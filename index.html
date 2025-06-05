@@ -61,6 +61,41 @@
 
 
           <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20" >
+		  
+ <tr onmouseout="dogrecon_stop()" onmouseover="dogrecon_start()">  
+  <td width="25%">
+    <div class="one">
+      <div class="two" id='dogrecon_image'>
+        <center><img src='images/app2.gif' width="150" height="150"></center>
+      </div>
+      <center><img src='images/app2.gif' width="150" height="150"></center>
+    </div>
+    <script type="text/javascript">
+      function dogrecon_start() {
+        document.getElementById('dogrecon_image').style.opacity = "1";
+      }
+      function dogrecon_stop() {
+        document.getElementById('dogrecon_image').style.opacity = "0";
+      }
+      dogrecon_stop()
+    </script>
+  </td>
+
+  <td valign="top" width="75%">
+    <papertitle>
+      <a href="https://doi.org/10.1007/s11263-025-02485-5">
+        DogRecon: Canine Prior-Guided Animatable 3D Gaussian Dog Reconstruction From A Single Image
+      </a>
+    </papertitle>
+    <br>
+    <em><strong>Gyeongsu Cho</strong>, Changwoo Kang, Donghyeon Soon, Kyungdon Joo</em>
+    <br>
+    <em>International Journal of Computer Vision (IJCV), 2025</em>
+    <br><br>
+    We propose <b>DogRecon</b>, a novel framework that reconstructs animatable 3D Gaussian dog models from a single image. Our method leverages a canine prior and a reliable sampling strategy to produce high-quality 3D reconstructions and animations of dogs.
+  </td>
+</tr>
+
     <tr onmouseout="pond_stop()" onmouseover="pond_start()">  
       <td width="25%">
           <div class="one">
