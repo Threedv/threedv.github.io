@@ -25,9 +25,9 @@ def initialize_model():
         device = "cuda" if torch.cuda.is_available() else "cpu"
         logger.info(f"Using device: {device}")
         
-        # Large 모델 로드
-        logger.info("Loading Whisper large model...")
-        model = whisper.load_model("large", device=device)
+        # Large-v3 모델 로드 (최신 버전)
+        logger.info("Loading Whisper large-v3 model...")
+        model = whisper.load_model("large-v3", device=device)
         logger.info("Model loaded successfully!")
         return True
     except Exception as e:
@@ -95,7 +95,7 @@ def transcribe_audio():
 def model_info():
     """모델 정보 반환"""
     return jsonify({
-        "model_name": "whisper-large",
+        "model_name": "whisper-large-v3",
         "device": "cuda" if torch.cuda.is_available() else "cpu",
         "model_loaded": model is not None
     })
