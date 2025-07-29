@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>M4A to TXT Converter - Gyeongsu Cho</title>
+    <meta name="author" content="Gyeongsu Cho">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="whisper-style.css">
+    <link rel="icon" type="image/png" href="images/hp_logo.png">
+</head>
+
+<body>
+    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+        <tr style="padding:0px">
+            <td style="padding:0px">
+                <!-- Header with navigation -->
+                <div class="header-nav">
+                    <a href="index.html" class="back-btn">← Back to Portfolio</a>
+                    <h1>M4A to TXT Converter</h1>
+                    <p>Convert your audio files to text using OpenAI Whisper</p>
+                </div>
+
+                <!-- Main converter interface -->
+                <div class="converter-container">
+                    <div class="upload-section">
+                        <div class="upload-area" id="uploadArea">
+                            <div class="upload-icon">🎵</div>
+                            <h3>Drop your M4A file here or click to select</h3>
+                            <p>Supported formats: M4A, MP3, WAV, FLAC</p>
+                            <input type="file" id="audioFile" accept=".m4a,.mp3,.wav,.flac" style="display: none;">
+                            <button class="select-btn" onclick="document.getElementById('audioFile').click()">Select File</button>
+                        </div>
+                    </div>
+
+                    <div class="processing-section" id="processingSection" style="display: none;">
+                        <div class="progress-container">
+                            <h3>Processing your audio...</h3>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="progressFill"></div>
+                            </div>
+                            <p id="statusText">Loading Whisper model...</p>
+                        </div>
+                    </div>
+
+                    <div class="result-section" id="resultSection" style="display: none;">
+                        <h3>Transcription Result</h3>
+                        <div class="text-output">
+                            <textarea id="transcriptionText" readonly></textarea>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="download-btn" onclick="downloadTranscription()">Download TXT</button>
+                            <button class="copy-btn" onclick="copyToClipboard()">Copy to Clipboard</button>
+                            <button class="new-file-btn" onclick="resetConverter()">Convert Another File</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <div style="margin-top: 40px; text-align: center; font-size: small;">
+                    <p>Powered by <a href="https://openai.com/research/whisper" target="_blank">OpenAI Whisper</a> | 
+                    Built by <a href="index.html">Gyeongsu Cho</a></p>
+                </div>
+            </td>
+        </tr>
+    </tbody></table>
+
+    <!-- Include Whisper.js from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@xenova/transformers@2.17.2/dist/transformers.min.js"></script>
+    <script src="whisper-script.js"></script>
+</body>
+</html>
