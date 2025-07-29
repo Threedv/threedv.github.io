@@ -1,26 +1,38 @@
-// Whisper Converter JavaScript
-let pipeline = null;
-let isModelLoaded = false;
+// Whisper Converter JavaScript - Backend API Version
+const BACKEND_URL = 'http://localhost:5000';  // 백엔드 서버 URL
+let isBackendReady = false;
 
-// Initialize the Whisper pipeline
-async function initializeWhisper() {
+// 백엔드 서버 상태 확인
+async function checkBackendHealth() {
     try {
-        const { pipeline: createPipeline } = await import('https://cdn.skypack.dev/@xenova/transformers');
+        const response = await fetch(`${BACKEND_URL}/health`);
+        const data = await response.json();
         
-        updateStatus('Loading Whisper model... This may take a few minutes on first load.');
-        updateProgress(10);
-        
-        pipeline = await createPipeline('automatic-speech-recognition', 'Xenova/whisper-small');
-        
-        updateProgress(100);
-        updateStatus('Model loaded successfully!');
-        isModelLoaded = true;
-        
-        return true;
+        if (data.status === 'healthy' && data.model_loaded) {
+            isBackendReady = true;
+            updateStatus('Backend server is ready!');
+            return true;
+        } else if (data.status === 'healthy' && !data.model_loaded) {
+            updateStatus('Backend server is running but model is not loaded yet...');
+            return false;
+        }
     } catch (error) {
-        console.error('Error initializing Whisper:', error);
-        updateStatus('Error loading model. Please refresh and try again.');
+        console.error('Backend health check failed:', error);
+        updateStatus('Backend server is not available. Please start the server.');
         return false;
+    }
+}
+
+// 모델 정보 가져오기
+async function getModelInfo() {
+    try {
+        const response = await fetch(`${BACKEND_URL}/model-info`);
+        const data = await response.json();
+        console.log('Model info:', data);
+        return data;
+    } catch (error) {
+        console.error('Failed to get model info:', error);
+        return null;
     }
 }
 
@@ -28,6 +40,9 @@ async function initializeWhisper() {
 document.addEventListener('DOMContentLoaded', function() {
     const uploadArea = document.getElementById('uploadArea');
     const audioFile = document.getElementById('audioFile');
+    
+    // 페이지 로드 시 백엔드 상태 확인
+    checkBackendHealth();
     
     // File input change handler
     audioFile.addEventListener('change', handleFileSelect);
@@ -69,7 +84,10 @@ function handleFileSelect(e) {
 async function processFile(file) {
     // Validate file type
     const validTypes = ['audio/m4a', 'audio/mp3', 'audio/wav', 'audio/flac', 'audio/x-m4a'];
-    if (!validTypes.some(type => file.type === type || file.name.toLowerCase().endsWith(type.split('/')[1]))) {
+    const fileExtension = file.name.toLowerCase().split('.').pop();
+    const validExtensions = ['m4a', 'mp3', 'wav', 'flac'];
+    
+    if (!validTypes.some(type => file.type === type) && !validExtensions.includes(fileExtension)) {
         alert('Please select a valid audio file (M4A, MP3, WAV, or FLAC)');
         return;
     }
@@ -80,38 +98,56 @@ async function processFile(file) {
     document.getElementById('resultSection').style.display = 'none';
     
     try {
-        // Initialize Whisper if not already loaded
-        if (!isModelLoaded) {
-            const modelLoaded = await initializeWhisper();
-            if (!modelLoaded) {
-                resetConverter();
-                return;
+        // 백엔드 서버 상태 확인
+        updateStatus('Checking backend server...');
+        updateProgress(5);
+        
+        const healthCheck = await checkBackendHealth();
+        if (!healthCheck) {
+            // 서버가 준비되지 않았으면 잠시 대기 후 재시도
+            updateStatus('Waiting for backend server to be ready...');
+            await new Promise(resolve => setTimeout(resolve, 2000));
+            
+            const retryHealthCheck = await checkBackendHealth();
+            if (!retryHealthCheck) {
+                throw new Error('Backend server is not ready. Please start the whisper_backend.py server.');
             }
         }
         
-        updateStatus('Processing audio file...');
+        updateStatus('Uploading file to server...');
         updateProgress(20);
         
-        // Convert file to audio buffer
-        const audioBuffer = await file.arrayBuffer();
+        // FormData로 파일 준비
+        const formData = new FormData();
+        formData.append('audio', file);
+        
+        updateStatus('Processing with Whisper Large model on GPU...');
         updateProgress(40);
         
-        updateStatus('Transcribing audio...');
-        updateProgress(60);
+        // 백엔드 API 호출
+        const response = await fetch(`${BACKEND_URL}/transcribe`, {
+            method: 'POST',
+            body: formData
+        });
         
-        // Process with Whisper
-        const result = await pipeline(audioBuffer);
-        updateProgress(90);
+        updateProgress(80);
         
-        updateStatus('Finalizing transcription...');
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.error || 'Transcription failed');
+        }
+        
+        const result = await response.json();
         updateProgress(100);
         
+        updateStatus('Transcription completed!');
+        
         // Display results
-        displayResults(result.text);
+        displayResults(result.text, result);
         
     } catch (error) {
         console.error('Error processing file:', error);
-        alert('Error processing file. Please try again with a different file.');
+        alert(`Error: ${error.message}`);
         resetConverter();
     }
 }
@@ -124,10 +160,18 @@ function updateStatus(message) {
     document.getElementById('statusText').textContent = message;
 }
 
-function displayResults(transcriptionText) {
+function displayResults(transcriptionText, fullResult = null) {
     document.getElementById('processingSection').style.display = 'none';
     document.getElementById('resultSection').style.display = 'block';
     document.getElementById('transcriptionText').value = transcriptionText;
+    
+    // 추가 정보가 있으면 콘솔에 로그
+    if (fullResult) {
+        console.log('Full transcription result:', fullResult);
+        if (fullResult.language) {
+            console.log('Detected language:', fullResult.language);
+        }
+    }
 }
 
 function downloadTranscription() {
