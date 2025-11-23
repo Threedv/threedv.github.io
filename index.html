@@ -23,222 +23,359 @@
                 <p class="name" style="text-align: center;">
                   Gyeongsu (Bob) Cho
                 </p>
-                <p>I am a Ph.D. student in Artificial Intelligence Graduate School at <a href="https://www.unist.ac.kr">UNIST</a>, where I am a <a href='https://unist.info/'>3D Vision & Robotics Lab</a> member under <a href='https://unist.info/?page_id=194'>Prof. Kyungdon Joo</a>'s supervision. I received a B.S. in Mechanical Engineering at <a href='https://neweng.cau.ac.kr/index.do'>Chung-Ang University</a>.
-
- 
+                <p>
+                  I am a Ph.D. student in the Artificial Intelligence Graduate School at
+                  <a href="https://www.unist.ac.kr">UNIST</a>, where I am a member of the
+                  <a href="https://unist.info/">3D Vision &amp; Robotics Lab</a> under
+                  <a href="https://unist.info/?page_id=194">Prof. Kyungdon Joo</a>'s supervision.
+                  I received a B.Eng. in Mechanical Engineering from
+                  <a href="https://neweng.cau.ac.kr/index.do">Chung-Ang University</a>.
                 </p>
-		<p style="color:red; font-weight:bold; text-align:center;">
-		  I am actively seeking internship opportunities at academic or industrial research teams.<br>
-		  I’m always open to new collaborations — feel free to reach out to me at <a href="mailto:threedv@unist.ac.kr">threedv@unist.ac.kr</a>.
-		</p>        
-	         <p style="text-align:center">
+                <p>
+                  My research focuses on 3D/4D reconstruction of animals and humans, multi-view and generative vision, Gaussian splatting, and real-time pose estimation.
+                  Ultimately, I aim to build models that reconstruct, animate, and generate dynamic 3D/4D content from everyday visual input.
+                </p>
+                <p style="color:red; font-weight:bold; text-align:center;">
+                  I am actively seeking internship opportunities at academic or industrial research teams.<br>
+                  I’m always open to new collaborations — feel free to reach out to me at
+                  <a href="mailto:threedv@unist.ac.kr">threedv@unist.ac.kr</a>.
+                </p>
+                <p style="text-align:center">
                   <a href="mailto:threedv@unist.ac.kr">Email</a> &nbsp;/&nbsp;
                   <a href="Gyeongsu__Bob__Cho_CV.pdf">CV</a> &nbsp;/&nbsp;
-                  
-                  <a href="https://www.linkedin.com/in/gyeongsu-cho-1670a9202/">Linkedin</a> &nbsp;/&nbsp;
-                  <a href="https://github.com/Threedv/">Github</a>
+                  <a href="https://www.linkedin.com/in/gyeongsu-cho-1670a9202/">LinkedIn</a> &nbsp;/&nbsp;
+                  <a href="https://github.com/Threedv/">GitHub</a>
                 </p>
               </td>
               <td style="padding:2.5%;width:40%;max-width:40%">
-                <a href="images/ro.jpg"><img style="width:100%;max-width:100%" alt="profile photo" src="images/ro.png" class="hoverZoomLink"></a>
+                <a href="images/ro.jpg">
+                  <img style="width:100%;max-width:100%" alt="profile photo" src="images/ro.png" class="hoverZoomLink">
+                </a>
               </td>
             </tr>
-           </tbody></table>
+          </tbody></table>
 
-
-          
+          <!-- Research blurb -->
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-              <tr>
+            <tr>
               <td style="padding:20px;width:100%;vertical-align:middle">
                 <h2>Research</h2>
                 <p>
-                  I am passionate about creating models that don’t yet exist — models capable of reconstructing, animating, and generating dynamic 3D and 4D content, especially for humans and animals. My ultimate goal is to push the boundaries of dynamic 3D/4D reconstruction and generation. I'm driven by a passion for meaningful and enjoyable research, building tools and models that unlock new creative and scientific possibilities.
+                  I am passionate about creating models that do not yet exist — models capable of reconstructing, animating, and generating dynamic 3D and 4D content, especially for animals and humans.
+                  My work combines synthetic data pipelines, parametric animal/human models, and generative methods to lift 2D images and videos into animatable 3D/4D representations.
+                  I enjoy building tools and models that unlock new creative and scientific possibilities in computer vision and graphics.
                 </p>
               </td>
             </tr>
           </tbody></table>
 
-
-          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20" >
-
-
-<!-- Avatar++ (in submission) -->
-<tr>
-  <td width="25%">
-    <div class="one">
-      <div class="two">
-        <center><img src='images/single_human.png' width="150" height="150"></center>
-      </div>
-      <center><img src='images/single_human.png' width="150" height="150"></center>
-    </div>
-  </td>
-
-  <td valign="top" width="75%">
-    <papertitle>
-      Fast and Controllable 3D Human Generation from a Single Image
-    </papertitle>
-    <br>
-    <em><Anonymous Authors</em>
-
-    <br>
-    <em><strong>In submission</strong></em>
-    <br><br>
-    We present a fast, pose-controllable 3D avatar generation framework from a single image. By combining facial identity and visual embeddings with pose-guided multi-view synthesis, our method creates high-fidelity, animation-ready human avatars in under 15 seconds.
-  </td>
-</tr>
-		  
-		  
- <tr onmouseout="dogrecon_stop()" onmouseover="dogrecon_start()">  
-  <td width="25%">
-    <div class="one">
-      <div class="two" id='dogrecon_image'>
-        <center><img src='images/app2.gif' width="150" height="150"></center>
-      </div>
-      <center><img src='images/app2.gif' width="150" height="150"></center>
-    </div>
-    <script type="text/javascript">
-      function dogrecon_start() {
-        document.getElementById('dogrecon_image').style.opacity = "1";
-      }
-      function dogrecon_stop() {
-        document.getElementById('dogrecon_image').style.opacity = "0";
-      }
-      dogrecon_stop()
-    </script>
-  </td>
-
-  <td valign="top" width="75%">
-    <papertitle>
-      <a href="https://doi.org/10.1007/s11263-025-02485-5">
-        DogRecon: Canine Prior-Guided Animatable 3D Gaussian Dog Reconstruction From A Single Image
-      </a>
-    </papertitle>
-    <br>
-    <em><strong>Gyeongsu Cho</strong>, Changwoo Kang, Donghyeon Soon, Kyungdon Joo</em>
-    <br>
-    <em><strong>IJCV 2025, CV4Animals Oral (CVPRW 2024)</strong></em>
-    <br><br>
-    We propose <b>DogRecon</b>, a novel framework that reconstructs animatable 3D Gaussian dog models from a single image. Our method leverages a canine prior and a reliable sampling strategy to produce high-quality 3D reconstructions and animations of dogs.
-  </td>
-</tr>
-
-    <tr onmouseout="pond_stop()" onmouseover="pond_start()">  
-      <td width="25%">
-          <div class="one">
-                <div class="two" id='malle_image'>
-			<center><img src='images/Slabins_ICCV.png' width="150" height="150"></center></div>
-		      <center><img src='images/Slabins_ICCV.png' width="150" height="150"></center>
-		      
-              </div>
-              <script type="text/javascript">
-                function malle_start() {
-                  document.getElementById('malle_image').style.opacity = "1";
-                }
-
-                function malle_stop() {
-                  document.getElementById('malle_image').style.opacity = "0";
-                }
-                malle_stop()
-              </script>
-		 
-            </td>
-		
-	    <td valign="top" width="75%">
-                <papertitle> <a href="https://syniez.github.io/SlaBins/">SlaBins: Fisheye Depth Estimation using Slanted Bins on the Road Environments</a> </papertitle>
-              <br>
-		    <em>Jongsung Lee, <strong>Gyeognsu Cho</strong>*, Jeongin Park*, Kyongjun Kim*, Seongoh Lee*, Jung Hee Kim, Seong-Gyun Jeong, Kyungdon Joo</em>
-		    <br>
-		    <em><strong>ICCV 2023</strong> </em>
-	 	<br>
-<!-- 		    <em>paper (coming soon)</em> &nbsp/&nbsp -->
-		    <!-- <a href="https://ojs.aaai.org/index.php/AAAI/article/view/25195">paper</a> &nbsp/&nbsp -->
-                    <!-- <em>paper (coming soon)</em> &nbsp/&nbsp 
-                    <a href="https://syniez.github.io/SlaBins/">project page</a> &nbsp/&nbsp
-		   <a href="https://youtu.be/FL8oc74jDlc">video</a> -->
-		    <br>
-		    <br>
-		    SlaBins utilizes a slanted multi-cylindrical image representation and adaptive bins to generate accurate and dense depth maps.
-            </td>
-          </tr>
-        </tbody></table>		    
-		
-
-
-
-          <!--
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <!-- Featured publications / projects -->
           <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
-              <tr>
-                <td>
-                  <h2>Publications</h2>
-                </td>
-              </tr>
-            </tbody></table>
-          <table width="100%" align="center" border="0" cellpadding="20"><tbody>
 
-              <tr>
-                <td style="padding:20px;width:80%;vertical-align:middle">
-                          <papertitle>Interactive 3D human generation</papertitle>
-                        </a>
-                        <br>
-                        <em>Under review</em>
-                </td>
-              </tr>
-
-              <tr>
-                <td style="padding:20px;width:80%;vertical-align:middle">
-                          <papertitle>Structure-aware 3D scene reconstruction</papertitle>
-                        </a>
-                        <br>
-                        <em>Under review</em>
-                </td>
-              </tr>
--->
-
-            
-          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
+            <!-- 4D Animal Mesh Reconstruction (CVPR submission) -->
             <tr>
-              <td>
-                <h2>Education</h2>         
-                  <ul>
-                    <li>M.S. & Ph.D in Artifical Intelligence Graduate School, UNIST, South Korea (2022.03~ current)</li>
-                    <li>Bachelor in Mechanical Engineering, Chung-Ang Univ, South Korea (2018.03 ~ 2021.08)</li>
-                  </ul>  
-                </td>
-              </tr>
-          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
+              <td width="25%">
+                <div class="one">
+                  <center><img src="images/4d_animal.png" width="150" height="150" alt="4D animal mesh reconstruction"></center>
+                </div>
+              </td>
+              <td valign="top" width="75%">
+                <papertitle>4D Animal Mesh Reconstruction from Monocular Videos</papertitle>
+                <br>
+                <em><strong>In submission (CVPR)</strong></em>
+                <br>
+                <a href="#" target="_blank">[paper]</a> &nbsp;/&nbsp;
+                <a href="#" target="_blank">[project page]</a>
+                <br><br>
+                We present a synthetic animal video pipeline and a video transformer model for reconstructing temporally coherent 4D animal motion and global trajectories from monocular in-the-wild videos.
+                The framework leverages SMAL-based priors, large-scale rendered data, and 3D Gaussian splatting to handle challenging real-world animal scenes.
+              </td>
+            </tr>
+
+            <!-- Pose-Diverse Multi-View Virtual Try-on (WACV 2026) -->
             <tr>
-              <td>
-                <h2>Projects</h2>         
-                  <ul>
-		    <li>Video Anomaly Detection, funded by <a href="https://news.samsung.com/global/">SAMSUNG ELECTRONICS</a> (2024.06 ~2025.06)</li>
-                    <li>Recommendation System (virtual tactile spring constant), funded by UNIST (2023.06 ~2023.12)</li>
-                    <li>Monocular Depth Estimation, funded by <a href="https://42dot.ai//">42dot</a> (2022.03 ~ 2022.12 )</li> 
-                    <li>Human Pose Estimation, funded by NIA (2021.08 ~ 2021.12)</li>
-                  </ul>  
-                </td>
-              </tr>    
-                  </ul>  
-                </td>
-              </tr>    
+              <td width="25%">
+                <div class="one">
+                  <center><img src="images/vton.png" width="150" height="150" alt="Pose-diverse virtual try-on"></center>
+                </div>
+              </td>
+              <td valign="top" width="75%">
+                <papertitle>
+                  Pose-Diverse Multi-View Virtual Try-on from a Single Frontal Image
+                </papertitle>
+                <br>
+                <em>Sangmin Han*, Minji Chung*, <strong>Gyeongsu Cho</strong>, Kyungdon Joo, Taesup Kim</em>
+                <br>
+                <em><strong>WACV 2026</strong></em>
+                <br>
+                <a href="#" target="_blank">[paper]</a> &nbsp;/&nbsp;
+                <a href="#" target="_blank">[project page]</a>
+                <br><br>
+                This work generates pose-diverse, multi-view images for virtual try-on starting from a single frontal input.
+                By leveraging multi-view consistency and pose conditioning, the method produces realistic, view-consistent outfits under large pose variations.
+              </td>
+            </tr>
+
+            <!-- Avatar++ (ICCV 2025 Wild3D Workshop) -->
+            <tr>
+              <td width="25%">
+                <div class="one">
+                  <center><img src="images/single_human.png" width="150" height="150" alt="Avatar++"></center>
+                </div>
+              </td>
+              <td valign="top" width="75%">
+                <papertitle>
+                  Avatar++: Fast and Pose-Controllable 3D Human Avatar Generation from a Single Image
+                </papertitle>
+                <br>
+                <em>Sangmin Han*, Minji Chung*, <strong>Gyeongsu Cho</strong>, Kyungdon Joo, Taesup Kim</em>
+                <br>
+                <em><strong>ICCV 2025, Wild3D Workshop</strong></em>
+                <br>
+                <a href="#" target="_blank">[paper]</a> &nbsp;/&nbsp;
+                <a href="#" target="_blank">[project page]</a>
+                <br><br>
+                Avatar++ generates an animation-ready 3D human avatar from a single image in seconds.
+                By combining identity-preserving features with pose-guided multi-view synthesis, the framework enables fast and controllable avatar creation for downstream animation and XR applications.
+              </td>
+            </tr>
+
+            <!-- DogRecon IJCV (Journal) -->
+            <tr onmouseout="dogrecon_stop()" onmouseover="dogrecon_start()">
+              <td width="25%">
+                <div class="one">
+                  <div class="two" id="dogrecon_image">
+                    <center><img src="images/app2.gif" width="150" height="150" alt="DogRecon animation"></center>
+                  </div>
+                  <center><img src="images/app2.gif" width="150" height="150" alt="DogRecon animation base"></center>
+                </div>
+                <script type="text/javascript">
+                  function dogrecon_start() {
+                    document.getElementById('dogrecon_image').style.opacity = "1";
+                  }
+                  function dogrecon_stop() {
+                    document.getElementById('dogrecon_image').style.opacity = "0";
+                  }
+                  dogrecon_stop();
+                </script>
+              </td>
+
+              <td valign="top" width="75%">
+                <papertitle>
+                  DogRecon: Canine Prior-Guided Animatable 3D Gaussian Dog Reconstruction From a Single Image
+                </papertitle>
+                <br>
+                <em><strong>Gyeongsu Cho</strong>, Changwoo Kang, Donghyeon Soon, Kyungdon Joo</em>
+                <br>
+                <em><strong>International Journal of Computer Vision (IJCV), 2025</strong></em>
+                <br>
+                <a href="https://doi.org/10.1007/s11263-025-02485-5" target="_blank">[paper]</a> &nbsp;/&nbsp;
+                <a href="#" target="_blank">[project page]</a>
+                <br><br>
+                DogRecon is a framework that reconstructs animatable 3D Gaussian dog models from a single RGB image.
+                It leverages a canine prior and a reliable sampling strategy to obtain high-quality 3D shapes and realistic animations of dogs from in-the-wild photos.
+              </td>
+            </tr>
+
+            <!-- DogRecon CVPRW (Workshop version) -->
+            <tr>
+              <td width="25%">
+                <div class="one">
+                  <center><img src="images/app2.gif" width="150" height="150" alt="DogRecon workshop"></center>
+                </div>
+              </td>
+              <td valign="top" width="75%">
+                <papertitle>
+                  Canine Prior-Guided Animatable 3D Gaussian Dog Reconstruction From a Single Image
+                </papertitle>
+                <br>
+                <em><strong>Gyeongsu Cho</strong>, Changwoo Kang, Donghyeon Soon, Kyungdon Joo</em>
+                <br>
+                <em><strong>CV4Animals Workshop @ CVPRW 2025 (Oral)</strong></em>
+                <br>
+                <a href="https://drive.google.com/file/d/1iBRWAKBcO0eGoRMj5di9rdLILR6fRc5h/view" target="_blank">[paper]</a> &nbsp;/&nbsp;
+                <a href="#" target="_blank">[project page]</a>
+                <br><br>
+                This workshop version presents the initial DogRecon framework for animatable 3D Gaussian dog reconstruction from a single image, focusing on canine priors and practical reconstruction quality for in-the-wild photos.
+              </td>
+            </tr>
+
+            <!-- SlaBins -->
+            <tr onmouseout="malle_stop()" onmouseover="malle_start()">
+              <td width="25%">
+                <div class="one">
+                  <div class="two" id="malle_image">
+                    <center><img src="images/Slabins_ICCV.png" width="150" height="150" alt="SlaBins depth estimation"></center>
+                  </div>
+                  <center><img src="images/Slabins_ICCV.png" width="150" height="150" alt="SlaBins depth estimation base"></center>
+                </div>
+                <script type="text/javascript">
+                  function malle_start() {
+                    document.getElementById('malle_image').style.opacity = "1";
+                  }
+
+                  function malle_stop() {
+                    document.getElementById('malle_image').style.opacity = "0";
+                  }
+                  malle_stop();
+                </script>
+              </td>
+
+              <td valign="top" width="75%">
+                <papertitle>
+                  SlaBins: Fisheye Depth Estimation using Slanted Bins on Road Environments
+                </papertitle>
+                <br>
+                <em>
+                  Jongsung Lee,
+                  <strong>Gyeongsu Cho</strong>*,
+                  Jeongin Park*,
+                  Kyongjun Kim*,
+                  Seongoh Lee*,
+                  Jung Hee Kim,
+                  Seong-Gyun Jeong,
+                  Kyungdon Joo
+                </em>
+                <br>
+                <em><strong>ICCV 2023</strong></em>
+                <br>
+                <a href="#" target="_blank">[paper]</a> &nbsp;/&nbsp;
+                <a href="https://syniez.github.io/SlaBins/" target="_blank">[project page]</a>
+                <br><br>
+                SlaBins introduces a slanted multi-cylindrical representation and adaptive depth bins to achieve accurate and dense depth estimation from automotive fisheye cameras in road environments.
+              </td>
+            </tr>
 
           </tbody></table>
+
+          <!-- Education -->
+          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
+            <tr>
+              <td>
+                <h2>Education</h2>
+                <ul>
+                  <li>
+                    Integrated M.S.–Ph.D. in Artificial Intelligence,
+                    Artificial Intelligence Graduate School, UNIST, South Korea (2022.03 – Present)
+                  </li>
+                  <li>
+                    B.Eng. in Mechanical Engineering, Chung-Ang University, South Korea (2018.03 – 2021.08)
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody></table>
+
+          <!-- Research & Industry Experience -->
+          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
+            <tr>
+              <td>
+                <h2>Research &amp; Industry Experience</h2>
+                <ul>
+                  <li>
+                    <strong>Graduate Researcher, UNIST – 3D/4D Vision &amp; Graphics (2022 – Present)</strong><br>
+                    Lead author of <strong>DogRecon (IJCV 2025)</strong> and a <strong>4D animal reconstruction</strong> framework for single-image 3D Gaussian dog reconstruction and 4D animal motion from monocular videos.
+                    Develop synthetic video pipelines, SMAL-based animal models, and PyTorch3D-based renderers for large-scale training and evaluation.
+                    Explore generative pipelines that lift text/video outputs into animatable 3D/4D representations.
+                  </li>
+                  <li>
+                    <strong>Research Collaboration with Samsung Electronics – Video Anomaly Detection (2024 – 2025)</strong><br>
+                    Co-developed a video anomaly detection framework for industrial display inspection using real manufacturing data.
+                    Contributed to dataset design, model architecture, and experiments for a <strong>TCSVT</strong> submission on reference-guided video anomaly detection.
+                  </li>
+                  <li>
+                    <strong>Startup Project – Real-Time 3D Human Pose Estimation (KIC &amp; GWU Program, 2024)</strong><br>
+                    Built a <strong>3-camera real-time 3D human pose estimation system</strong> with smoothing algorithms for stable motion analysis in gyms, designed as an AI-based personal training assistant.
+                    Selected for a Korean government startup support program and a 3-week entrepreneurship program at <strong>George Washington University</strong>.
+                    Conducted 50+ interviews with fitness and healthcare professionals across major U.S. cities and refined a US-market–focused business model, ranking <strong>1st in track</strong>.
+                  </li>
+                  <li>
+                    <strong>Other industry-funded projects</strong><br>
+                    Monocular depth estimation (funded by <a href="https://42dot.ai/">42dot</a>, 2022),
+                    a recommendation system for virtual tactile stiffness (funded by UNIST, 2023),
+                    and human pose estimation (funded by NIA, 2021).
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody></table>
+
+          <!-- Teaching & Mentoring -->
+          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
+            <tr>
+              <td>
+                <h2>Teaching &amp; Mentoring</h2>
+                <ul>
+                  <li>
+                    Teaching Assistant:
+                    Linear Algebra (Chung-Ang University),
+                    Computer Graphics (UNIST),
+                    Introduction to AI Programming 2 (UNIST).
+                  </li>
+                  <li>
+                    Tutor for a Hyundai Motor Company internal data/AI program (Python, data analysis).
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody></table>
+
+          <!-- Grants & Awards -->
+          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
+            <tr>
+              <td>
+                <h2>Grants &amp; Awards</h2>
+                <ul>
+                  <li>
+                    <strong>AI Tech Open Workshop – Creative Project UNIST (Startup Track, 1st Place), 2025</strong><br>
+                    Project: <em>Lightweight camera system and inference for 3D animal model reconstruction</em>.<br>
+                    Awarded <strong>30,000,000 KRW (≈ 20,000 USD)</strong>; funding allocated as research budget for continued 3D animal reconstruction work (2026).
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody></table>
+
+          <!-- Patents -->
+          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
+            <tr>
+              <td>
+                <h2>Patents</h2>
+                <ul>
+                  <li>
+                    <strong>Method and apparatus for reconstructing a 3D dog Gaussian model from a single image</strong><br>
+                    Korean Patent Application 10-2025-0107831 (2025-08-05); PCT Application PCT/KR2025/019381.
+                  </li>
+                  <li>
+                    <strong>Method and apparatus for generating a depth map of an image</strong><br>
+                    Korean Patent Application 10-2023-0125078, with 42dot.
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody></table>
+
+          <!-- Footer -->
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr>
               <td style="padding:0px">
                 <br>
                 <p style="text-align:right;font-size:small;">
-                  Template from <a href="https://github.com/jonbarron/jonbarron_website">this website</a>.
+                  Template from
+                  <a href="https://github.com/jonbarron/jonbarron_website">this website</a>.
+                </p>
               </td>
             </tr>
           </tbody></table>
+
         </td>
       </tr>
-    </table>
-<!-- ClustrMaps Globe -->
-<div style="width:300px; margin: 40px auto; overflow:hidden;">
-  <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=DfLCqjAjw4CkqTxNLdzmEIt4t3xhNo9-GRzyXFmTij0"></script>
-</div>
+    </tbody></table>
+
+    <!-- ClustrMaps Globe -->
+    <div style="width:300px; margin: 40px auto; overflow:hidden;">
+      <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=DfLCqjAjw4CkqTxNLdzmEIt4t3xhNo9-GRzyXFmTij0"></script>
+    </div>
 
   </body>
 </html>
