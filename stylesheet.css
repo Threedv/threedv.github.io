@@ -133,3 +133,7 @@ h2 {
 span.highlight {
   background-color: #ffffd0;
 }
+
+.nolink {
+  color: #000000;
+}
