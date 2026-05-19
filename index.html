@@ -315,6 +315,39 @@ This work was done in collaboration with <a href="https://news.samsung.com/globa
                   A small archive of research seminar slides I presented while exploring topics in
                   3D vision, generative models, human/animal reconstruction, and research workflows.
                 </p>
+                <div class="seminar-preview-action">
+                  <button id="seminar-preview-toggle" class="seminar-toggle" type="button" aria-expanded="false" aria-controls="seminar-preview-panel">
+                    Preview slides
+                  </button>
+                </div>
+                <div id="seminar-preview-panel" class="seminar-preview" hidden>
+                  <div class="seminar-preview-header">
+                    <div>
+                      <div id="seminar-preview-date" class="seminar-preview-date">2026.05</div>
+                      <div id="seminar-preview-title" class="seminar-preview-title">Agentic Coding Workflow for Research</div>
+                      <div id="seminar-preview-venue" class="seminar-preview-venue"></div>
+                    </div>
+                    <div class="seminar-preview-links">
+                      <a id="seminar-preview-open" href="seminars/2026-05-06-agentic-coding-workflow.pdf" target="_blank" rel="noopener">open PDF</a>
+                      <a id="seminar-preview-download" href="seminars/2026-05-06-agentic-coding-workflow.pdf" download>download PDF</a>
+                    </div>
+                  </div>
+                  <div class="seminar-preview-controls" aria-label="Seminar navigation">
+                    <button id="seminar-prev" class="seminar-icon-button" type="button" aria-label="Previous seminar" title="Previous seminar">&#8249;</button>
+                    <span id="seminar-position" class="seminar-control-label">Seminar 1 / 13</span>
+                    <button id="seminar-next" class="seminar-icon-button" type="button" aria-label="Next seminar" title="Next seminar">&#8250;</button>
+                  </div>
+                  <div class="seminar-canvas-wrap">
+                    <canvas id="seminar-preview-canvas" aria-label="Seminar slide preview"></canvas>
+                    <div id="seminar-preview-loading" class="seminar-preview-loading">Loading preview...</div>
+                  </div>
+                  <div class="seminar-preview-controls" aria-label="Page navigation">
+                    <button id="seminar-page-prev" class="seminar-icon-button" type="button" aria-label="Previous page" title="Previous page">&#8249;</button>
+                    <span id="seminar-page-position" class="seminar-control-label">Page 1 / 1</span>
+                    <button id="seminar-page-next" class="seminar-icon-button" type="button" aria-label="Next page" title="Next page">&#8250;</button>
+                  </div>
+                  <div id="seminar-preview-status" class="seminar-preview-status" role="status"></div>
+                </div>
                 <table class="seminar-list"><tbody>
                   <tr>
                     <td class="seminar-date">2026.05</td>
@@ -476,5 +509,309 @@ This work was done in collaboration with <a href="https://news.samsung.com/globa
       <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=DfLCqjAjw4CkqTxNLdzmEIt4t3xhNo9-GRzyXFmTij0"></script>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script>
+      (function () {
+        const seminars = [
+          {
+            date: "2026.05",
+            title: "Agentic Coding Workflow for Research",
+            venue: "",
+            pdf: "seminars/2026-05-06-agentic-coding-workflow.pdf"
+          },
+          {
+            date: "2025.10",
+            title: "From Single-Image HMR to World-Grounded Video HMR",
+            venue: "",
+            pdf: "seminars/2025-10-01-world-grounded-video-hmr.pdf"
+          },
+          {
+            date: "2025.05",
+            title: "AniMer",
+            venue: "CVPR 2025",
+            pdf: "seminars/2025-05-08-animer.pdf"
+          },
+          {
+            date: "2025.02",
+            title: "SEVA",
+            venue: "arXiv 2025",
+            pdf: "seminars/2025-02-21-seva.pdf"
+          },
+          {
+            date: "2025.02",
+            title: "LGM: Large Multi-view Gaussian Model",
+            venue: "ECCV 2024",
+            pdf: "seminars/2025-02-21-lgm.pdf"
+          },
+          {
+            date: "2024.12",
+            title: "WonderJourney",
+            venue: "CVPR 2024",
+            pdf: "seminars/2024-12-05-wonderjourney.pdf"
+          },
+          {
+            date: "2024.05",
+            title: "Generative Rendering: Controllable 4D-Guided Video Generation with 2D Diffusion Models",
+            venue: "CVPR 2024",
+            pdf: "seminars/2024-05-09-generative-rendering.pdf"
+          },
+          {
+            date: "2024.01",
+            title: "ControlNet: Adding Conditional Control to Text-to-Image Diffusion Models",
+            venue: "ICCV 2023",
+            pdf: "seminars/2024-01-18-controlnet.pdf"
+          },
+          {
+            date: "2023.09",
+            title: "BANMo: Building Animatable 3D Neural Models from Many Casual Videos",
+            venue: "CVPR 2022",
+            pdf: "seminars/2023-09-20-banmo.pdf"
+          },
+          {
+            date: "2023.05",
+            title: "NeuMan: Neural Human Radiance Field from a Single Video",
+            venue: "ECCV 2022",
+            pdf: "seminars/2023-05-04-neuman.pdf"
+          },
+          {
+            date: "2022.07",
+            title: "Digging Into Self-Supervised Monocular Depth Estimation",
+            venue: "ICCV 2019",
+            pdf: "seminars/2022-07-28-monodepth2.pdf"
+          },
+          {
+            date: "2022.04",
+            title: "MINE: Towards Continuous Depth MPI with NeRF for Novel View Synthesis",
+            venue: "ICCV 2021",
+            pdf: "seminars/2022-04-28-mine.pdf"
+          },
+          {
+            date: "2022.03",
+            title: "PixelSynth: Generating a 3D-Consistent Experience from a Single Image",
+            venue: "ICCV 2021",
+            pdf: "seminars/2022-03-03-pixelsynth.pdf"
+          }
+        ];
+
+        const toggle = document.getElementById("seminar-preview-toggle");
+        const panel = document.getElementById("seminar-preview-panel");
+        const canvas = document.getElementById("seminar-preview-canvas");
+        const loading = document.getElementById("seminar-preview-loading");
+        const status = document.getElementById("seminar-preview-status");
+        const date = document.getElementById("seminar-preview-date");
+        const title = document.getElementById("seminar-preview-title");
+        const venue = document.getElementById("seminar-preview-venue");
+        const openLink = document.getElementById("seminar-preview-open");
+        const downloadLink = document.getElementById("seminar-preview-download");
+        const seminarPosition = document.getElementById("seminar-position");
+        const pagePosition = document.getElementById("seminar-page-position");
+        const seminarPrev = document.getElementById("seminar-prev");
+        const seminarNext = document.getElementById("seminar-next");
+        const pagePrev = document.getElementById("seminar-page-prev");
+        const pageNext = document.getElementById("seminar-page-next");
+
+        let seminarIndex = 0;
+        let pageNumber = 1;
+        let pdfDocument = null;
+        let renderTask = null;
+        let isRendering = false;
+        let queuedPage = null;
+        let renderToken = 0;
+        let previewBusy = false;
+        let resizeTimer = null;
+
+        if (!toggle || !panel || !canvas) {
+          return;
+        }
+
+        function setStatus(message) {
+          status.textContent = message || "";
+        }
+
+        function setBusy(isBusy) {
+          previewBusy = isBusy;
+          loading.hidden = !isBusy;
+          canvas.style.opacity = isBusy ? "0.35" : "1";
+          updateControls();
+        }
+
+        function updateControls() {
+          seminarPrev.disabled = previewBusy;
+          seminarNext.disabled = previewBusy;
+          pagePrev.disabled = previewBusy || !pdfDocument || pageNumber <= 1;
+          pageNext.disabled = previewBusy || !pdfDocument || pageNumber >= pdfDocument.numPages;
+        }
+
+        function updateMeta() {
+          const seminar = seminars[seminarIndex];
+          date.textContent = seminar.date;
+          title.textContent = seminar.title;
+          venue.textContent = seminar.venue ? "(" + seminar.venue + ")" : "";
+          openLink.href = seminar.pdf;
+          downloadLink.href = seminar.pdf;
+          downloadLink.setAttribute("download", seminar.pdf.split("/").pop());
+          seminarPosition.textContent = "Seminar " + (seminarIndex + 1) + " / " + seminars.length;
+          pagePosition.textContent = "Page " + pageNumber + " / " + (pdfDocument ? pdfDocument.numPages : 1);
+          updateControls();
+        }
+
+        async function renderPage(number) {
+          if (!pdfDocument) {
+            return;
+          }
+
+          if (isRendering) {
+            queuedPage = number;
+            return;
+          }
+
+          isRendering = true;
+          const token = ++renderToken;
+          setBusy(true);
+          setStatus("");
+          updateMeta();
+
+          try {
+            const page = await pdfDocument.getPage(number);
+            if (token !== renderToken) {
+              return;
+            }
+
+            const baseViewport = page.getViewport({ scale: 1 });
+            const wrapWidth = Math.max((canvas.parentElement.clientWidth || 760) - 24, 280);
+            const cssScale = Math.min(wrapWidth / baseViewport.width, 1.4);
+            const viewport = page.getViewport({ scale: cssScale });
+            const outputScale = window.devicePixelRatio || 1;
+            const context = canvas.getContext("2d");
+
+            canvas.width = Math.floor(viewport.width * outputScale);
+            canvas.height = Math.floor(viewport.height * outputScale);
+            canvas.style.width = Math.floor(viewport.width) + "px";
+            canvas.style.height = Math.floor(viewport.height) + "px";
+            context.setTransform(outputScale, 0, 0, outputScale, 0, 0);
+
+            renderTask = page.render({
+              canvasContext: context,
+              viewport: viewport
+            });
+
+            await renderTask.promise;
+            if (token === renderToken) {
+              setBusy(false);
+              updateMeta();
+            }
+          } catch (error) {
+            if (error && error.name === "RenderingCancelledException") {
+              return;
+            }
+            setBusy(false);
+            setStatus("Preview failed to load. Please open the PDF directly.");
+          } finally {
+            isRendering = false;
+            renderTask = null;
+            if (queuedPage !== null) {
+              const nextPage = queuedPage;
+              queuedPage = null;
+              renderPage(nextPage);
+            }
+          }
+        }
+
+        async function loadSeminar(index) {
+          if (!window.pdfjsLib) {
+            setBusy(false);
+            setStatus("Preview is unavailable. Please open the PDF directly.");
+            return;
+          }
+
+          seminarIndex = (index + seminars.length) % seminars.length;
+          pageNumber = 1;
+          pdfDocument = null;
+          queuedPage = null;
+          ++renderToken;
+          updateMeta();
+          setBusy(true);
+
+          try {
+            const loadingTask = window.pdfjsLib.getDocument(seminars[seminarIndex].pdf);
+            pdfDocument = await loadingTask.promise;
+            await renderPage(pageNumber);
+          } catch (error) {
+            setBusy(false);
+            setStatus("Preview failed to load. Please open the PDF directly.");
+          }
+        }
+
+        function changePage(delta) {
+          if (!pdfDocument) {
+            return;
+          }
+
+          const nextPage = Math.min(Math.max(pageNumber + delta, 1), pdfDocument.numPages);
+          if (nextPage === pageNumber) {
+            return;
+          }
+          pageNumber = nextPage;
+          renderPage(pageNumber);
+        }
+
+        function openPanel() {
+          panel.hidden = false;
+          toggle.setAttribute("aria-expanded", "true");
+          toggle.textContent = "Hide preview";
+          if (window.pdfjsLib) {
+            window.pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+            if (!pdfDocument) {
+              loadSeminar(seminarIndex);
+            }
+          } else {
+            setBusy(false);
+            setStatus("Preview is unavailable. Please open the PDF directly.");
+          }
+        }
+
+        function closePanel() {
+          panel.hidden = true;
+          toggle.setAttribute("aria-expanded", "false");
+          toggle.textContent = "Preview slides";
+        }
+
+        toggle.addEventListener("click", function () {
+          if (panel.hidden) {
+            openPanel();
+          } else {
+            closePanel();
+          }
+        });
+
+        seminarPrev.addEventListener("click", function () {
+          loadSeminar(seminarIndex - 1);
+        });
+
+        seminarNext.addEventListener("click", function () {
+          loadSeminar(seminarIndex + 1);
+        });
+
+        pagePrev.addEventListener("click", function () {
+          changePage(-1);
+        });
+
+        pageNext.addEventListener("click", function () {
+          changePage(1);
+        });
+
+        window.addEventListener("resize", function () {
+          if (panel.hidden || !pdfDocument) {
+            return;
+          }
+          clearTimeout(resizeTimer);
+          resizeTimer = setTimeout(function () {
+            renderPage(pageNumber);
+          }, 150);
+        });
+
+        updateMeta();
+      }());
+    </script>
   </body>
 </html>
