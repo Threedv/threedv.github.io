@@ -137,3 +137,27 @@ span.highlight {
 .nolink {
   color: #000000;
 }
+
+.seminar-list {
+  width: 100%;
+  border-spacing: 0 8px;
+}
+
+.seminar-list td {
+  padding: 0;
+  vertical-align: top;
+}
+
+.seminar-date {
+  width: 70px;
+  color: #666666;
+  white-space: nowrap;
+}
+
+.seminar-title {
+  font-weight: 700;
+}
+
+.seminar-venue {
+  color: #666666;
+}
