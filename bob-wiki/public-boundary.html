@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Gyeongsu (Bob) Cho" />
+  <meta name="description" content="Bob Wiki public page: Public/private boundary." />
+  <title>Public/private boundary | Bob Wiki</title>
+  <link rel="icon" type="image/png" href="../images/hp_logo.png" />
+  <link rel="stylesheet" href="wiki.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="wordmark" href="index.html">Bob Wiki<small>public profile</small></a>
+    <form class="search" onsubmit="event.preventDefault(); const q=this.querySelector('input').value.toLowerCase(); const map={research:'research.html',books:'books.html',films:'films.html',people:'people.html',papers:'papers.html',values:'values.html',projects:'projects.html',questions:'questions.html'}; location.href=map[q]||'index.html#ask';">
+      <input aria-label="Ask about Bob" placeholder="Ask about Bob: research, books, films, papers, values..." />
+      <button>Ask</button>
+    </form>
+    <nav class="toplinks"><a href="../">Portfolio</a><a href="../research-map/">Research Map</a><a href="mailto:threedv@unist.ac.kr">Email</a></nav>
+  </header>
+  <div class="layout">
+    <aside class="sidebar"><p class="side-title">Navigation</p><a class="" href="index.html">Summary</a>
+<a class="" href="research.html">Research</a>
+<a class="" href="projects.html">Projects</a>
+<a class="" href="values.html">Values</a>
+<a class="" href="people.html">People</a>
+<a class="" href="books.html">Books</a>
+<a class="" href="films.html">Films / Drama</a>
+<a class="" href="papers.html">Papers & topics</a>
+<a class="" href="questions.html">Open questions</a>
+<a class="active" href="public-boundary.html">Public boundary</a></aside>
+    <main class="content-wrap">
+      <div class="page-tabs"><a class="active" href="public-boundary.html">Article</a><a href="index.html#ask">Ask about Bob</a><a href="public-boundary.html">Public-safe version</a></div>
+      <article class="article">
+        <h1>Public/private boundary</h1>
+        <p class="subtitle">From Bob Wiki, a public encyclopedia-style profile page</p>
+        
+<p class="lead">Bob Wiki is a public layer, not a mirror of Bob’s private LLM Wiki. It is designed for professors, lab members, collaborators, and portfolio visitors.</p>
+<table class="wikitable"><thead><tr><th>Public-safe</th><th>Private / excluded</th></tr></thead><tbody>
+<tr><td>Research identity, projects, public links, values, books, films, research questions, public influences</td><td>Personal relationships, raw conversations, emotional logs, financial targets, private outreach plans, private contact screenshots, credentials, local paths, unpublished details</td></tr>
+</tbody></table>
+<h2>Rewrite principle</h2><p>Private, emotionally charged, or strategic language should be rewritten into public research language. The goal is not to hide Bob’s personality, but to present it in a way that builds trust with readers who do not know him yet.</p>
+<h2>Examples</h2><table class="wikitable"><thead><tr><th>Private style</th><th>Public style</th></tr></thead><tbody>
+<tr><td>Raw ambition, private motivation, or personal urgency.</td><td>Long-term research direction and builder identity.</td></tr>
+<tr><td>Unfiltered agent logs.</td><td>High-level description of AI-assisted research workflows.</td></tr>
+<tr><td>Specific contact strategy or screenshots.</td><td>General collaboration interests and research fit.</td></tr>
+</tbody></table>
+
+      </article>
+    </main>
+  </div>
+</body>
+</html>

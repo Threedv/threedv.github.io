@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Gyeongsu (Bob) Cho" />
+  <meta name="description" content="Bob Wiki public page: Research identity." />
+  <title>Research identity | Bob Wiki</title>
+  <link rel="icon" type="image/png" href="../images/hp_logo.png" />
+  <link rel="stylesheet" href="wiki.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="wordmark" href="index.html">Bob Wiki<small>public profile</small></a>
+    <form class="search" onsubmit="event.preventDefault(); const q=this.querySelector('input').value.toLowerCase(); const map={research:'research.html',books:'books.html',films:'films.html',people:'people.html',papers:'papers.html',values:'values.html',projects:'projects.html',questions:'questions.html'}; location.href=map[q]||'index.html#ask';">
+      <input aria-label="Ask about Bob" placeholder="Ask about Bob: research, books, films, papers, values..." />
+      <button>Ask</button>
+    </form>
+    <nav class="toplinks"><a href="../">Portfolio</a><a href="../research-map/">Research Map</a><a href="mailto:threedv@unist.ac.kr">Email</a></nav>
+  </header>
+  <div class="layout">
+    <aside class="sidebar"><p class="side-title">Navigation</p><a class="" href="index.html">Summary</a>
+<a class="active" href="research.html">Research</a>
+<a class="" href="projects.html">Projects</a>
+<a class="" href="values.html">Values</a>
+<a class="" href="people.html">People</a>
+<a class="" href="books.html">Books</a>
+<a class="" href="films.html">Films / Drama</a>
+<a class="" href="papers.html">Papers & topics</a>
+<a class="" href="questions.html">Open questions</a>
+<a class="" href="public-boundary.html">Public boundary</a></aside>
+    <main class="content-wrap">
+      <div class="page-tabs"><a class="active" href="research.html">Article</a><a href="index.html#ask">Ask about Bob</a><a href="public-boundary.html">Public-safe version</a></div>
+      <article class="article">
+        <h1>Research identity</h1>
+        <p class="subtitle">From Bob Wiki, a public encyclopedia-style profile page</p>
+        
+<p class="lead">Bob’s core domain is computer vision for humans and animals. His work is centered on dynamic 3D/4D understanding: reconstructing bodies, motion, appearance, and interaction from visual input.</p>
+<h2>Origin story</h2>
+<p>Bob first became interested in 3D reconstruction through implicit neural representations and monocular depth estimation. Early influences included neural surface reconstruction and occupancy-based representations, such as NeuS-style neural surface modeling and Convolutional Occupancy Networks. These works made 3D reconstruction feel like a way to connect geometry, learning, and visual understanding into a single technical language.</p>
+<p>Over time, Bob became less satisfied with only reconstructing static objects or scenes. Static reconstruction felt important, but he expected many of the core problems to be solved relatively quickly. He became more attracted to dynamic reconstruction: understanding bodies that move, deform, interact with the ground, and change over time.</p>
+<p>The shift toward animals came from a mixture of technical opportunity and long-term motivation. Animal reconstruction was much less explored than human reconstruction, yet animals are everywhere in the real world. If the goal is to build digital twins or embodied AI systems that reflect the real world, animals cannot be ignored. They are also technically harder: they have diverse body shapes, less standardized data, weaker priors, fur and appearance ambiguity, and complex locomotion. This made animal 3D/4D reconstruction feel like both an underexplored research space and a more challenging testbed for general dynamic reconstruction.</p>
+<h2>Research summary</h2>
+<p>Bob is interested in methods that move beyond static reconstruction toward dynamic and usable representations. His recurring technical themes include monocular and sparse-view reconstruction, animal body modeling, neural and Gaussian representations, feed-forward systems, temporal consistency, synthetic data pipelines, and physics-grounded motion.</p>
+<h2>Before DogRecon</h2>
+<p>Before DogRecon, Bob was mainly interested in implicit neural representations and monocular depth estimation. This background shaped how he thought about geometry from limited visual evidence: a single image should not be treated as a flat observation, but as a constraint on possible 3D worlds.</p>
+<h2>Why animals are central</h2>
+<p>Animal 3D/4D reconstruction is less standardized than human reconstruction. Humans have stronger datasets, parametric priors, motion capture pipelines, and evaluation protocols. Animals introduce larger shape variation, weaker supervision, fur and appearance ambiguity, complex locomotion, and contact-rich motion.</p>
+<p>Bob views animals as a hard testbed for general embodied perception: if a method can handle non-human articulated bodies in the wild, it is closer to robust real-world 4D understanding.</p>
+<h2>Public framing</h2>
+<ul><li><b>Short version:</b> dynamic 3D/4D human and animal understanding.</li><li><b>Research direction:</b> embodied human and animal AI through reconstruction, motion, physics, and interaction.</li><li><b>Current focus:</b> physics-grounded 4D animal reconstruction from in-the-wild videos.</li></ul>
+<h2>Collaboration fit</h2>
+<p>Bob is especially interested in collaborations that connect reconstruction with motion: temporally coherent 4D geometry, physically plausible locomotion, contact and ground interaction, controllable avatars, and human-animal or character-level embodied AI. His animal reconstruction background gives him experience with weak priors, sparse or monocular observations, synthetic data pipelines, and difficult non-human articulated bodies.</p>
+<p>In meetings, Bob usually frames himself as a researcher-builder: someone who can learn missing technical pieces quickly, build prototypes, run experiments, and turn broad research directions into concrete systems.</p>
+<h2>Needs more detail from Bob</h2><div class="stub">Potential additions: the first paper/demo that made Bob feel “3D reconstruction is my field,” and the moment when animal reconstruction stopped being an accident and became a research identity.</div>
+
+      </article>
+    </main>
+  </div>
+</body>
+</html>

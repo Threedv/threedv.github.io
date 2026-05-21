@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Gyeongsu (Bob) Cho" />
+  <meta name="description" content="Bob Wiki public page: Selected projects." />
+  <title>Selected projects | Bob Wiki</title>
+  <link rel="icon" type="image/png" href="../images/hp_logo.png" />
+  <link rel="stylesheet" href="wiki.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="wordmark" href="index.html">Bob Wiki<small>public profile</small></a>
+    <form class="search" onsubmit="event.preventDefault(); const q=this.querySelector('input').value.toLowerCase(); const map={research:'research.html',books:'books.html',films:'films.html',people:'people.html',papers:'papers.html',values:'values.html',projects:'projects.html',questions:'questions.html'}; location.href=map[q]||'index.html#ask';">
+      <input aria-label="Ask about Bob" placeholder="Ask about Bob: research, books, films, papers, values..." />
+      <button>Ask</button>
+    </form>
+    <nav class="toplinks"><a href="../">Portfolio</a><a href="../research-map/">Research Map</a><a href="mailto:threedv@unist.ac.kr">Email</a></nav>
+  </header>
+  <div class="layout">
+    <aside class="sidebar"><p class="side-title">Navigation</p><a class="" href="index.html">Summary</a>
+<a class="" href="research.html">Research</a>
+<a class="active" href="projects.html">Projects</a>
+<a class="" href="values.html">Values</a>
+<a class="" href="people.html">People</a>
+<a class="" href="books.html">Books</a>
+<a class="" href="films.html">Films / Drama</a>
+<a class="" href="papers.html">Papers & topics</a>
+<a class="" href="questions.html">Open questions</a>
+<a class="" href="public-boundary.html">Public boundary</a></aside>
+    <main class="content-wrap">
+      <div class="page-tabs"><a class="active" href="projects.html">Article</a><a href="index.html#ask">Ask about Bob</a><a href="public-boundary.html">Public-safe version</a></div>
+      <article class="article">
+        <h1>Selected projects</h1>
+        <p class="subtitle">From Bob Wiki, a public encyclopedia-style profile page</p>
+        
+<p class="lead">Bob’s projects are presented as research nodes: each one represents a technical step toward dynamic, animatable, and eventually embodied human and animal AI characters.</p>
+<h2>Project narrative</h2>
+<p>The public narrative is sequential. Bob began from the question of whether a single image could control the creation of an animatable animal. DogRecon focused on dogs as a category where canine priors could make single-image reconstruction feasible. AniGauss broadened the setting toward arbitrary animals and less restrictive input images. WildAni4D then moved from single images toward video, synthetic data, and temporally coherent 4D animal motion.</p>
+<table class="wikitable"><thead><tr><th>Project</th><th>Status</th><th>Contribution</th><th>Technical challenge / lesson</th></tr></thead><tbody>
+<tr><td><b><a href="https://vision3d-lab.github.io/dogrecon/" target="_blank" rel="noopener">DogRecon</a></b></td><td>International Journal of Computer Vision, 2025</td><td>Proposed an early framework for controllable animal generation and reconstruction from a single image, focused on animatable 3D Gaussian dog reconstruction guided by canine priors.</td><td>Zero123-style generated views were not always reliable, so the system needed canine-prior and mask-guided mechanisms. One of the hardest parts was robust sampling: selecting between the input sample and RSW-generated samples, and also sampling among generated views to reduce failure cases.</td></tr>
+<tr><td><b>AniGauss</b></td><td>CV4Animals Workshop at CVPR 2026</td><td>Extends the animal reconstruction direction beyond restrictive dog inputs. Whereas DogRecon required a relatively clean input where all four legs were visible, AniGauss aims to handle more general in-the-wild animal images and broader animal categories.</td><td>Uses 3D Gaussian representations as an anchor representation during inference. It is a workshop-stage project and still needs further development, but it represents a step toward more general animatable animal reconstruction.</td></tr>
+<tr><td><b><a href="https://vision3d-lab.github.io/wildani4d/" target="_blank" rel="noopener">WildAni4D</a></b></td><td>CVPR 2026 Findings</td><td>Builds an end-to-end system for extracting animal motion from video, using a synthetic animal video pipeline and a model for temporally coherent 4D animal mesh reconstruction.</td><td>The system currently works especially well on generated videos such as Veo3-style outputs. A key next step is improving the data and robustness so that it performs strongly on truly in-the-wild videos. The strongest demo to highlight is <code>demo1.mov</code> on the project page.</td></tr>
+<tr><td><b>Human / animal avatar thread</b></td><td>Ongoing research direction</td><td>Connects lessons from human avatar reconstruction to animal avatar reconstruction, while identifying where human-centric assumptions fail.</td><td>Important for positioning animal reconstruction as part of a broader embodied-character stack rather than a niche visual reconstruction problem.</td></tr>
+<tr><td><b>Personal AI research OS</b></td><td>Public high-level description only</td><td>Uses structured notes and AI tools to compound research taste, writing, and execution over time.</td><td>Should remain high-level in public. Private agent logs, relationship context, and strategy details are intentionally excluded.</td></tr>
+</tbody></table>
+<h2>DogRecon</h2>
+<p>DogRecon is important in Bob’s research identity because it established a concrete thesis: a single image can be used to control the creation of an animatable animal representation. Its contribution was not only producing dog reconstructions, but proposing a framework where category-specific animal priors guide single-image 3D Gaussian reconstruction.</p>
+<p>Bob considers the most meaningful part to be that the work was early in this direction. The hardest engineering and research challenge was reliability. Generated views could contain artifacts or inconsistent geometry, so the framework needed a reliable sampling strategy and canine-prior-guided constraints. The mask-guided use of a canine prior was especially satisfying because it converted an unreliable generative component into a more controllable reconstruction pipeline.</p>
+<h2>AniGauss</h2>
+<p>AniGauss can be viewed as a generalization attempt after DogRecon. DogRecon worked best when the input was relatively favorable, such as a dog image where all four legs were visible. AniGauss aims to relax this assumption: the goal is to reconstruct animatable animals from more general in-the-wild images and across a broader set of animal categories.</p>
+<p>The project uses 3D Gaussian representations as an anchor during inference. Its public status is CV4Animals Workshop at CVPR 2026. Bob sees it as promising but still needing further development.</p>
+<h2>WildAni4D</h2>
+<p>WildAni4D moves the research thread from single-image reconstruction toward video-based 4D animal motion. Its core idea is to create synthetic animal video data and use it to build an end-to-end system that can extract temporally coherent animal motion from videos.</p>
+<p>The current system performs especially well on generated videos, but Bob’s future goal is to refine the data and model so that it becomes strong on truly in-the-wild animal videos. The project’s strongest visual demonstration is <code>demo1.mov</code> on the WildAni4D project page.</p>
+<h2>Needs more detail from Bob</h2><div class="stub">Add links for AniGauss if/when public, exact paper titles/authors for each project, and 1–2 representative images or videos per project.</div>
+
+      </article>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Gyeongsu (Bob) Cho" />
+  <meta name="description" content="Bob Wiki public page: Open research questions." />
+  <title>Open research questions | Bob Wiki</title>
+  <link rel="icon" type="image/png" href="../images/hp_logo.png" />
+  <link rel="stylesheet" href="wiki.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="wordmark" href="index.html">Bob Wiki<small>public profile</small></a>
+    <form class="search" onsubmit="event.preventDefault(); const q=this.querySelector('input').value.toLowerCase(); const map={research:'research.html',books:'books.html',films:'films.html',people:'people.html',papers:'papers.html',values:'values.html',projects:'projects.html',questions:'questions.html'}; location.href=map[q]||'index.html#ask';">
+      <input aria-label="Ask about Bob" placeholder="Ask about Bob: research, books, films, papers, values..." />
+      <button>Ask</button>
+    </form>
+    <nav class="toplinks"><a href="../">Portfolio</a><a href="../research-map/">Research Map</a><a href="mailto:threedv@unist.ac.kr">Email</a></nav>
+  </header>
+  <div class="layout">
+    <aside class="sidebar"><p class="side-title">Navigation</p><a class="" href="index.html">Summary</a>
+<a class="" href="research.html">Research</a>
+<a class="" href="projects.html">Projects</a>
+<a class="" href="values.html">Values</a>
+<a class="" href="people.html">People</a>
+<a class="" href="books.html">Books</a>
+<a class="" href="films.html">Films / Drama</a>
+<a class="" href="papers.html">Papers & topics</a>
+<a class="active" href="questions.html">Open questions</a>
+<a class="" href="public-boundary.html">Public boundary</a></aside>
+    <main class="content-wrap">
+      <div class="page-tabs"><a class="active" href="questions.html">Article</a><a href="index.html#ask">Ask about Bob</a><a href="public-boundary.html">Public-safe version</a></div>
+      <article class="article">
+        <h1>Open research questions</h1>
+        <p class="subtitle">From Bob Wiki, a public encyclopedia-style profile page</p>
+        
+<p class="lead">These are public research questions Bob expects to keep returning to. They help convert a broad long-term vision into concrete research problems.</p>
+<ol>
+<li>How can animals be reconstructed in 4D without dense supervision?</li>
+<li>What physical priors are useful for non-human articulated bodies?</li>
+<li>Can human motion models transfer to animal motion and human-animal interaction?</li>
+<li>What representations best support animatable, controllable animal avatars?</li>
+<li>How can 3D/4D reconstruction become a body layer for AI agents?</li>
+<li>How can neural rendering, physical simulation, and control be unified for embodied characters?</li>
+<li>What is the smallest convincing benchmark for general animal 4D reconstruction?</li>
+</ol>
+<h2>Visiting research framing</h2><p>A concrete current framing is <b>physics-grounded 4D animal reconstruction from in-the-wild videos</b>. This connects Bob’s animal reconstruction background with neural representations, dynamic reconstruction, physically plausible motion, contact, locomotion, and embodied character modeling.</p>
+<h2>Questions for motion / embodied AI labs</h2>
+<ol>
+<li>How can reconstruction systems expose motion states that are useful for downstream simulation or control?</li>
+<li>Which physical priors matter most for believable animal and character motion: contact, balance, energy, kinematic limits, or learned motion manifolds?</li>
+<li>Can synthetic animal video pipelines be used not only for reconstruction training, but also for evaluating physical plausibility and controllability?</li>
+</ol>
+<h2>Needs prioritization</h2><div class="stub">Bob should rank these questions by: short-term visiting feasibility, publication potential, personal excitement, and fit with target labs.</div>
+
+      </article>
+    </main>
+  </div>
+</body>
+</html>

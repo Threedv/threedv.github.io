@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Gyeongsu (Bob) Cho" />
+  <meta name="description" content="Bob Wiki public page: Influential people." />
+  <title>Influential people | Bob Wiki</title>
+  <link rel="icon" type="image/png" href="../images/hp_logo.png" />
+  <link rel="stylesheet" href="wiki.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="wordmark" href="index.html">Bob Wiki<small>public profile</small></a>
+    <form class="search" onsubmit="event.preventDefault(); const q=this.querySelector('input').value.toLowerCase(); const map={research:'research.html',books:'books.html',films:'films.html',people:'people.html',papers:'papers.html',values:'values.html',projects:'projects.html',questions:'questions.html'}; location.href=map[q]||'index.html#ask';">
+      <input aria-label="Ask about Bob" placeholder="Ask about Bob: research, books, films, papers, values..." />
+      <button>Ask</button>
+    </form>
+    <nav class="toplinks"><a href="../">Portfolio</a><a href="../research-map/">Research Map</a><a href="mailto:threedv@unist.ac.kr">Email</a></nav>
+  </header>
+  <div class="layout">
+    <aside class="sidebar"><p class="side-title">Navigation</p><a class="" href="index.html">Summary</a>
+<a class="" href="research.html">Research</a>
+<a class="" href="projects.html">Projects</a>
+<a class="" href="values.html">Values</a>
+<a class="active" href="people.html">People</a>
+<a class="" href="books.html">Books</a>
+<a class="" href="films.html">Films / Drama</a>
+<a class="" href="papers.html">Papers & topics</a>
+<a class="" href="questions.html">Open questions</a>
+<a class="" href="public-boundary.html">Public boundary</a></aside>
+    <main class="content-wrap">
+      <div class="page-tabs"><a class="active" href="people.html">Article</a><a href="index.html#ask">Ask about Bob</a><a href="public-boundary.html">Public-safe version</a></div>
+      <article class="article">
+        <h1>Influential people</h1>
+        <p class="subtitle">From Bob Wiki, a public encyclopedia-style profile page</p>
+        
+<p class="lead">This page lists public intellectual influences: people whose work shaped Bob’s taste in AI, research, building, communication, and agency. It includes both public figures and direct research mentors/collaborators who helped shape his technical direction.</p>
+<h2>Research mentors and collaborators</h2>
+<table class="wikitable"><thead><tr><th>Person</th><th>Relationship to Bob</th><th>What Bob learned</th><th>Concrete influence</th></tr></thead><tbody>
+<tr><td><b>Kyungdon Joo</b></td><td>Bob’s Ph.D. advisor at the 3D Vision &amp; Robotics Lab, UNIST.</td><td>Research taste, problem formulation, academic discipline, and the practical standards needed to turn visual reconstruction ideas into publishable research.</td><td>Prof. Joo has provided broad research guidance across Bob’s Ph.D. journey. Through advising, project discussions, writing feedback, and lab direction, Bob learned how to frame research questions, judge whether a technical idea is meaningful, and connect 3D vision/graphics systems to a coherent long-term research agenda.</td></tr>
+<tr><td><b>Hezhen “Alex” Hu</b></td><td>Bob’s first external Ph.D.-level collaborator.</td><td>Human-centric 3D/4D reconstruction, expressive human modeling, and how to think about human motion, body representation, and controllable avatars more deeply.</td><td>Alex gave Bob substantial help and advice on the human side of his research, especially around expressive humans. The collaboration helped Bob connect his animal reconstruction background with lessons from human avatars, expression, and motion-oriented modeling.</td></tr>
+</tbody></table>
+<h2>Public intellectual influences</h2>
+<table class="wikitable"><thead><tr><th>Person / source</th><th>What Bob learned</th><th>Concrete influences</th><th>Caution / nuance</th></tr></thead><tbody>
+<tr><td><b>Andrej Karpathy</b></td><td>First-principles AI education, clear technical writing, and the culture of understanding systems from scratch.</td><td>Bob spent a large amount of graduate-school time learning from Karpathy: CS231n, YouTube lectures on LLMs, neural-network training tips, the “LLM 2.0” essay, the 2015 RNN post that feels prophetic in the age of ChatGPT, podcasts, and frequent posts on X. Bob sees Karpathy as one of the clearest examples of how to explain frontier AI without losing technical depth.</td><td>The lesson is not to imitate the surface style, but to build the ability to explain, implement, and reason from fundamentals.</td></tr>
+<tr><td><b>Elon Musk</b></td><td>Extreme first-principles execution, urgency, ambition, and the willingness to treat impossible goals as engineering problems.</td><td>Bob is influenced by the idea that work assumed to take a year can sometimes be compressed by changing constraints, urgency, and execution structure. He also admires the intensity of continuing to work hard despite enormous external success.</td><td>Bob does not treat Musk as a model to copy completely. The public lesson is bold execution and first-principles thinking; the caution is that impulsive or strange public communication should not be copied.</td></tr>
+<tr><td><b>Naval Ravikant</b></td><td>Leverage, wealth as freedom, judgment, calm ambition, and the idea that happiness is not a zero-sum game.</td><td>Bob connects Naval’s ideas to code, media, research artifacts, and AI agents as forms of leverage. Wealth is framed not only as money, but as freedom, optionality, and the ability to help people.</td><td>The useful lesson is not passive quote-collecting; it is replacing low-leverage effort with compounding assets, better judgment, and calmer execution.</td></tr>
+<tr><td><b>Peter Steinberger</b></td><td>Agentic high-output coding and tool-building.</td><td>Plan → build → verify; use AI coding as leverage.</td><td>Good influence when it produces shipped artifacts, not when it becomes tool-chasing.</td></tr>
+<tr><td><b>Jason Liu / jxnl</b></td><td>Agency, proof artifacts, and acting while scared.</td><td>Build one proof artifact instead of waiting for confidence.</td><td>Especially useful for turning anxiety into public proof.</td></tr>
+<tr><td><b>Jaebeom Lee / 1-Minute Science</b></td><td>Concise science communication and AI acceleration framing.</td><td>Explain research ideas in 60 seconds, in both Korean and English.</td><td>The public goal is clarity, not simplification into shallowness.</td></tr>
+</tbody></table>
+<h2>Karpathy as a special case</h2>
+<p>Among public AI educators, Karpathy has been unusually important for Bob. The influence is not just one lecture or one post; it is the combination of lectures, code-oriented explanations, training intuition, LLM commentary, and a writing style that makes frontier AI feel understandable and buildable.</p>
+<p>Bob’s public takeaway is: <b>great researchers should be able to think deeply, implement carefully, and explain clearly.</b></p>
+<h2>Needs expansion</h2><div class="stub">Add 5–10 more influences: researchers, labs, authors, founders, artists, directors, or teachers. Candidate categories: AI researchers, graphics researchers, robotics builders, science communicators, science-fiction authors, and founder-engineers.</div>
+
+      </article>
+    </main>
+  </div>
+</body>
+</html>

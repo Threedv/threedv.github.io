@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Gyeongsu (Bob) Cho" />
+  <meta name="description" content="Research Taste Map of Gyeongsu (Bob) Cho: papers, projects, labs, and questions shaping work on embodied human and animal AI." />
+  <title>Research Taste Map | Gyeongsu (Bob) Cho</title>
+  <link rel="icon" type="image/png" href="../images/hp_logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --ink: #171717;
+      --muted: #5f6368;
+      --soft: #fafafa;
+      --line: rgba(0, 0, 0, 0.08);
+      --blue: #0a72ef;
+      --pink: #de1d8d;
+      --red: #ff5b4f;
+      --green: #0f9f6e;
+      --card-shadow: rgba(0,0,0,0.08) 0px 0px 0px 1px, rgba(0,0,0,0.04) 0px 2px 2px, rgba(0,0,0,0.04) 0px 8px 8px -8px, #fafafa 0px 0px 0px 1px;
+      --mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      --sans: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-feature-settings: "liga" 1;
+      line-height: 1.55;
+    }
+    a { color: var(--ink); text-decoration: none; }
+    a:hover { color: var(--blue); }
+    p { margin: 0 0 16px; color: var(--muted); font-size: 16px; }
+    strong { color: var(--ink); font-weight: 600; }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255,255,255,0.86);
+      backdrop-filter: blur(14px);
+      box-shadow: rgba(0,0,0,0.08) 0px 1px 0px;
+    }
+    .nav-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      min-height: 64px;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: -0.2px;
+    }
+    .logo-dot {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #fff 0 12%, #171717 13% 100%);
+      box-shadow: var(--line) 0px 0px 0px 1px;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .nav-links a { color: #3d3d3d; }
+    .nav-links a:hover { color: var(--ink); }
+    .pill-link {
+      padding: 7px 12px;
+      border-radius: 999px;
+      color: #fff !important;
+      background: var(--ink);
+      box-shadow: var(--line) 0px 0px 0px 1px;
+    }
+
+    .hero {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 96px 24px 64px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 36px;
+      width: 720px;
+      height: 240px;
+      transform: translateX(-50%);
+      background: radial-gradient(circle at 20% 40%, rgba(10,114,239,0.13), transparent 32%), radial-gradient(circle at 64% 30%, rgba(222,29,141,0.10), transparent 30%), radial-gradient(circle at 80% 70%, rgba(255,91,79,0.10), transparent 28%);
+      filter: blur(20px);
+      z-index: -1;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 11px;
+      border-radius: 999px;
+      background: #ebf5ff;
+      color: #0068d6;
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: -0.1px;
+      margin-bottom: 22px;
+    }
+    .hero h1 {
+      margin: 0 auto 24px;
+      max-width: 920px;
+      font-size: clamp(44px, 7vw, 76px);
+      line-height: 0.98;
+      letter-spacing: -3.8px;
+      font-weight: 600;
+    }
+    .hero .subtitle {
+      max-width: 780px;
+      margin: 0 auto 30px;
+      font-size: 20px;
+      line-height: 1.65;
+      color: #4d4d4d;
+    }
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 0 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      box-shadow: var(--line) 0px 0px 0px 1px;
+      background: #fff;
+    }
+    .button.primary { background: var(--ink); color: #fff; }
+
+    .section {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 58px 24px;
+    }
+    .section-header {
+      display: grid;
+      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+      gap: 40px;
+      align-items: start;
+      margin-bottom: 28px;
+    }
+    .kicker {
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 500;
+      color: #777;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 12px;
+    }
+    h2 {
+      margin: 0;
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.08;
+      letter-spacing: -2.2px;
+      font-weight: 600;
+    }
+    h3 {
+      margin: 0 0 10px;
+      font-size: 22px;
+      line-height: 1.25;
+      letter-spacing: -0.8px;
+      font-weight: 600;
+    }
+    .lead { font-size: 18px; line-height: 1.7; }
+
+    .question-card {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 34px;
+      border-radius: 18px;
+      background: #fff;
+      box-shadow: var(--card-shadow);
+      text-align: left;
+    }
+    .question-card .label {
+      font-family: var(--mono);
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+    .question-card .question {
+      color: var(--ink);
+      font-size: clamp(25px, 4vw, 40px);
+      line-height: 1.15;
+      letter-spacing: -1.7px;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .grid { display: grid; gap: 16px; }
+    .grid.cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid.cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .card {
+      border-radius: 14px;
+      padding: 22px;
+      background: #fff;
+      box-shadow: var(--card-shadow);
+      min-height: 100%;
+    }
+    .card p:last-child { margin-bottom: 0; }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      margin-bottom: 14px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: #0068d6;
+      background: #ebf5ff;
+    }
+    .tag.pink { color: #a80062; background: #fff0f8; }
+    .tag.red { color: #b91c1c; background: #fff1f0; }
+    .tag.green { color: #087a52; background: #ecfdf5; }
+    .tag.gray { color: #555; background: #f5f5f5; }
+
+    .project-card {
+      display: grid;
+      grid-template-columns: 118px minmax(0, 1fr);
+      gap: 18px;
+      align-items: center;
+    }
+    .thumb {
+      width: 118px;
+      height: 94px;
+      border-radius: 12px;
+      object-fit: cover;
+      background: #f6f6f6;
+      box-shadow: rgba(0,0,0,0.10) 0px 0px 0px 1px;
+    }
+    .project-card h3 { margin-bottom: 6px; }
+    .project-card p { font-size: 15px; line-height: 1.55; }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .flow-step {
+      padding: 18px;
+      border-radius: 14px;
+      background: #fff;
+      box-shadow: var(--card-shadow);
+      position: relative;
+    }
+    .flow-step .num {
+      font-family: var(--mono);
+      color: #999;
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+    .flow-step h3 { font-size: 19px; }
+    .flow-step p { font-size: 14px; }
+
+    .list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .list li {
+      padding: 12px 14px;
+      border-radius: 10px;
+      background: var(--soft);
+      color: #4d4d4d;
+      box-shadow: rgba(0,0,0,0.06) 0px 0px 0px 1px;
+      font-size: 15px;
+    }
+    .list li strong { display: block; margin-bottom: 3px; }
+
+    .focus-panel {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      gap: 18px;
+      align-items: stretch;
+      padding: 18px;
+      border-radius: 18px;
+      background: #171717;
+      color: #fff;
+      box-shadow: var(--card-shadow);
+    }
+    .focus-panel p { color: #c9c9c9; }
+    .focus-panel .card { background: #202020; box-shadow: rgba(255,255,255,0.11) 0px 0px 0px 1px; }
+    .focus-panel h2, .focus-panel h3, .focus-panel strong { color: #fff; }
+    .focus-panel .list li { background: #252525; color: #d6d6d6; box-shadow: rgba(255,255,255,0.08) 0px 0px 0px 1px; }
+
+    .boundary {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .footer {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 50px 24px 70px;
+      color: #777;
+      font-size: 14px;
+      border-top: 1px solid #ebebeb;
+    }
+    .footer a { color: #555; }
+
+    @media (max-width: 860px) {
+      .nav-links { display: none; }
+      .hero { padding-top: 76px; }
+      .hero h1 { letter-spacing: -2.2px; }
+      .section-header, .focus-panel { grid-template-columns: 1fr; }
+      .grid.cols-3, .grid.cols-2, .flow, .boundary { grid-template-columns: 1fr; }
+      .project-card { grid-template-columns: 92px minmax(0, 1fr); }
+      .thumb { width: 92px; height: 78px; }
+      .question-card { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="../"><span class="logo-dot"></span> Gyeongsu (Bob) Cho</a>
+      <div class="nav-links">
+        <a href="#projects">Projects</a>
+        <a href="#pillars">Pillars</a>
+        <a href="#influences">Influences</a>
+        <a href="#visit">Visiting Direction</a>
+        <a class="pill-link" href="mailto:threedv@unist.ac.kr">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="eyebrow">PUBLIC RESEARCH MAP</div>
+    <h1>Research Taste Map</h1>
+    <p class="subtitle">Papers, people, projects, and questions that shape my work on embodied human and animal AI.</p>
+    <div class="question-card">
+      <div class="label">CORE QUESTION</div>
+      <p class="question">How can we build lifelike human and animal AI characters through 3D/4D reconstruction, motion, physics, and embodied interaction?</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button primary" href="#visit">Current Visiting Research Framing</a>
+      <a class="button" href="../">Back to Portfolio</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="direction">
+      <div class="section-header">
+        <div>
+          <div class="kicker">Direction</div>
+          <h2>From reconstruction to embodied characters.</h2>
+        </div>
+        <div>
+          <p class="lead">I am a Ph.D. student at UNIST working on dynamic 3D/4D human and animal understanding. My work focuses on reconstructing, representing, and eventually animating humans and animals as dynamic embodied agents.</p>
+          <p>The broader motivation is to move from passive 3D reconstruction toward interactive living representations: characters that can be reconstructed, animated, simulated, and used in embodied AI systems.</p>
+        </div>
+      </div>
+      <div class="flow">
+        <div class="flow-step"><div class="num">01</div><h3>Perceive</h3><p>Recover shape, appearance, pose, and motion from images or videos.</p></div>
+        <div class="flow-step"><div class="num">02</div><h3>Represent</h3><p>Build neural, Gaussian, or structured body representations for dynamic agents.</p></div>
+        <div class="flow-step"><div class="num">03</div><h3>Animate</h3><p>Make bodies controllable, temporally coherent, and physically plausible.</p></div>
+        <div class="flow-step"><div class="num">04</div><h3>Interact</h3><p>Connect bodies with behavior, language, memory, and embodied AI systems.</p></div>
+      </div>
+    </section>
+
+    <section class="section" id="animals">
+      <div class="section-header">
+        <div>
+          <div class="kicker">Why Animals?</div>
+          <h2>Animals are a hard testbed for general 4D reconstruction.</h2>
+        </div>
+        <div>
+          <p class="lead">Humans have strong datasets, parametric priors, motion capture pipelines, and evaluation protocols. Animals are much less standardized.</p>
+          <p>If a method can handle non-human articulated bodies in the wild, it is closer to robust real-world embodied perception.</p>
+        </div>
+      </div>
+      <div class="grid cols-3">
+        <div class="card"><span class="tag">Shape</span><h3>Large variation</h3><p>Animals exhibit large inter-species and intra-species differences in anatomy, proportion, and appearance.</p></div>
+        <div class="card"><span class="tag pink">Motion</span><h3>Contact-rich dynamics</h3><p>Animal motion involves locomotion, balance, ground contact, deformation, and highly non-rigid behavior.</p></div>
+        <div class="card"><span class="tag red">Data</span><h3>Weak supervision</h3><p>Dense annotations and controlled multiview data are harder to obtain, especially for in-the-wild videos.</p></div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="section-header">
+        <div>
+          <div class="kicker">Project Nodes</div>
+          <h2>My projects as a connected research thread.</h2>
+        </div>
+        <p class="lead">These projects are not isolated artifacts. I view them as steps toward dynamic, animatable, and eventually physics-grounded human and animal representations.</p>
+      </div>
+      <div class="grid cols-2">
+        <a class="card project-card" href="https://vision3d-lab.github.io/wildani4d/" target="_blank" rel="noopener">
+          <img class="thumb" src="../images/CVPR2026_tea.gif" alt="WildAni4D preview" />
+          <div><span class="tag">WildAni4D</span><h3>In-the-wild 4D animal reconstruction</h3><p>Dynamic animal reconstruction from realistic videos with sparse views, unknown motion, occlusion, and limited supervision.</p></div>
+        </a>
+        <div class="card project-card">
+          <img class="thumb" src="../images/feed_project.png" alt="AniGauss preview" />
+          <div><span class="tag pink">AniGauss</span><h3>Neural / Gaussian animal representation</h3><p>Moving from mesh-only thinking toward renderable, animatable, neural representations for animals.</p></div>
+        </div>
+        <div class="card project-card">
+          <img class="thumb" src="../images/app2.gif" alt="DogRecon preview" />
+          <div><span class="tag green">DogRecon</span><h3>Category-specific animal body reconstruction</h3><p>An entry point into animal 3D reconstruction, especially dogs as a challenging and meaningful category.</p></div>
+        </div>
+        <div class="card project-card">
+          <img class="thumb" src="../images/ICCVW2025_tea.png" alt="Human avatar preview" />
+          <div><span class="tag gray">Human / Animal Avatars</span><h3>Transfer and limits of human-centric priors</h3><p>Learning from human avatar literature while asking what must be rebuilt for non-human bodies.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="pillars">
+      <div class="section-header">
+        <div>
+          <div class="kicker">Pillars</div>
+          <h2>The five pillars I keep returning to.</h2>
+        </div>
+        <p class="lead">My interests are broad, but they converge on a single direction: lifelike embodied human and animal AI characters.</p>
+      </div>
+      <div class="grid cols-3">
+        <div class="card"><span class="tag">3D / 4D</span><h3>Dynamic reconstruction</h3><p>Recover not only shape, but time, motion, deformation, and interaction from sparse or in-the-wild inputs.</p></div>
+        <div class="card"><span class="tag green">Animals</span><h3>Shape and motion</h3><p>Develop priors and representations that handle non-human anatomy, locomotion, fur, and weak supervision.</p></div>
+        <div class="card"><span class="tag pink">Neural 3D</span><h3>Rendering and generation</h3><p>Use neural and Gaussian representations to bridge appearance, geometry, animation, and controllability.</p></div>
+        <div class="card"><span class="tag red">Physics</span><h3>Grounded motion</h3><p>Move from visually plausible motion to physically plausible behavior: contact, balance, forces, and control.</p></div>
+        <div class="card"><span class="tag gray">Embodiment</span><h3>AI characters</h3><p>Connect body representations with behavior, voice, memory, language, and interaction.</p></div>
+        <div class="card"><span class="tag">Systems</span><h3>Research OS</h3><p>Use structured notes and AI-assisted workflows to compound research taste, execution, and long-term direction.</p></div>
+      </div>
+    </section>
+
+    <section class="section" id="influences">
+      <div class="section-header">
+        <div>
+          <div class="kicker">Influences</div>
+          <h2>Ideas and labs that shape my research taste.</h2>
+        </div>
+        <p class="lead">This map is intentionally selective. It is not a complete bibliography; it is a public view of the ideas I keep returning to.</p>
+      </div>
+      <div class="grid cols-2">
+        <div class="card"><span class="tag">Neural Rendering</span><h3>Scene representations and controllable 3D</h3><p>Neural and Gaussian representations reframed geometry and appearance as learnable structures that can connect reconstruction, rendering, generation, and control.</p></div>
+        <div class="card"><span class="tag pink">Human Avatars</span><h3>Performance capture and animation</h3><p>Human avatar research provides strong tools for pose, deformation, and controllable rendering, while animals expose different assumptions and failure modes.</p></div>
+        <div class="card"><span class="tag red">Physics</span><h3>Reconstruction that can move</h3><p>Many reconstructed motions look visually plausible but physically unstable. Contact, force, control, and dynamics are essential for embodied characters.</p></div>
+        <div class="card"><span class="tag green">Robotics</span><h3>Useful representations</h3><p>Robotics forces representations to be useful, not only visually impressive: latency, sensors, actuation, safety, and control all matter.</p></div>
+      </div>
+    </section>
+
+    <section class="section" id="liu-lab">
+      <div class="focus-panel">
+        <div class="card">
+          <div class="kicker">Lab Fit I Follow</div>
+          <h2>Lingjie Liu Lab, UPenn</h2>
+          <p>Themes I follow include neural representations and rendering for 3D/4D reconstruction, physics-grounded reconstruction, human motion and controllable characters, 3D/video world simulators, and robotics-facing graphics and vision through the GRASP ecosystem.</p>
+        </div>
+        <div class="card">
+          <h3>Why it connects</h3>
+          <p>My animal 3D/4D reconstruction background could complement research strengths in human motion, physics-grounded reconstruction, neural representations, and robotics.</p>
+          <ul class="list">
+            <li><strong>What I bring</strong>Non-human articulated bodies, animal priors, and in-the-wild reconstruction challenges.</li>
+            <li><strong>What I want to explore</strong>Physics-grounded 4D reconstruction for animals and embodied characters.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="questions">
+      <div class="section-header">
+        <div>
+          <div class="kicker">Open Questions</div>
+          <h2>Questions I expect to keep returning to.</h2>
+        </div>
+        <p class="lead">These questions help me convert broad vision into concrete research problems.</p>
+      </div>
+      <ul class="list">
+        <li>How can we reconstruct animals in 4D without dense supervision?</li>
+        <li>What physical priors are useful for non-human articulated bodies?</li>
+        <li>Can human motion models transfer to animal motion and human-animal interaction?</li>
+        <li>What representations best support animatable, controllable animal avatars?</li>
+        <li>How can 3D/4D reconstruction become a body layer for AI agents?</li>
+        <li>How can neural rendering, physical simulation, and control be unified for embodied characters?</li>
+      </ul>
+    </section>
+
+    <section class="section" id="visit">
+      <div class="section-header">
+        <div>
+          <div class="kicker">Current Framing</div>
+          <h2>Physics-grounded 4D animal reconstruction from in-the-wild videos.</h2>
+        </div>
+        <div>
+          <p class="lead">This is the focused visiting-research direction I am currently most interested in.</p>
+          <p>It builds on my animal 3D/4D reconstruction background, connects to neural representations and dynamic reconstruction, and introduces physical constraints such as contact, locomotion, balance, and plausible motion.</p>
+        </div>
+      </div>
+      <div class="grid cols-2">
+        <div class="card">
+          <span class="tag red">Possible Components</span>
+          <ul class="list">
+            <li>4D neural or Gaussian animal representation</li>
+            <li>Learned or differentiable physical constraints</li>
+            <li>Contact and ground-interaction modeling</li>
+            <li>Motion plausibility priors</li>
+            <li>Cross-category or cross-species evaluation</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="tag green">Desired Outcome</span>
+          <h3>A concrete bridge between animal 4D reconstruction and embodied character modeling.</h3>
+          <p>The goal is to produce a focused research project rather than merely describe a broad vision.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="boundary">
+      <div class="section-header">
+        <div>
+          <div class="kicker">Public Boundary</div>
+          <h2>Curated, not private.</h2>
+        </div>
+        <p class="lead">This page is a public layer derived from a private knowledge system. It intentionally excludes private life context, raw logs, application strategy, unpublished details, and agent internals.</p>
+      </div>
+      <div class="boundary">
+        <div class="card"><span class="tag red">Keep Private</span><p>Personal relationships, emotional logs, raw chat transcripts, private strategy notes, credentials, local file paths, and confidential technical details.</p></div>
+        <div class="card"><span class="tag pink">Rewrite</span><p>Internal vision phrases become research-facing language: “lifelike embodied human and animal AI characters.”</p></div>
+        <div class="card"><span class="tag green">Safe After Review</span><p>Research questions, public projects, public papers, public talks, high-level values, and sanitized long-term vision.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p><strong>Gyeongsu (Bob) Cho</strong> · Ph.D. Student, AIGS, UNIST · <a href="mailto:threedv@unist.ac.kr">threedv@unist.ac.kr</a> · <a href="../">Portfolio</a> · <a href="https://www.linkedin.com/in/gyeongsu-cho-1670a9202/" target="_blank" rel="noopener">LinkedIn</a></p>
+    <p>Last updated: May 2026. This page is a curated public research map, not a private diary or complete knowledge base.</p>
+  </footer>
+</body>
+</html>

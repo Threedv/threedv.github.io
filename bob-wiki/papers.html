@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Gyeongsu (Bob) Cho" />
+  <meta name="description" content="Bob Wiki public page: Papers and technical vocabulary." />
+  <title>Papers and technical vocabulary | Bob Wiki</title>
+  <link rel="icon" type="image/png" href="../images/hp_logo.png" />
+  <link rel="stylesheet" href="wiki.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="wordmark" href="index.html">Bob Wiki<small>public profile</small></a>
+    <form class="search" onsubmit="event.preventDefault(); const q=this.querySelector('input').value.toLowerCase(); const map={research:'research.html',books:'books.html',films:'films.html',people:'people.html',papers:'papers.html',values:'values.html',projects:'projects.html',questions:'questions.html'}; location.href=map[q]||'index.html#ask';">
+      <input aria-label="Ask about Bob" placeholder="Ask about Bob: research, books, films, papers, values..." />
+      <button>Ask</button>
+    </form>
+    <nav class="toplinks"><a href="../">Portfolio</a><a href="../research-map/">Research Map</a><a href="mailto:threedv@unist.ac.kr">Email</a></nav>
+  </header>
+  <div class="layout">
+    <aside class="sidebar"><p class="side-title">Navigation</p><a class="" href="index.html">Summary</a>
+<a class="" href="research.html">Research</a>
+<a class="" href="projects.html">Projects</a>
+<a class="" href="values.html">Values</a>
+<a class="" href="people.html">People</a>
+<a class="" href="books.html">Books</a>
+<a class="" href="films.html">Films / Drama</a>
+<a class="active" href="papers.html">Papers & topics</a>
+<a class="" href="questions.html">Open questions</a>
+<a class="" href="public-boundary.html">Public boundary</a></aside>
+    <main class="content-wrap">
+      <div class="page-tabs"><a class="active" href="papers.html">Article</a><a href="index.html#ask">Ask about Bob</a><a href="public-boundary.html">Public-safe version</a></div>
+      <article class="article">
+        <h1>Papers and technical vocabulary</h1>
+        <p class="subtitle">From Bob Wiki, a public encyclopedia-style profile page</p>
+        
+<p class="lead">This page is not a ranked list of Bob’s favorite papers. It records the technical vocabulary that shaped how Bob thinks about 3D/4D reconstruction, neural representations, animals, and embodied AI.</p>
+<div class="notice"><b>Editorial note.</b> Bob does not describe his research taste as coming from a single “life-changing” paper. It emerged from repeatedly studying many papers, codebases, demos, and technical trends around implicit representation, neural rendering, generative 3D, animal priors, and dynamic reconstruction.</div>
+<nav class="toc"><div class="toc-title">Contents</div><ol>
+<li><a href="#implicit">Implicit 3D representations</a></li>
+<li><a href="#neural-rendering">Neural rendering</a></li>
+<li><a href="#gaussians">3D Gaussian representations</a></li>
+<li><a href="#single-image">Single-image and generative 3D</a></li>
+<li><a href="#human-avatars">Human avatars and animatable reconstruction</a></li>
+<li><a href="#animal-modeling">Animal body modeling</a></li>
+<li><a href="#dynamic-4d">Dynamic 4D reconstruction</a></li>
+<li><a href="#physics">Physics-grounded motion</a></li>
+<li><a href="#bibliography">Open bibliography</a></li>
+</ol></nav>
+<h2 id="implicit">Implicit 3D representations</h2>
+<table class="wikitable"><thead><tr><th>Representative papers / methods</th><th>What Bob learned</th><th>Connection to Bob’s work</th></tr></thead><tbody>
+<tr><td>Occupancy Networks; Convolutional Occupancy Networks; DeepSDF; IDR; NeuS; VolSDF</td><td>Geometry can be represented as a learned continuous field rather than only as explicit meshes, voxels, or point clouds.</td><td>This was Bob’s entry point into 3D reconstruction. Before DogRecon, he was interested in implicit neural representations and monocular 3D reasoning.</td></tr>
+</tbody></table>
+<p>These works made 3D reconstruction feel like a language for converting images into possible 3D worlds. Bob’s later animal work still carries this intuition: a single observation is not enough by itself, but it constrains a structured space of plausible 3D bodies.</p>
+<h2 id="neural-rendering">Neural rendering</h2>
+<table class="wikitable"><thead><tr><th>Representative papers / methods</th><th>What Bob learned</th><th>Connection to Bob’s work</th></tr></thead><tbody>
+<tr><td>NeRF; Mip-NeRF; Instant-NGP; Neuralangelo-style surface reconstruction</td><td>View synthesis can become a reconstruction engine. Rendering, optimization, appearance, and geometry can be learned together.</td><td>Helped connect Bob’s interest in 3D geometry with image formation and visual realism. This line of work shaped the background for thinking about renderable animal and human avatars.</td></tr>
+</tbody></table>
+<h2 id="gaussians">3D Gaussian representations</h2>
+<table class="wikitable"><thead><tr><th>Representative papers / methods</th><th>What Bob learned</th><th>Connection to Bob’s work</th></tr></thead><tbody>
+<tr><td>3D Gaussian Splatting; dynamic Gaussian methods; Gaussian avatar methods</td><td>A 3D representation can be explicit, efficient, renderable, and suitable for animation or editing.</td><td>Directly connected to DogRecon and AniGauss. DogRecon uses animatable 3D Gaussian dog models, and AniGauss uses Gaussian representations as an anchor representation during inference.</td></tr>
+</tbody></table>
+<p>For Bob, the importance of Gaussians is not only speed or rendering quality. They also suggest a practical representation layer for controllable bodies: something that can be optimized, rendered, animated, and connected to downstream systems.</p>
+<h2 id="single-image">Single-image and generative 3D</h2>
+<table class="wikitable"><thead><tr><th>Representative papers / methods</th><th>What Bob learned</th><th>Connection to Bob’s work</th></tr></thead><tbody>
+<tr><td>Zero123; DreamFusion; Magic3D; Magic123; SyncDreamer; Wonder3D; One-2-3-45; LGM-style feed-forward 3D generation</td><td>Generative models can provide missing views, priors, or 3D hypotheses from a single image.</td><td>DogRecon was shaped by this general direction, but it also exposed the reliability problem: generated views are not always consistent or correct. This motivated canine-prior and mask-guided constraints, as well as careful sampling among generated views.</td></tr>
+</tbody></table>
+<p>This category is especially important because it shows Bob’s relationship to generative AI: useful, powerful, but not automatically reliable. A reconstruction system needs priors, constraints, and selection mechanisms to convert generated evidence into stable 3D structure.</p>
+<h2 id="human-avatars">Human avatars and animatable reconstruction</h2>
+<table class="wikitable"><thead><tr><th>Representative papers / methods</th><th>What Bob learned</th><th>Connection to Bob’s work</th></tr></thead><tbody>
+<tr><td>HumanNeRF; Neural Body; Animatable NeRF; TAVA; InstantAvatar; GaussianAvatar-style methods; single-image avatar generation methods</td><td>Human reconstruction is a mature testbed for pose, deformation, identity preservation, appearance modeling, and controllable animation.</td><td>Bob asks which assumptions transfer from humans to animals and which fail. This comparison helps position animal reconstruction as a harder and less standardized extension of animatable body modeling.</td></tr>
+</tbody></table>
+<h2 id="animal-modeling">Animal body modeling</h2>
+<table class="wikitable"><thead><tr><th>Representative papers / methods</th><th>What Bob learned</th><th>Connection to Bob’s work</th></tr></thead><tbody>
+<tr><td>SMAL; BARC; WLDO-style animal pose/reconstruction; LASR; BANMo; MagicPony; animal avatar and animal pose literature</td><td>Animals need category-specific priors, weak supervision, flexible shape modeling, and methods that tolerate limited datasets and ambiguous observations.</td><td>This is the direct path to DogRecon, AniGauss, and WildAni4D. Bob’s work can be read as an attempt to make animal reconstruction more controllable, more general, and eventually more dynamic.</td></tr>
+</tbody></table>
+<p>The animal literature matters because it makes the limitations of human-centric reconstruction visible. Dogs, horses, cats, and other animals are not simply humans with different skeletons. They require different priors, different data assumptions, and different evaluation habits.</p>
+<h2 id="dynamic-4d">Dynamic 4D reconstruction</h2>
+<table class="wikitable"><thead><tr><th>Representative papers / methods</th><th>What Bob learned</th><th>Connection to Bob’s work</th></tr></thead><tbody>
+<tr><td>D-NeRF; Nerfies; HyperNeRF; Neural Scene Flow Fields; dynamic 3D Gaussians; 4D Gaussian Splatting; video-based human and object reconstruction methods</td><td>Reconstruction should include time, deformation, motion, and trajectory, not only static shape.</td><td>This supports Bob’s shift from static object/scene reconstruction toward dynamic animal reconstruction. WildAni4D is the clearest project in this direction.</td></tr>
+</tbody></table>
+<h2 id="physics">Physics-grounded motion and embodied characters</h2>
+<table class="wikitable"><thead><tr><th>Representative papers / methods</th><th>What Bob learned</th><th>Connection to Bob’s work</th></tr></thead><tbody>
+<tr><td>PhysHMR; PhysCtrl; ModSkill; Vid2Sim; physics-based human motion reconstruction and control; simulation-to-reconstruction methods</td><td>Visual plausibility is not enough. Bodies should move in ways that respect contact, balance, dynamics, and physical constraints.</td><td>This is a future-facing direction for Bob: physics-grounded 4D animal reconstruction from in-the-wild videos. It connects his animal reconstruction background with motion, simulation, and embodied AI.</td></tr>
+</tbody></table>
+<p>This category is especially relevant to Bob’s current visiting-research framing. The open question is how ideas from physics-grounded human motion can be translated to non-human articulated bodies, where morphology, gait, data availability, and priors differ substantially.</p>
+<h2 id="bibliography">Open bibliography to fill later</h2>
+<p>This page should eventually become a more concrete bibliography. Each entry can follow a simple format:</p>
+<table class="wikitable"><thead><tr><th>Paper / method</th><th>Why it mattered</th><th>Connection to Bob</th></tr></thead><tbody>
+<tr><td>Paper title</td><td>One-sentence technical influence.</td><td>Which project or research question it shaped.</td></tr>
+</tbody></table>
+<h3>Candidate entries to verify</h3>
+<ul>
+<li>NeuS and VolSDF for neural surface reconstruction.</li>
+<li>Convolutional Occupancy Networks and DeepSDF for implicit shape representation.</li>
+<li>NeRF, Mip-NeRF, and Instant-NGP for neural rendering.</li>
+<li>3D Gaussian Splatting and dynamic Gaussian methods for efficient renderable representations.</li>
+<li>Zero123 and related single-image 3D generation methods for missing-view priors.</li>
+<li>SMAL, BARC, BANMo, LASR, and MagicPony for animal shape and reconstruction.</li>
+<li>D-NeRF, Nerfies, HyperNeRF, and 4D Gaussian methods for dynamic reconstruction.</li>
+<li>PhysHMR, PhysCtrl, ModSkill, and Vid2Sim for physics-grounded reconstruction and motion.</li>
+</ul>
+<div class="stub">Next step: Bob can mark each candidate as “strong influence,” “background knowledge,” or “remove.”</div>
+
+      </article>
+    </main>
+  </div>
+</body>
+</html>
