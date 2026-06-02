@@ -69,7 +69,8 @@
 <p>This category is especially important because it shows Bob’s relationship to generative AI: useful, powerful, but not automatically reliable. A reconstruction system needs priors, constraints, and selection mechanisms to convert generated evidence into stable 3D structure.</p>
 <h2 id="human-avatars">Human avatars and animatable reconstruction</h2>
 <table class="wikitable"><thead><tr><th>Representative papers / methods</th><th>What Bob learned</th><th>Connection to Bob’s work</th></tr></thead><tbody>
-<tr><td>HumanNeRF; Neural Body; Animatable NeRF; TAVA; InstantAvatar; GaussianAvatar-style methods; single-image avatar generation methods</td><td>Human reconstruction is a mature testbed for pose, deformation, identity preservation, appearance modeling, and controllable animation.</td><td>Bob asks which assumptions transfer from humans to animals and which fail. This comparison helps position animal reconstruction as a harder and less standardized extension of animatable body modeling.</td></tr>
+<tr><td>SMPL; SMPL-X; HMR / SPIN / PARE-style mesh recovery; TRAM; PromptHMR</td><td>Human-centric reconstruction has a strong parametric-body backbone: shape, pose, camera, contact, and temporal motion can be estimated in a standardized coordinate system.</td><td>These methods are important comparison points for Bob's animal work. They clarify what animals still lack: a universally adopted body model, robust in-the-wild tracking, and reliable temporal reconstruction from casual videos.</td></tr>
+<tr><td>HumanNeRF; Neural Body; Animatable NeRF; TAVA; InstantAvatar; GaussianAvatar-style methods; GART; single-image avatar generation methods</td><td>Human reconstruction is a mature testbed for pose, deformation, identity preservation, appearance modeling, Gaussian avatars, and controllable animation.</td><td>Bob asks which assumptions transfer from humans to animals and which fail. This comparison helps position animal reconstruction as a harder and less standardized extension of animatable body modeling.</td></tr>
 </tbody></table>
 <h2 id="animal-modeling">Animal body modeling</h2>
 <table class="wikitable"><thead><tr><th>Representative papers / methods</th><th>What Bob learned</th><th>Connection to Bob’s work</th></tr></thead><tbody>
@@ -78,7 +79,7 @@
 <p>The animal literature matters because it makes the limitations of human-centric reconstruction visible. Dogs, horses, cats, and other animals are not simply humans with different skeletons. They require different priors, different data assumptions, and different evaluation habits.</p>
 <h2 id="dynamic-4d">Dynamic 4D reconstruction</h2>
 <table class="wikitable"><thead><tr><th>Representative papers / methods</th><th>What Bob learned</th><th>Connection to Bob’s work</th></tr></thead><tbody>
-<tr><td>D-NeRF; Nerfies; HyperNeRF; Neural Scene Flow Fields; dynamic 3D Gaussians; 4D Gaussian Splatting; video-based human and object reconstruction methods</td><td>Reconstruction should include time, deformation, motion, and trajectory, not only static shape.</td><td>This supports Bob’s shift from static object/scene reconstruction toward dynamic animal reconstruction. WildAni4D is the clearest project in this direction.</td></tr>
+<tr><td>D-NeRF; Nerfies; HyperNeRF; Neural Scene Flow Fields; TRAM-style video human recovery; dynamic 3D Gaussians; 4D Gaussian Splatting; video-based human and object reconstruction methods</td><td>Reconstruction should include time, deformation, motion, camera trajectory, and global body motion, not only static shape.</td><td>This supports Bob’s shift from static object/scene reconstruction toward dynamic animal reconstruction. WildAni4D is the clearest project in this direction.</td></tr>
 </tbody></table>
 <h2 id="physics">Physics-grounded motion and embodied characters</h2>
 <table class="wikitable"><thead><tr><th>Representative papers / methods</th><th>What Bob learned</th><th>Connection to Bob’s work</th></tr></thead><tbody>
@@ -97,6 +98,8 @@
 <li>NeRF, Mip-NeRF, and Instant-NGP for neural rendering.</li>
 <li>3D Gaussian Splatting and dynamic Gaussian methods for efficient renderable representations.</li>
 <li>Zero123 and related single-image 3D generation methods for missing-view priors.</li>
+<li>SMPL, SMPL-X, HMR/SPIN/PARE-style mesh recovery, TRAM, and PromptHMR for human body models, monocular recovery, and video motion estimation.</li>
+<li>GART and GaussianAvatar-style methods for animatable Gaussian human avatars.</li>
 <li>SMAL, BARC, BANMo, LASR, and MagicPony for animal shape and reconstruction.</li>
 <li>D-NeRF, Nerfies, HyperNeRF, and 4D Gaussian methods for dynamic reconstruction.</li>
 <li>PhysHMR, PhysCtrl, ModSkill, and Vid2Sim for physics-grounded reconstruction and motion.</li>
