@@ -57,7 +57,8 @@
   height: calc(8px * var(--shiba-px));
   pointer-events: none;
   background-image: url("images/shiba-strip.png");
-  background-position: calc(-440px * var(--shiba-px)) 0;
+  /* Frame 20 is the standalone 8x8 ball; frame 11 is the dog holding it. */
+  background-position: calc(-800px * var(--shiba-px)) 0;
   background-repeat: no-repeat;
   background-size: calc(840px * var(--shiba-px)) calc(32px * var(--shiba-px));
   image-rendering: pixelated;
