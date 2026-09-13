@@ -1,0 +1,138 @@
+/* Interactive shiba: isolated from the academic site's layout and styles. */
+:root {
+  --shiba-px: 4;
+}
+
+#site-shiba {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  width: calc(40px * var(--shiba-px));
+  height: calc(32px * var(--shiba-px));
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity .3s ease;
+  user-select: none;
+  -webkit-user-select: none;
+  will-change: transform;
+}
+
+#site-shiba.ready {
+  opacity: 1;
+}
+
+#site-shiba .site-shiba-sprite {
+  position: absolute;
+  inset: 0;
+  background-image: url("images/shiba-strip.png");
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: calc(840px * var(--shiba-px)) calc(32px * var(--shiba-px));
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+#site-shiba.flip .site-shiba-sprite {
+  transform: scaleX(-1);
+}
+
+#site-shiba .site-shiba-shadow {
+  position: absolute;
+  right: 14%;
+  bottom: 0;
+  left: 14%;
+  height: calc(3px * var(--shiba-px));
+  border-radius: 50%;
+  background: rgba(40, 50, 70, .14);
+  transform-origin: center;
+}
+
+.site-shiba-ball {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1001;
+  width: calc(8px * var(--shiba-px));
+  height: calc(8px * var(--shiba-px));
+  pointer-events: none;
+  background-image: url("images/shiba-strip.png");
+  background-position: calc(-440px * var(--shiba-px)) 0;
+  background-repeat: no-repeat;
+  background-size: calc(840px * var(--shiba-px)) calc(32px * var(--shiba-px));
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  will-change: transform;
+}
+
+.site-shiba-ball::after {
+  position: absolute;
+  top: 100%;
+  right: 20%;
+  left: 20%;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(40, 50, 70, .12);
+  content: "";
+}
+
+.site-shiba-pixel {
+  position: fixed;
+  z-index: 1002;
+  width: 3px;
+  height: 3px;
+  pointer-events: none;
+  background: transparent;
+  animation: site-shiba-float 1s ease-out forwards;
+}
+
+.site-shiba-pixel.z {
+  animation: site-shiba-drift 1.6s ease-out forwards;
+}
+
+.site-shiba-bubble {
+  position: fixed;
+  z-index: 1003;
+  padding: 3px 8px 4px;
+  border: 2px solid #5c3a26;
+  border-radius: 4px 4px 4px 0;
+  background: #fff8ea;
+  box-shadow: 2px 2px 0 #5c3a26;
+  color: #5c3a26;
+  font: 700 13px/1 ui-monospace, "SF Mono", Menlo, monospace;
+  pointer-events: none;
+  white-space: nowrap;
+  animation: site-shiba-pop .9s ease-out forwards;
+}
+
+@keyframes site-shiba-float {
+  from { opacity: 1; transform: translateY(0) scale(1); }
+  to { opacity: 0; transform: translateY(-70px) scale(1.15); }
+}
+
+@keyframes site-shiba-drift {
+  from { opacity: .9; transform: translate(0, 0); }
+  to { opacity: 0; transform: translate(18px, -46px); }
+}
+
+@keyframes site-shiba-pop {
+  0% { opacity: 0; transform: translateY(4px) scale(.7); }
+  15% { opacity: 1; transform: translateY(0) scale(1); }
+  75% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-8px); }
+}
+
+@media (max-width: 720px) {
+  :root {
+    --shiba-px: 3;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #site-shiba,
+  .site-shiba-ball,
+  .site-shiba-pixel,
+  .site-shiba-bubble {
+    display: none !important;
+  }
+}
