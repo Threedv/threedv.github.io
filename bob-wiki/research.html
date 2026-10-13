@@ -1,61 +1,50 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="author" content="Gyeongsu (Bob) Cho" />
-  <meta name="description" content="Bob Wiki public page: Research identity." />
-  <title>Research identity | Bob Wiki</title>
-  <link rel="icon" type="image/png" href="../images/hp_logo.png" />
-  <link rel="stylesheet" href="wiki.css" />
-</head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Gyeongsu (Bob) Cho" name="author"/>
+<meta content="Research trajectory from fisheye depth to animal Gaussians and temporally coherent 4D motion, with source-grounded evaluation." name="description"/>
+<title>Research | Bob Wiki</title>
+<link href="../images/hp_logo.png" rel="icon" type="image/png"/>
+<link href="wiki.css" rel="stylesheet"/>
+<meta content="Research | Bob Wiki" property="og:title"/><meta content="Research trajectory from fisheye depth to animal Gaussians and temporally coherent 4D motion, with source-grounded evaluation." property="og:description"/><meta content="https://threedv.github.io/bob-wiki/assets/research/wildani4d-teaser.jpg" property="og:image"/><meta content="website" property="og:type"/></head>
 <body>
-  <header class="topbar">
-    <a class="wordmark" href="index.html">Bob Wiki<small>public profile</small></a>
-    <form class="search" onsubmit="event.preventDefault(); const q=this.querySelector('input').value.toLowerCase(); const map={research:'research.html',books:'books.html',films:'films.html',people:'people.html',papers:'papers.html',values:'values.html',projects:'projects.html',questions:'questions.html'}; location.href=map[q]||'index.html#ask';">
-      <input aria-label="Ask about Bob" placeholder="Ask about Bob: research, books, films, papers, values..." />
-      <button>Ask</button>
-    </form>
-    <nav class="toplinks"><a href="../">Portfolio</a><a href="../research-map/">Research Map</a><a href="mailto:threedv@unist.ac.kr">Email</a></nav>
-  </header>
-  <div class="layout">
-    <aside class="sidebar"><p class="side-title">Navigation</p><a class="" href="index.html">Summary</a>
+<header class="topbar">
+<a class="wordmark" href="index.html">Bob Wiki<small>public profile</small></a>
+<form class="search" onsubmit="event.preventDefault(); const q=this.querySelector('input').value.toLowerCase(); const map={internship:'internship.html',publications:'publications.html',research:'research.html',books:'books.html',films:'films.html',people:'people.html',papers:'papers.html',values:'values.html',projects:'projects.html',questions:'questions.html'}; location.href=map[q]||'index.html#ask';">
+<input aria-label="Ask about Bob" placeholder="Ask about Bob: research, books, films, papers, values..."/>
+<button>Ask</button>
+</form>
+<nav class="toplinks"><a href="internship.html">Summer 2027</a><a href="../">Portfolio</a><a href="../research-map/">Research Map</a><a href="mailto:threedv@unist.ac.kr">Email</a></nav>
+</header>
+<div class="layout">
+<aside class="sidebar"><p class="side-title">Navigation</p><a class="" href="internship.html">Summer 2027 internship</a><a class="" href="publications.html">Publications</a><a class="" href="index.html">Summary</a>
 <a class="active" href="research.html">Research</a>
 <a class="" href="projects.html">Projects</a>
 <a class="" href="values.html">Values</a>
 <a class="" href="people.html">People</a>
 <a class="" href="books.html">Books</a>
 <a class="" href="films.html">Films / Drama</a>
-<a class="" href="papers.html">Papers & topics</a>
+<a class="" href="papers.html">Papers &amp; topics</a>
 <a class="" href="questions.html">Open questions</a>
 <a class="" href="public-boundary.html">Public boundary</a></aside>
-    <main class="content-wrap">
-      <div class="page-tabs"><a class="active" href="research.html">Article</a><a href="index.html#ask">Ask about Bob</a><a href="public-boundary.html">Public-safe version</a></div>
-      <article class="article">
-        <h1>Research identity</h1>
-        <p class="subtitle">From Bob Wiki, a public encyclopedia-style profile page</p>
-        
-<p class="lead">Bob’s core domain is computer vision for humans and animals. His work is centered on dynamic 3D/4D understanding: reconstructing bodies, motion, appearance, and interaction from visual input.</p>
-<h2>Origin story</h2>
+<main class="content-wrap">
+<div class="page-tabs"><a href="internship.html">Summer 2027</a><a href="publications.html">Publications</a><a href="projects.html">Demos</a><a href="public-boundary.html">Public boundary</a></div>
+<article class="article"><h1>Research</h1><p class="lead">I build methods that turn images and videos into animatable human and animal representations. <a href="publications.html">[publications]</a></p>
+<h2>Research trajectory</h2><ol class="timeline">
+<li><strong>2022–2023:</strong> depth and fisheye geometry → SlaBins (ICCV 2023), with 42dot. <a href="publications.html#slabins">[paper]</a></li>
+<li><strong>2024:</strong> single-image animatable dogs → DogRecon, CV4Animals oral. <a href="publications.html#dogrecon">[work]</a></li>
+<li><strong>2025:</strong> DogRecon (IJCV), Avatar++, Samsung display-inspection collaboration (2024–2025). <a href="publications.html">[papers]</a> <a href="projects.html#samsung">[industry]</a></li>
+<li><strong>2026:</strong> WildAni4D, AniGauss, UT Austin Research Intern, Sony collaboration. <a href="publications.html">[papers]</a> <a href="projects.html#sony">[collaboration]</a> <a href="../Gyeongsu_Bob_Cho_Research_Intern_CV_Updated.pdf">[CV]</a></li></ol><section><h2>DogRecon</h2><p><strong>What I built:</strong> Single-image dog reconstruction with canine-prior-guided novel views and an animatable Gaussian representation. <a href="https://vision3d-lab.github.io/dogrecon/">[project]</a></p><p><strong>What it showed:</strong> Internet-sourced image-to-3D test: CLIP-Similarity 0.8006. This is a rendered-view semantic-similarity metric, not geometry accuracy. <a href="assets/research/dogrecon-paper.pdf#page=8">[Table 2]</a></p><p><strong>Status:</strong> IJCV 2025; CV4Animals @ CVPR 2024 oral. <a href="publications.html#dogrecon">[paper record]</a></p><p><strong>Links:</strong> <a href="projects.html#dogrecon">[figure / demo]</a></p></section><section><h2>WildAni4D</h2><p><strong>What I built:</strong> Video-native recovery of animal mesh, articulated motion and world-space trajectory. <a href="https://vision3d-lab.github.io/wildani4d/">[project]</a></p><p><strong>What it showed:</strong> Synthetic test set: MPJPE 91.29 and Shape Consistency 0.0703 (lower is better). These are paper-reported values; units are not specified in the table. <a href="assets/research/wildani4d-paper.pdf#page=6">[Table 1]</a></p><p><strong>Status:</strong> CVPR 2026 Findings. <a href="publications.html#wildani4d">[paper record]</a></p><p><strong>Links:</strong> <a href="projects.html#wildani4d">[figure / demo]</a></p></section><section><h2>AniGauss</h2><p><strong>What I built:</strong> Topology-aware Gaussians for animatable animal reconstruction from a single in-the-wild image. <a href="https://vision3d-lab.github.io/anigauss/">[project]</a></p><p><strong>What it showed:</strong> The published workshop manuscript reports qualitative comparisons across animal categories; no quantitative performance claim is made here. <a href="assets/research/anigauss-workshop-paper.pdf#page=4">[Figure 2]</a></p><p><strong>Status:</strong> CV4Animals Workshop at CVPR 2026. <a href="publications.html#anigauss">[paper record]</a></p><p><strong>Links:</strong> <a href="projects.html#anigauss">[figure / demo]</a></p></section><section><h2>Fisheye depth — SlaBins</h2><p><strong>What I built:</strong> contributed to slanted-bin fisheye depth estimation for road environments. <a href="assets/research/slabins-paper.pdf">[paper]</a></p><p><strong>What it showed:</strong> SynWoodScape test results: RMSE 1.040 and Abs Rel 0.022. These results refer to this benchmark, not production validation. <a href="assets/research/slabins-paper.pdf#page=6">[Table 1]</a></p><p><strong>Status:</strong> ICCV 2023. <a href="publications.html#slabins">[paper / project / augmentation code]</a></p></section><h2 id="manuscripts">Manuscripts &amp; Ongoing Research</h2><p class="muted">Working project titles; listed separately from published work.</p><ul class="manuscripts"><li id="anigauss-plus"><strong>AniGauss++</strong> — <em>Manuscript submitted to IJCV</em>. <a href="../Gyeongsu_Bob_Cho_Research_Intern_CV_Updated.pdf#page=2">[CV]</a></li><li id="dance"><strong>Multi-Dancer Generation</strong> — <em>Manuscript in preparation for CVPR</em>. Research collaboration with Sony × UT Austin. <a href="../Gyeongsu_Bob_Cho_Research_Intern_CV_Updated.pdf#page=2">[CV]</a></li><li id="animal-agent"><strong>Animal Agent</strong> — <em>Manuscript in preparation for CVPR</em>. <a href="../Gyeongsu_Bob_Cho_Research_Intern_CV_Updated.pdf#page=2">[CV]</a></li><li id="animal-motion"><strong>Animal Motion</strong> — <em>Manuscript in preparation for CVPR</em>. <a href="../Gyeongsu_Bob_Cho_Research_Intern_CV_Updated.pdf#page=2">[CV]</a></li></ul><h2>Origin story — 2022–2024</h2>
 <p>Bob first became interested in 3D reconstruction through implicit neural representations and monocular depth estimation. Early influences included neural surface reconstruction and occupancy-based representations, such as NeuS-style neural surface modeling and Convolutional Occupancy Networks. These works made 3D reconstruction feel like a way to connect geometry, learning, and visual understanding into a single technical language.</p>
 <p>Over time, Bob became less satisfied with only reconstructing static objects or scenes. Static reconstruction felt important, but he expected many of the core problems to be solved relatively quickly. He became more attracted to dynamic reconstruction: understanding bodies that move, deform, interact with the ground, and change over time.</p>
 <p>The shift toward animals came from a mixture of technical opportunity and long-term motivation. Animal reconstruction was much less explored than human reconstruction, yet animals are everywhere in the real world. If the goal is to build digital twins or embodied AI systems that reflect the real world, animals cannot be ignored. They are also technically harder: they have diverse body shapes, less standardized data, weaker priors, fur and appearance ambiguity, and complex locomotion. This made animal 3D/4D reconstruction feel like both an underexplored research space and a more challenging testbed for general dynamic reconstruction.</p>
-<h2>Research summary</h2>
-<p>Bob is interested in methods that move beyond static reconstruction toward dynamic and usable representations. His recurring technical themes include monocular and sparse-view reconstruction, animal body modeling, neural and Gaussian representations, feed-forward systems, temporal consistency, synthetic data pipelines, and physics-grounded motion.</p>
-<h2>Before DogRecon</h2>
+<h2>Before DogRecon — 2022–2024</h2>
 <p>Before DogRecon, Bob was mainly interested in implicit neural representations and monocular depth estimation. This background shaped how he thought about geometry from limited visual evidence: a single image should not be treated as a flat observation, but as a constraint on possible 3D worlds.</p>
-<h2>Why animals are central</h2>
-<p>Animal 3D/4D reconstruction is less standardized than human reconstruction. Humans have stronger datasets, parametric priors, motion capture pipelines, and evaluation protocols. Animals introduce larger shape variation, weaker supervision, fur and appearance ambiguity, complex locomotion, and contact-rich motion.</p>
-<p>Bob views animals as a hard testbed for general embodied perception: if a method can handle non-human articulated bodies in the wild, it is closer to robust real-world 4D understanding.</p>
-<h2>Public framing</h2>
-<ul><li><b>Short version:</b> dynamic 3D/4D human and animal understanding.</li><li><b>Research direction:</b> embodied human and animal AI through reconstruction, motion, physics, and interaction.</li><li><b>Current focus:</b> physics-grounded 4D animal reconstruction from in-the-wild videos.</li></ul>
-<h2>Collaboration fit</h2>
-<p>Bob is especially interested in collaborations that connect reconstruction with motion: temporally coherent 4D geometry, physically plausible locomotion, contact and ground interaction, controllable avatars, and human-animal or character-level embodied AI. His animal reconstruction background gives him experience with weak priors, sparse or monocular observations, synthetic data pipelines, and difficult non-human articulated bodies.</p>
-<p>In meetings, Bob usually frames himself as a researcher-builder: someone who can learn missing technical pieces quickly, build prototypes, run experiments, and turn broad research directions into concrete systems.</p>
-<h2>Needs more detail from Bob</h2><div class="stub">Potential additions: the first paper/demo that made Bob feel “3D reconstruction is my field,” and the moment when animal reconstruction stopped being an accident and became a research identity.</div>
-
-      </article>
-    </main>
-  </div>
+<p><a href="publications.html">Published work</a> · <a href="../Gyeongsu_Bob_Cho_Research_Intern_CV_Updated.pdf">CV</a> · <a href="internship.html">Contribution themes</a></p><footer class="wiki-footer">Last updated: 2026-10-13 · <a href="../">Main portfolio</a> · <a href="internship.html">Research profile</a> · <a href="public-boundary.html">Public boundary</a></footer></article>
+</main>
+</div>
 </body>
 </html>

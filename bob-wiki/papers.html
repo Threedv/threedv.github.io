@@ -1,40 +1,40 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="author" content="Gyeongsu (Bob) Cho" />
-  <meta name="description" content="Bob Wiki public page: Papers and technical vocabulary." />
-  <title>Papers and technical vocabulary | Bob Wiki</title>
-  <link rel="icon" type="image/png" href="../images/hp_logo.png" />
-  <link rel="stylesheet" href="wiki.css" />
-</head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Gyeongsu (Bob) Cho" name="author"/>
+<meta content="Bob Wiki public page: Papers and technical vocabulary." name="description"/>
+<title>Papers and technical vocabulary | Bob Wiki</title>
+<link href="../images/hp_logo.png" rel="icon" type="image/png"/>
+<link href="wiki.css" rel="stylesheet"/>
+<meta content="Papers and technical vocabulary | Bob Wiki" property="og:title"/><meta content="Bob Wiki public page: Papers and technical vocabulary." property="og:description"/><meta content="https://threedv.github.io/bob-wiki/assets/research/wildani4d-teaser.jpg" property="og:image"/><meta content="website" property="og:type"/></head>
 <body>
-  <header class="topbar">
-    <a class="wordmark" href="index.html">Bob Wiki<small>public profile</small></a>
-    <form class="search" onsubmit="event.preventDefault(); const q=this.querySelector('input').value.toLowerCase(); const map={research:'research.html',books:'books.html',films:'films.html',people:'people.html',papers:'papers.html',values:'values.html',projects:'projects.html',questions:'questions.html'}; location.href=map[q]||'index.html#ask';">
-      <input aria-label="Ask about Bob" placeholder="Ask about Bob: research, books, films, papers, values..." />
-      <button>Ask</button>
-    </form>
-    <nav class="toplinks"><a href="../">Portfolio</a><a href="../research-map/">Research Map</a><a href="mailto:threedv@unist.ac.kr">Email</a></nav>
-  </header>
-  <div class="layout">
-    <aside class="sidebar"><p class="side-title">Navigation</p><a class="" href="index.html">Summary</a>
+<header class="topbar">
+<a class="wordmark" href="index.html">Bob Wiki<small>public profile</small></a>
+<form class="search" onsubmit="event.preventDefault(); const q=this.querySelector('input').value.toLowerCase(); const map={internship:'internship.html',publications:'publications.html',research:'research.html',books:'books.html',films:'films.html',people:'people.html',papers:'papers.html',values:'values.html',projects:'projects.html',questions:'questions.html'}; location.href=map[q]||'index.html#ask';">
+<input aria-label="Ask about Bob" placeholder="Ask about Bob: research, books, films, papers, values..."/>
+<button>Ask</button>
+</form>
+<nav class="toplinks"><a href="internship.html">Summer 2027</a><a href="../">Portfolio</a><a href="../research-map/">Research Map</a><a href="mailto:threedv@unist.ac.kr">Email</a></nav>
+</header>
+<div class="layout">
+<aside class="sidebar"><p class="side-title">Navigation</p><a class="" href="internship.html">Summer 2027 internship</a><a class="" href="publications.html">Publications</a><a class="" href="index.html">Summary</a>
 <a class="" href="research.html">Research</a>
 <a class="" href="projects.html">Projects</a>
 <a class="" href="values.html">Values</a>
 <a class="" href="people.html">People</a>
 <a class="" href="books.html">Books</a>
 <a class="" href="films.html">Films / Drama</a>
-<a class="active" href="papers.html">Papers & topics</a>
+<a class="active" href="papers.html">Papers &amp; topics</a>
 <a class="" href="questions.html">Open questions</a>
 <a class="" href="public-boundary.html">Public boundary</a></aside>
-    <main class="content-wrap">
-      <div class="page-tabs"><a class="active" href="papers.html">Article</a><a href="index.html#ask">Ask about Bob</a><a href="public-boundary.html">Public-safe version</a></div>
-      <article class="article">
-        <h1>Papers and technical vocabulary</h1>
-        <p class="subtitle">From Bob Wiki, a public encyclopedia-style profile page</p>
-        
+<main class="content-wrap">
+<div class="page-tabs"><a class="active" href="papers.html">Article</a><a href="index.html#ask">Ask about Bob</a><a href="public-boundary.html">Public-safe version</a></div>
+<article class="article">
+<h1>Papers and technical vocabulary</h1>
+<p class="subtitle">From Bob Wiki, a public encyclopedia-style profile page</p>
 <p class="lead">This page is not a ranked list of Bob’s favorite papers. It records the technical vocabulary that shaped how Bob thinks about 3D/4D reconstruction, neural representations, animals, and embodied AI.</p>
 <div class="notice"><b>Editorial note.</b> Bob does not describe his research taste as coming from a single “life-changing” paper. It emerged from repeatedly studying many papers, codebases, demos, and technical trends around implicit representation, neural rendering, generative 3D, animal priors, and dynamic reconstruction.</div>
 <nav class="toc"><div class="toc-title">Contents</div><ol>
@@ -46,7 +46,6 @@
 <li><a href="#animal-modeling">Animal body modeling</a></li>
 <li><a href="#dynamic-4d">Dynamic 4D reconstruction</a></li>
 <li><a href="#physics">Physics-grounded motion</a></li>
-<li><a href="#bibliography">Open bibliography</a></li>
 </ol></nav>
 <h2 id="implicit">Implicit 3D representations</h2>
 <table class="wikitable"><thead><tr><th>Representative papers / methods</th><th>What Bob learned</th><th>Connection to Bob’s work</th></tr></thead><tbody>
@@ -86,28 +85,8 @@
 <tr><td>PhysHMR; PhysCtrl; ModSkill; Vid2Sim; physics-based human motion reconstruction and control; simulation-to-reconstruction methods</td><td>Visual plausibility is not enough. Bodies should move in ways that respect contact, balance, dynamics, and physical constraints.</td><td>This is a future-facing direction for Bob: physics-grounded 4D animal reconstruction from in-the-wild videos. It connects his animal reconstruction background with motion, simulation, and embodied AI.</td></tr>
 </tbody></table>
 <p>This category is especially relevant to Bob’s current visiting-research framing. The open question is how ideas from physics-grounded human motion can be translated to non-human articulated bodies, where morphology, gait, data availability, and priors differ substantially.</p>
-<h2 id="bibliography">Open bibliography to fill later</h2>
-<p>This page should eventually become a more concrete bibliography. Each entry can follow a simple format:</p>
-<table class="wikitable"><thead><tr><th>Paper / method</th><th>Why it mattered</th><th>Connection to Bob</th></tr></thead><tbody>
-<tr><td>Paper title</td><td>One-sentence technical influence.</td><td>Which project or research question it shaped.</td></tr>
-</tbody></table>
-<h3>Candidate entries to verify</h3>
-<ul>
-<li>NeuS and VolSDF for neural surface reconstruction.</li>
-<li>Convolutional Occupancy Networks and DeepSDF for implicit shape representation.</li>
-<li>NeRF, Mip-NeRF, and Instant-NGP for neural rendering.</li>
-<li>3D Gaussian Splatting and dynamic Gaussian methods for efficient renderable representations.</li>
-<li>Zero123 and related single-image 3D generation methods for missing-view priors.</li>
-<li>SMPL, SMPL-X, HMR/SPIN/PARE-style mesh recovery, TRAM, and PromptHMR for human body models, monocular recovery, and video motion estimation.</li>
-<li>GART and GaussianAvatar-style methods for animatable Gaussian human avatars.</li>
-<li>SMAL, BARC, BANMo, LASR, and MagicPony for animal shape and reconstruction.</li>
-<li>D-NeRF, Nerfies, HyperNeRF, and 4D Gaussian methods for dynamic reconstruction.</li>
-<li>PhysHMR, PhysCtrl, ModSkill, and Vid2Sim for physics-grounded reconstruction and motion.</li>
-</ul>
-<div class="stub">Next step: Bob can mark each candidate as “strong influence,” “background knowledge,” or “remove.”</div>
-
-      </article>
-    </main>
-  </div>
+<footer class="wiki-footer">Last updated: 2026-10-13 · <a href="../">Main portfolio</a> · <a href="internship.html">Research profile</a> · <a href="public-boundary.html">Public boundary</a></footer></article>
+</main>
+</div>
 </body>
 </html>

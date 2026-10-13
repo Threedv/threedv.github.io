@@ -1,14 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="author" content="Gyeongsu (Bob) Cho" />
-  <meta name="description" content="Research Taste Map of Gyeongsu (Bob) Cho: papers, projects, labs, and questions shaping work on embodied human and animal AI." />
-  <title>Research Taste Map | Gyeongsu (Bob) Cho</title>
-  <link rel="icon" type="image/png" href="../images/hp_logo.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Gyeongsu (Bob) Cho" name="author"/>
+<meta content="Research Taste Map of Gyeongsu (Bob) Cho: papers, projects, labs, and questions shaping work on embodied human and animal AI." name="description"/>
+<title>Research Taste Map | Gyeongsu (Bob) Cho</title>
+<link href="../images/hp_logo.png" rel="icon" type="image/png"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&amp;family=Geist+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<style>
     :root {
       --bg: #ffffff;
       --ink: #171717;
@@ -348,201 +349,162 @@
   </style>
 </head>
 <body>
-  <nav class="nav">
-    <div class="nav-inner">
-      <a class="brand" href="../"><span class="logo-dot"></span> Gyeongsu (Bob) Cho</a>
-      <div class="nav-links">
-        <a href="#projects">Projects</a>
-        <a href="#pillars">Pillars</a>
-        <a href="#influences">Influences</a>
-        <a href="#visit">Visiting Direction</a>
-        <a class="pill-link" href="mailto:threedv@unist.ac.kr">Contact</a>
-      </div>
-    </div>
-  </nav>
-
-  <header class="hero">
-    <div class="eyebrow">PUBLIC RESEARCH MAP</div>
-    <h1>Research Taste Map</h1>
-    <p class="subtitle">Papers, people, projects, and questions that shape my work on embodied human and animal AI.</p>
-    <div class="question-card">
-      <div class="label">CORE QUESTION</div>
-      <p class="question">How can we build lifelike human and animal AI characters through 3D/4D reconstruction, motion, physics, and embodied interaction?</p>
-    </div>
-    <div class="hero-actions">
-      <a class="button primary" href="#visit">Current Visiting Research Framing</a>
-      <a class="button" href="../">Back to Portfolio</a>
-    </div>
-  </header>
-
-  <main>
-    <section class="section" id="direction">
-      <div class="section-header">
-        <div>
-          <div class="kicker">Direction</div>
-          <h2>From reconstruction to embodied characters.</h2>
-        </div>
-        <div>
-          <p class="lead">I am a Ph.D. student at UNIST working on dynamic 3D/4D human and animal understanding. My work focuses on reconstructing, representing, and eventually animating humans and animals as dynamic embodied agents.</p>
-          <p>The broader motivation is to move from passive 3D reconstruction toward interactive living representations: characters that can be reconstructed, animated, simulated, and used in embodied AI systems.</p>
-        </div>
-      </div>
-      <div class="flow">
-        <div class="flow-step"><div class="num">01</div><h3>Perceive</h3><p>Recover shape, appearance, pose, and motion from images or videos.</p></div>
-        <div class="flow-step"><div class="num">02</div><h3>Represent</h3><p>Build neural, Gaussian, or structured body representations for dynamic agents.</p></div>
-        <div class="flow-step"><div class="num">03</div><h3>Animate</h3><p>Make bodies controllable, temporally coherent, and physically plausible.</p></div>
-        <div class="flow-step"><div class="num">04</div><h3>Interact</h3><p>Connect bodies with behavior, language, memory, and embodied AI systems.</p></div>
-      </div>
-    </section>
-
-    <section class="section" id="animals">
-      <div class="section-header">
-        <div>
-          <div class="kicker">Why Animals?</div>
-          <h2>Animals are a hard testbed for general 4D reconstruction.</h2>
-        </div>
-        <div>
-          <p class="lead">Humans have strong datasets, parametric priors, motion capture pipelines, and evaluation protocols. Animals are much less standardized.</p>
-          <p>If a method can handle non-human articulated bodies in the wild, it is closer to robust real-world embodied perception.</p>
-        </div>
-      </div>
-      <div class="grid cols-3">
-        <div class="card"><span class="tag">Shape</span><h3>Large variation</h3><p>Animals exhibit large inter-species and intra-species differences in anatomy, proportion, and appearance.</p></div>
-        <div class="card"><span class="tag pink">Motion</span><h3>Contact-rich dynamics</h3><p>Animal motion involves locomotion, balance, ground contact, deformation, and highly non-rigid behavior.</p></div>
-        <div class="card"><span class="tag red">Data</span><h3>Weak supervision</h3><p>Dense annotations and controlled multiview data are harder to obtain, especially for in-the-wild videos.</p></div>
-      </div>
-    </section>
-
-    <section class="section" id="projects">
-      <div class="section-header">
-        <div>
-          <div class="kicker">Project Nodes</div>
-          <h2>My projects as a connected research thread.</h2>
-        </div>
-        <p class="lead">These projects are not isolated artifacts. I view them as steps toward dynamic, animatable, and eventually physics-grounded human and animal representations.</p>
-      </div>
-      <div class="grid cols-2">
-        <a class="card project-card" href="https://vision3d-lab.github.io/wildani4d/" target="_blank" rel="noopener">
-          <img class="thumb" src="../images/CVPR2026_tea.gif" alt="WildAni4D preview" />
-          <div><span class="tag">WildAni4D</span><h3>In-the-wild 4D animal reconstruction</h3><p>Dynamic animal reconstruction from realistic videos with sparse views, unknown motion, occlusion, and limited supervision.</p></div>
-        </a>
-        <div class="card project-card">
-          <img class="thumb" src="../images/feed_project.png" alt="AniGauss preview" />
-          <div><span class="tag pink">AniGauss</span><h3>Neural / Gaussian animal representation</h3><p>Moving from mesh-only thinking toward renderable, animatable, neural representations for animals.</p></div>
-        </div>
-        <div class="card project-card">
-          <img class="thumb" src="../images/app2.gif" alt="DogRecon preview" />
-          <div><span class="tag green">DogRecon</span><h3>Category-specific animal body reconstruction</h3><p>An entry point into animal 3D reconstruction, especially dogs as a challenging and meaningful category.</p></div>
-        </div>
-        <div class="card project-card">
-          <img class="thumb" src="../images/ICCVW2025_tea.png" alt="Human avatar preview" />
-          <div><span class="tag gray">Human / Animal Avatars</span><h3>Transfer and limits of human-centric priors</h3><p>Learning from human avatar literature while asking what must be rebuilt for non-human bodies.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="pillars">
-      <div class="section-header">
-        <div>
-          <div class="kicker">Pillars</div>
-          <h2>The five pillars I keep returning to.</h2>
-        </div>
-        <p class="lead">My interests are broad, but they converge on a single direction: lifelike embodied human and animal AI characters.</p>
-      </div>
-      <div class="grid cols-3">
-        <div class="card"><span class="tag">3D / 4D</span><h3>Dynamic reconstruction</h3><p>Recover not only shape, but time, motion, deformation, and interaction from sparse or in-the-wild inputs.</p></div>
-        <div class="card"><span class="tag green">Animals</span><h3>Shape and motion</h3><p>Develop priors and representations that handle non-human anatomy, locomotion, fur, and weak supervision.</p></div>
-        <div class="card"><span class="tag pink">Neural 3D</span><h3>Rendering and generation</h3><p>Use neural and Gaussian representations to bridge appearance, geometry, animation, and controllability.</p></div>
-        <div class="card"><span class="tag red">Physics</span><h3>Grounded motion</h3><p>Move from visually plausible motion to physically plausible behavior: contact, balance, forces, and control.</p></div>
-        <div class="card"><span class="tag gray">Embodiment</span><h3>AI characters</h3><p>Connect body representations with behavior, voice, memory, language, and interaction.</p></div>
-        <div class="card"><span class="tag">Systems</span><h3>Research OS</h3><p>Use structured notes and AI-assisted workflows to compound research taste, execution, and long-term direction.</p></div>
-      </div>
-    </section>
-
-    <section class="section" id="influences">
-      <div class="section-header">
-        <div>
-          <div class="kicker">Influences</div>
-          <h2>Ideas and labs that shape my research taste.</h2>
-        </div>
-        <p class="lead">This map is intentionally selective. It is not a complete bibliography; it is a public view of the ideas I keep returning to.</p>
-      </div>
-      <div class="grid cols-2">
-        <div class="card"><span class="tag">Neural Rendering</span><h3>Scene representations and controllable 3D</h3><p>Neural and Gaussian representations reframed geometry and appearance as learnable structures that can connect reconstruction, rendering, generation, and control.</p></div>
-        <div class="card"><span class="tag pink">Human Avatars</span><h3>Performance capture and animation</h3><p>Human avatar research provides strong tools for pose, deformation, and controllable rendering, while animals expose different assumptions and failure modes.</p></div>
-        <div class="card"><span class="tag red">Physics</span><h3>Reconstruction that can move</h3><p>Many reconstructed motions look visually plausible but physically unstable. Contact, force, control, and dynamics are essential for embodied characters.</p></div>
-        <div class="card"><span class="tag green">Robotics</span><h3>Useful representations</h3><p>Robotics forces representations to be useful, not only visually impressive: latency, sensors, actuation, safety, and control all matter.</p></div>
-      </div>
-    </section>
-
-
-    <section class="section" id="questions">
-      <div class="section-header">
-        <div>
-          <div class="kicker">Open Questions</div>
-          <h2>Questions I expect to keep returning to.</h2>
-        </div>
-        <p class="lead">These questions help me convert broad vision into concrete research problems.</p>
-      </div>
-      <ul class="list">
-        <li>How can we reconstruct animals in 4D without dense supervision?</li>
-        <li>What physical priors are useful for non-human articulated bodies?</li>
-        <li>Can human motion models transfer to animal motion and human-animal interaction?</li>
-        <li>What representations best support animatable, controllable animal avatars?</li>
-        <li>How can 3D/4D reconstruction become a body layer for AI agents?</li>
-        <li>How can neural rendering, physical simulation, and control be unified for embodied characters?</li>
-      </ul>
-    </section>
-
-    <section class="section" id="visit">
-      <div class="section-header">
-        <div>
-          <div class="kicker">Current Framing</div>
-          <h2>Physics-grounded 4D animal reconstruction from in-the-wild videos.</h2>
-        </div>
-        <div>
-          <p class="lead">This is the focused visiting-research direction I am currently most interested in.</p>
-          <p>It builds on my animal 3D/4D reconstruction background, connects to neural representations and dynamic reconstruction, and introduces physical constraints such as contact, locomotion, balance, and plausible motion.</p>
-        </div>
-      </div>
-      <div class="grid cols-2">
-        <div class="card">
-          <span class="tag red">Possible Components</span>
-          <ul class="list">
-            <li>4D neural or Gaussian animal representation</li>
-            <li>Learned or differentiable physical constraints</li>
-            <li>Contact and ground-interaction modeling</li>
-            <li>Motion plausibility priors</li>
-            <li>Cross-category or cross-species evaluation</li>
-          </ul>
-        </div>
-        <div class="card">
-          <span class="tag green">Desired Outcome</span>
-          <h3>A concrete bridge between animal 4D reconstruction and embodied character modeling.</h3>
-          <p>The goal is to produce a focused research project rather than merely describe a broad vision.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="boundary">
-      <div class="section-header">
-        <div>
-          <div class="kicker">Public Boundary</div>
-          <h2>Curated, not private.</h2>
-        </div>
-        <p class="lead">This page is a public layer derived from a private knowledge system. It intentionally excludes private life context, raw logs, application strategy, unpublished details, and agent internals.</p>
-      </div>
-      <div class="boundary">
-        <div class="card"><span class="tag red">Keep Private</span><p>Personal relationships, emotional logs, raw chat transcripts, private strategy notes, credentials, local file paths, and confidential technical details.</p></div>
-        <div class="card"><span class="tag pink">Rewrite</span><p>Internal vision phrases become research-facing language: “lifelike embodied human and animal AI characters.”</p></div>
-        <div class="card"><span class="tag green">Safe After Review</span><p>Research questions, public projects, public papers, public talks, high-level values, and sanitized long-term vision.</p></div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <p><strong>Gyeongsu (Bob) Cho</strong> · Ph.D. Student, AIGS, UNIST · <a href="mailto:threedv@unist.ac.kr">threedv@unist.ac.kr</a> · <a href="../">Portfolio</a> · <a href="https://www.linkedin.com/in/gyeongsu-cho-1670a9202/" target="_blank" rel="noopener">LinkedIn</a></p>
-    <p>Last updated: May 2026. This page is a curated public research map, not a private diary or complete knowledge base.</p>
-  </footer>
+<nav class="nav">
+<div class="nav-inner">
+<a class="brand" href="../"><span class="logo-dot"></span> Gyeongsu (Bob) Cho</a>
+<div class="nav-links">
+<a href="#projects">Projects</a>
+<a href="#pillars">Pillars</a>
+<a href="#influences">Influences</a>
+<a href="#visit">Visiting Direction</a>
+<a class="pill-link" href="mailto:threedv@unist.ac.kr">Contact</a>
+</div>
+</div>
+</nav>
+<header class="hero">
+<div class="eyebrow">PUBLIC RESEARCH MAP</div>
+<h1>Research Taste Map</h1>
+<p class="subtitle">Papers, people, projects, and questions that shape my work on embodied human and animal AI.</p>
+<div class="question-card">
+<div class="label">CORE QUESTION</div>
+<p class="question">How can we build lifelike human and animal AI characters through 3D/4D reconstruction, motion, physics, and embodied interaction?</p>
+</div>
+<div class="hero-actions">
+<a class="button primary" href="#visit">Current Visiting Research Framing</a>
+<a class="button" href="../">Back to Portfolio</a>
+</div>
+</header>
+<main>
+<section class="section" id="direction">
+<div class="section-header">
+<div>
+<div class="kicker">Direction</div>
+<h2>From reconstruction to embodied characters.</h2>
+</div>
+<div>
+<p class="lead">I am a Ph.D. student at UNIST working on dynamic 3D/4D human and animal understanding. My work focuses on reconstructing, representing, and eventually animating humans and animals as dynamic embodied agents.</p>
+<p>The broader motivation is to move from passive 3D reconstruction toward interactive living representations: characters that can be reconstructed, animated, simulated, and used in embodied AI systems.</p>
+</div>
+</div>
+<div class="flow">
+<div class="flow-step"><div class="num">01</div><h3>Perceive</h3><p>Recover shape, appearance, pose, and motion from images or videos.</p></div>
+<div class="flow-step"><div class="num">02</div><h3>Represent</h3><p>Build neural, Gaussian, or structured body representations for dynamic agents.</p></div>
+<div class="flow-step"><div class="num">03</div><h3>Animate</h3><p>Make bodies controllable, temporally coherent, and physically plausible.</p></div>
+<div class="flow-step"><div class="num">04</div><h3>Interact</h3><p>Connect bodies with behavior, language, memory, and embodied AI systems.</p></div>
+</div>
+</section>
+<section class="section" id="animals">
+<div class="section-header">
+<div>
+<div class="kicker">Why Animals?</div>
+<h2>Animals are a hard testbed for general 4D reconstruction.</h2>
+</div>
+<div>
+<p class="lead">Humans have strong datasets, parametric priors, motion capture pipelines, and evaluation protocols. Animals are much less standardized.</p>
+<p>If a method can handle non-human articulated bodies in the wild, it is closer to robust real-world embodied perception.</p>
+</div>
+</div>
+<div class="grid cols-3">
+<div class="card"><span class="tag">Shape</span><h3>Large variation</h3><p>Animals exhibit large inter-species and intra-species differences in anatomy, proportion, and appearance.</p></div>
+<div class="card"><span class="tag pink">Motion</span><h3>Contact-rich dynamics</h3><p>Animal motion involves locomotion, balance, ground contact, deformation, and highly non-rigid behavior.</p></div>
+<div class="card"><span class="tag red">Data</span><h3>Weak supervision</h3><p>Dense annotations and controlled multiview data are harder to obtain, especially for in-the-wild videos.</p></div>
+</div>
+</section>
+<section class="section" id="projects">
+<div class="section-header">
+<div>
+<div class="kicker">Project Nodes</div>
+<h2>My projects as a connected research thread.</h2>
+</div>
+<p class="lead">These projects are not isolated artifacts. I view them as steps toward dynamic, animatable, and eventually physics-grounded human and animal representations.</p>
+</div>
+<div class="grid cols-2">
+<a class="card project-card" href="https://vision3d-lab.github.io/wildani4d/" rel="noopener" target="_blank">
+<img alt="WildAni4D preview" class="thumb" src="../images/CVPR2026_tea.gif"/>
+<div><span class="tag">WildAni4D</span><h3>In-the-wild 4D animal reconstruction</h3><p>Dynamic animal reconstruction from realistic videos with sparse views, unknown motion, occlusion, and limited supervision.</p></div>
+</a>
+<div class="card project-card">
+<img alt="AniGauss preview" class="thumb" src="../images/feed_project.png"/>
+<div><span class="tag pink">AniGauss</span><h3>Neural / Gaussian animal representation</h3><p>Moving from mesh-only thinking toward renderable, animatable, neural representations for animals.</p></div>
+</div>
+<div class="card project-card">
+<img alt="DogRecon preview" class="thumb" src="../images/app2.gif"/>
+<div><span class="tag green">DogRecon</span><h3>Category-specific animal body reconstruction</h3><p>An entry point into animal 3D reconstruction, especially dogs as a challenging and meaningful category.</p></div>
+</div>
+<div class="card project-card">
+<img alt="Human avatar preview" class="thumb" src="../images/ICCVW2025_tea.png"/>
+<div><span class="tag gray">Human / Animal Avatars</span><h3>Transfer and limits of human-centric priors</h3><p>Learning from human avatar literature while asking what must be rebuilt for non-human bodies.</p></div>
+</div>
+</div>
+</section>
+<section class="section" id="pillars">
+<div class="section-header">
+<div>
+<div class="kicker">Pillars</div>
+<h2>The five pillars I keep returning to.</h2>
+</div>
+<p class="lead">My interests are broad, but they converge on a single direction: lifelike embodied human and animal AI characters.</p>
+</div>
+<div class="grid cols-3">
+<div class="card"><span class="tag">3D / 4D</span><h3>Dynamic reconstruction</h3><p>Recover not only shape, but time, motion, deformation, and interaction from sparse or in-the-wild inputs.</p></div>
+<div class="card"><span class="tag green">Animals</span><h3>Shape and motion</h3><p>Develop priors and representations that handle non-human anatomy, locomotion, fur, and weak supervision.</p></div>
+<div class="card"><span class="tag pink">Neural 3D</span><h3>Rendering and generation</h3><p>Use neural and Gaussian representations to bridge appearance, geometry, animation, and controllability.</p></div>
+<div class="card"><span class="tag red">Physics</span><h3>Grounded motion</h3><p>Move from visually plausible motion to physically plausible behavior: contact, balance, forces, and control.</p></div>
+<div class="card"><span class="tag gray">Embodiment</span><h3>AI characters</h3><p>Connect body representations with behavior, voice, memory, language, and interaction.</p></div>
+<div class="card"><span class="tag">Systems</span><h3>Research OS</h3><p>Use structured notes and AI-assisted workflows to compound research taste, execution, and long-term direction.</p></div>
+</div>
+</section>
+<section class="section" id="influences">
+<div class="section-header">
+<div>
+<div class="kicker">Influences</div>
+<h2>Ideas and labs that shape my research taste.</h2>
+</div>
+<p class="lead">This map is intentionally selective. It is not a complete bibliography; it is a public view of the ideas I keep returning to.</p>
+</div>
+<div class="grid cols-2">
+<div class="card"><span class="tag">Neural Rendering</span><h3>Scene representations and controllable 3D</h3><p>Neural and Gaussian representations reframed geometry and appearance as learnable structures that can connect reconstruction, rendering, generation, and control.</p></div>
+<div class="card"><span class="tag pink">Human Avatars</span><h3>Performance capture and animation</h3><p>Human avatar research provides strong tools for pose, deformation, and controllable rendering, while animals expose different assumptions and failure modes.</p></div>
+<div class="card"><span class="tag red">Physics</span><h3>Reconstruction that can move</h3><p>Many reconstructed motions look visually plausible but physically unstable. Contact, force, control, and dynamics are essential for embodied characters.</p></div>
+<div class="card"><span class="tag green">Robotics</span><h3>Useful representations</h3><p>Robotics forces representations to be useful, not only visually impressive: latency, sensors, actuation, safety, and control all matter.</p></div>
+</div>
+</section>
+<section class="section" id="questions">
+<div class="section-header">
+<div>
+<div class="kicker">Open Questions</div>
+<h2>Questions I expect to keep returning to.</h2>
+</div>
+<p class="lead">These questions help me convert broad vision into concrete research problems.</p>
+</div>
+<ul class="list">
+<li>How can we reconstruct animals in 4D without dense supervision?</li>
+<li>What physical priors are useful for non-human articulated bodies?</li>
+<li>Can human motion models transfer to animal motion and human-animal interaction?</li>
+<li>What representations best support animatable, controllable animal avatars?</li>
+<li>How can 3D/4D reconstruction become a body layer for AI agents?</li>
+<li>How can neural rendering, physical simulation, and control be unified for embodied characters?</li>
+</ul>
+</section>
+<section class="section" id="visit"><div class="section-header"><div><div class="kicker">Research direction</div><h2>From visual reconstruction to reusable motion.</h2></div><p class="lead">My public work connects single-image animal reconstruction with temporally coherent video-based motion. Physics-grounded and embodied systems are longer-term research interests, not completed results. <a href="../bob-wiki/publications.html">[papers]</a> <a href="../bob-wiki/projects.html">[demos]</a></p></div></section>
+<section class="section" id="boundary">
+<div class="section-header">
+<div>
+<div class="kicker">Public Boundary</div>
+<h2>Curated, not private.</h2>
+</div>
+<p class="lead">This page is a public layer derived from a private knowledge system. It intentionally excludes private life context, raw logs, application strategy, unpublished details, and agent internals.</p>
+</div>
+<div class="boundary">
+<div class="card"><span class="tag red">Keep Private</span><p>Personal relationships, emotional logs, raw chat transcripts, private strategy notes, credentials, local file paths, and confidential technical details.</p></div>
+<div class="card"><span class="tag pink">Rewrite</span><p>Internal vision phrases become research-facing language: “lifelike embodied human and animal AI characters.”</p></div>
+<div class="card"><span class="tag green">Safe After Review</span><p>Research questions, public projects, public papers, public talks, high-level values, and sanitized long-term vision.</p></div>
+</div>
+</section>
+</main>
+<footer class="footer">
+<p><strong>Gyeongsu (Bob) Cho</strong> · Ph.D. Student, AIGS, UNIST · <a href="mailto:threedv@unist.ac.kr">threedv@unist.ac.kr</a> · <a href="../">Portfolio</a> · <a href="https://www.linkedin.com/in/gyeongsu-bob-cho-1670a9202/" rel="noopener" target="_blank">LinkedIn</a></p>
+<p>Last updated: May 2026. This page is a curated public research map, not a private diary or complete knowledge base.</p>
+<p>Last updated: 2026-10-13 · <a href="../bob-wiki/internship.html">Summer 2027 research profile</a> · <a href="../Gyeongsu_Bob_Cho_Research_Intern_CV_Updated.pdf">CV</a> · Expected Ph.D. graduation: February 2028.</p></footer>
 </body>
 </html>
