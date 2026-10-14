@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Gyeongsu (Bob) Cho">
+  <meta name="description" content="Seeking a Summer 2027 research internship: Gyeongsu (Bob) Cho, 3D/4D articulated human and animal reconstruction, published evidence and research directions.">
+  <meta property="og:title" content="Summer 2027 Research Internship | Gyeongsu (Bob) Cho">
+  <meta property="og:description" content="3D/4D humans and animals, animatable Gaussians, video-based motion, papers and demos.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://threedv.github.io/bob-wiki/assets/research/wildani4d-teaser.jpg">
+  <title>Summer 2027 Research Internship | Gyeongsu (Bob) Cho</title>
+  <link rel="canonical" href="https://threedv.github.io/internship.html">
+  <link rel="icon" type="image/png" href="images/hp_logo.png">
+  <link rel="stylesheet" href="stylesheet.css">
+  <style>
+    body { margin: 0; line-height: 1.6; }
+    main { max-width: 760px; margin: auto; padding: 28px 20px 48px; }
+    h1 { font-size: 28px; font-weight: normal; line-height: 1.25; }
+    h2 { margin: 30px 0 12px; }
+    h3 { font-size: 16px; margin: 18px 0 6px; }
+    .name { padding-top: 0; }
+    nav { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 16px 0; }
+    section { border-top: 1px solid #eee; margin-top: 24px; padding-top: 4px; }
+    li { margin-bottom: 10px; }
+    .venue, footer { color: #555; }
+    .demos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    figure { margin: 0; }
+    video { width: 100%; display: block; background: #fafafa; }
+    figcaption { margin-top: 8px; font-size: 13px; }
+    footer { border-top: 1px solid #eee; margin-top: 30px; padding-top: 16px; }
+    @media (max-width: 600px) { .demos { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <p class="name">Gyeongsu (Bob) Cho</p>
+    <h1>Research internship — Summer 2027</h1>
+    <p><strong>Seeking a Summer 2027 research internship.</strong> I study 3D/4D reconstruction of articulated humans and animals, animatable Gaussian representations, and video-based motion.</p>
+    <p>I am a Ph.D. student at <a href="https://www.unist.ac.kr">UNIST</a>, advised by <a href="https://unist.info/?page_id=194">Prof. Kyungdon Joo</a>, with expected graduation in February 2028. Currently a Research Intern at <a href="https://www.utexas.edu/">UT Austin</a> (2026–Present), working with <a href="https://geopavlakos.github.io/">Prof. Georgios Pavlakos</a> and <a href="https://alexhu.top/">Dr. Hezhen Hu</a>.</p>
+    <nav aria-label="Academic profile">
+      <a href="./">Portfolio</a>
+      <a href="Gyeongsu_Bob_Cho_Research_Intern_CV_Updated.pdf">CV PDF</a>
+      <a href="#published-evidence">Published evidence</a>
+      <a href="#demos">Demos</a>
+      <a href="research-map/">Research Map</a>
+      <a href="https://github.com/Threedv/">GitHub</a>
+      <a href="https://www.linkedin.com/in/gyeongsu-bob-cho-1670a9202/">LinkedIn</a>
+      <a href="mailto:threedv@unist.ac.kr">Email</a>
+    </nav>
+  </header>
+  <section id="published-evidence">
+    <h2>Published evidence</h2>
+    <p>My lead-author work connects single-image animal reconstruction with temporally coherent, video-based articulated motion.</p>
+    <ul>
+      <li><strong>DogRecon</strong> — <span class="venue">International Journal of Computer Vision (IJCV), 2025</span>. Canine-prior-guided, animatable 3D Gaussian dog reconstruction from a single image. Internet-sourced image-to-3D test: CLIP-Similarity 0.8006, measuring rendered-view semantic similarity rather than geometry accuracy. <a href="bob-wiki/assets/research/dogrecon-paper.pdf#page=8">[paper, Table 2]</a> · <a href="https://vision3d-lab.github.io/dogrecon/">[project]</a><br>Earlier workshop version: <strong>CV4Animals Workshop @ CVPR 2024 (Oral)</strong>. <a href="https://drive.google.com/file/d/1iBRWAKBcO0eGoRMj5di9rdLILR6fRc5h/view">[workshop paper]</a> · <a href="https://www.youtube.com/watch?v=j0NJR3WSwzU&t=30667s">[oral video]</a></li>
+      <li><strong>WildAni4D</strong> — <span class="venue">CVPR 2026 Findings</span>. Monocular-video animal mesh reconstruction, articulated motion, and world-space trajectories; synthetic-video and temporal reconstruction pipelines. Synthetic test set: MPJPE 91.29 and Shape Consistency 0.0703 (lower is better; units are not specified in the table). <a href="bob-wiki/assets/research/wildani4d-paper.pdf#page=6">[paper, Table 1]</a> · <a href="https://vision3d-lab.github.io/wildani4d/">[project]</a></li>
+      <li><strong>AniGauss</strong> — <span class="venue">CV4Animals Workshop @ CVPR 2026</span>. Topology-aware Gaussians for animatable animal reconstruction from a single in-the-wild image, extending beyond dogs. The workshop paper presents qualitative comparisons across animal categories. <a href="bob-wiki/assets/research/anigauss-workshop-paper.pdf#page=4">[paper, Figure 2]</a> · <a href="https://vision3d-lab.github.io/anigauss/">[project]</a></li>
+    </ul>
+    <h3>Coauthored work</h3>
+    <ul>
+      <li><strong>Pose-Diverse Multi-View Virtual Try-on from a Single Frontal Image</strong> — WACV 2026. <a href="https://openaccess.thecvf.com/content/WACV2026/papers/Han_Pose-Diverse_Multi-View_Virtual_Try-on_from_a_Single_Frontal_Image_via_WACV_2026_paper.pdf">[paper]</a></li>
+      <li><strong>Avatar++: Fast and Pose-Controllable 3D Human Avatar Generation from a Single Image</strong> — Wild3D Workshop @ ICCV 2025. <a href="index.html#publications">[publication record]</a></li>
+      <li><strong>SlaBins: Fisheye Depth Estimation using Slanted Bins on Road Environments</strong> — ICCV 2023, in collaboration with 42dot. <a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Lee_SlaBins_Fisheye_Depth_Estimation_using_Slanted_Bins_on_Road_Environments_ICCV_2023_paper.pdf">[paper]</a> · <a href="https://syniez.github.io/SlaBins/">[project]</a></li>
+    </ul>
+  </section>
+  <section id="demos">
+    <h2>Research demos</h2>
+    <div class="demos">
+      <figure><video controls loop muted playsinline preload="metadata" poster="bob-wiki/assets/research/dogrecon-teaser.png"><source src="bob-wiki/assets/research/dogrecon-animation.mp4" type="video/mp4"><a href="bob-wiki/assets/research/dogrecon-animation.mp4">DogRecon demo</a></video><figcaption>DogRecon: published novel-pose animation with a Gaussian scene.</figcaption></figure>
+      <figure><video controls loop muted playsinline preload="metadata" poster="bob-wiki/assets/research/wildani4d-teaser.jpg"><source src="bob-wiki/assets/research/wildani4d-demo.mp4" type="video/mp4"><a href="bob-wiki/assets/research/wildani4d-demo.mp4">WildAni4D demo</a></video><figcaption>WildAni4D: comparative reconstruction on Veo3-generated videos, not real-video ground truth.</figcaption></figure>
+      <figure><video controls loop muted playsinline preload="metadata"><source src="bob-wiki/assets/research/anigauss-demo.mp4" type="video/mp4"><a href="bob-wiki/assets/research/anigauss-demo.mp4">AniGauss demo</a></video><figcaption>AniGauss: public project reconstruction demonstration.</figcaption></figure>
+    </div>
+  </section>
+  <section id="contributions">
+    <h2>Research contributions &amp; tooling</h2>
+    <ul>
+      <li><strong>Dynamic reconstruction:</strong> temporal modeling and evaluation that distinguish shape consistency from pose accuracy.</li>
+      <li><strong>Human and animal avatars:</strong> body-prior integration, controllable reconstruction, topology-aware Gaussians, and differentiable rendering.</li>
+      <li><strong>Synthetic supervision:</strong> rendering and synthetic-video pipelines with labeled geometry, pose, and camera trajectories.</li>
+    </ul>
+    <p>Python · PyTorch · PyTorch3D · SMAL / parametric body models · 3D Gaussian splatting · multi-camera 3D pose.</p>
+  </section>
+  <section id="research-directions">
+    <h2>Ongoing work &amp; research directions</h2>
+    <p>I aim to connect explicit 3D/4D body representations with reusable motion and controllable video generation. Longer-term research questions include contact-aware motion, physical simulation, and world-model integration.</p>
+    <ul>
+      <li><strong>AniGauss++</strong> — Manuscript submitted to IJCV.</li>
+      <li><strong>Multi-Dancer Generation</strong> — Sony × UT Austin research collaboration; Manuscript in preparation for CVPR.</li>
+      <li><strong>Animal Agent</strong> — Manuscript in preparation for CVPR.</li>
+      <li><strong>Animal Motion</strong> — Manuscript in preparation for CVPR.</li>
+    </ul>
+  </section>
+  <section id="applied-research">
+    <h2>Applied research</h2>
+    <ul>
+      <li><strong>Samsung Electronics research collaboration (2024–2025):</strong> reference-guided video anomaly detection for industrial display inspection; contributions to dataset design, model architecture, and experiments. <em>Reference-Guided Video Anomaly Detection for Display Inspection — Manuscript submitted to WACV; awaiting decision.</em></li>
+      <li><strong>42dot / Hyundai Motor Group research collaboration:</strong> fisheye depth estimation through SlaBins (ICCV 2023).</li>
+      <li><strong>Startup project (KIC &amp; George Washington University program, 2024):</strong> a three-camera real-time 3D human pose system with motion smoothing for gyms; 50+ U.S. professional interviews and first place in the program track.</li>
+    </ul>
+  </section>
+  <section id="service-seminars">
+    <h2>Academic service &amp; seminars</h2>
+    <p>Reviewer: CVPR 2026; ECCV 2026; CV4Animals Workshop @ CVPR 2026; 4D Vision Workshop @ CVPR 2026. <a href="index.html#academic-service">[service record]</a></p>
+    <p><a href="index.html#seminars">Selected seminar slides and interactive previews</a> cover 3D vision, generative models, and human/animal reconstruction, including <a href="seminars/2026-05-06-agentic-coding-workflow.pdf">Agentic Coding Workflow for Research</a>.</p>
+  </section>
+  <footer>Updated <time datetime="2026-10-13">2026-10-13</time> · <a href="./">Main portfolio</a> · <a href="Gyeongsu_Bob_Cho_Research_Intern_CV_Updated.pdf">Research Intern CV</a> · <a href="mailto:threedv@unist.ac.kr">threedv@unist.ac.kr</a></footer>
+</main>
+</body>
+</html>
