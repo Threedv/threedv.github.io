@@ -51,3 +51,8 @@
 - External reference checks: LinkedIn returns anti-automation HTTP 999; two existing UNIST lab URLs return HTTP 403. These are not claimed to be verified accessible. Core research PDFs, project pages and the scan path have working evidence.
 
 Private follow-up questions and removed editing notes are intentionally not included in this public repository.
+
+## Presentation follow-up — 2026-10-13
+- Removed repetitive per-claim CV badges and CV-only citation rows. The CV remains a document-download link, not a substitute for independent research evidence.
+- Kept genuine paper/project/code/video links and exact table citations for published numerical results.
+- Unlinked biographical dates retain their approved text; no research status or approved PDF content changed.
