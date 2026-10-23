@@ -1,491 +1,88 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="Gyeongsu (Bob) Cho" name="author"/>
-<meta content="Research Taste Map of Gyeongsu (Bob) Cho: papers, projects, labs, and questions shaping work on embodied human and animal AI." name="description"/>
-<title>Research Taste Map | Gyeongsu (Bob) Cho</title>
-<link href="../images/hp_logo.png" rel="icon" type="image/png"/>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&amp;family=Geist+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="Gyeongsu (Bob) Cho">
+<meta name="description" content="Gyeongsu Cho's research map: AnimalAgent, animal motion, and human motion understanding, grounded in animatable 3D/4D reconstruction.">
+<meta property="og:title" content="Bodies, motion, behavior — Gyeongsu Cho">
+<meta property="og:description" content="A research map connecting animatable reconstruction, animal motion, human motion understanding, and embodied behavior.">
+<meta property="og:image" content="https://threedv.github.io/bob-wiki/assets/research/wildani4d-teaser.jpg">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://threedv.github.io/research-map/">
+<link rel="icon" href="../images/hp_logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<title>Research Map | Gyeongsu (Bob) Cho</title>
 <style>
-    :root {
-      --bg: #ffffff;
-      --ink: #171717;
-      --muted: #5f6368;
-      --soft: #fafafa;
-      --line: rgba(0, 0, 0, 0.08);
-      --blue: #0a72ef;
-      --pink: #de1d8d;
-      --red: #ff5b4f;
-      --green: #0f9f6e;
-      --card-shadow: rgba(0,0,0,0.08) 0px 0px 0px 1px, rgba(0,0,0,0.04) 0px 2px 2px, rgba(0,0,0,0.04) 0px 8px 8px -8px, #fafafa 0px 0px 0px 1px;
-      --mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      --sans: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--ink);
-      font-family: var(--sans);
-      font-feature-settings: "liga" 1;
-      line-height: 1.55;
-    }
-    a { color: var(--ink); text-decoration: none; }
-    a:hover { color: var(--blue); }
-    p { margin: 0 0 16px; color: var(--muted); font-size: 16px; }
-    strong { color: var(--ink); font-weight: 600; }
-
-    .nav {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: rgba(255,255,255,0.86);
-      backdrop-filter: blur(14px);
-      box-shadow: rgba(0,0,0,0.08) 0px 1px 0px;
-    }
-    .nav-inner {
-      max-width: 1160px;
-      margin: 0 auto;
-      min-height: 64px;
-      padding: 0 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: -0.2px;
-    }
-    .logo-dot {
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      background: radial-gradient(circle at 30% 30%, #fff 0 12%, #171717 13% 100%);
-      box-shadow: var(--line) 0px 0px 0px 1px;
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      font-size: 14px;
-      font-weight: 500;
-    }
-    .nav-links a { color: #3d3d3d; }
-    .nav-links a:hover { color: var(--ink); }
-    .pill-link {
-      padding: 7px 12px;
-      border-radius: 999px;
-      color: #fff !important;
-      background: var(--ink);
-      box-shadow: var(--line) 0px 0px 0px 1px;
-    }
-
-    .hero {
-      max-width: 1160px;
-      margin: 0 auto;
-      padding: 96px 24px 64px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: "";
-      position: absolute;
-      left: 50%;
-      top: 36px;
-      width: 720px;
-      height: 240px;
-      transform: translateX(-50%);
-      background: radial-gradient(circle at 20% 40%, rgba(10,114,239,0.13), transparent 32%), radial-gradient(circle at 64% 30%, rgba(222,29,141,0.10), transparent 30%), radial-gradient(circle at 80% 70%, rgba(255,91,79,0.10), transparent 28%);
-      filter: blur(20px);
-      z-index: -1;
-    }
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 11px;
-      border-radius: 999px;
-      background: #ebf5ff;
-      color: #0068d6;
-      font-family: var(--mono);
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: -0.1px;
-      margin-bottom: 22px;
-    }
-    .hero h1 {
-      margin: 0 auto 24px;
-      max-width: 920px;
-      font-size: clamp(44px, 7vw, 76px);
-      line-height: 0.98;
-      letter-spacing: -3.8px;
-      font-weight: 600;
-    }
-    .hero .subtitle {
-      max-width: 780px;
-      margin: 0 auto 30px;
-      font-size: 20px;
-      line-height: 1.65;
-      color: #4d4d4d;
-    }
-    .hero-actions {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 26px;
-    }
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 40px;
-      padding: 0 16px;
-      border-radius: 8px;
-      font-size: 14px;
-      font-weight: 500;
-      box-shadow: var(--line) 0px 0px 0px 1px;
-      background: #fff;
-    }
-    .button.primary { background: var(--ink); color: #fff; }
-
-    .section {
-      max-width: 1160px;
-      margin: 0 auto;
-      padding: 58px 24px;
-    }
-    .section-header {
-      display: grid;
-      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
-      gap: 40px;
-      align-items: start;
-      margin-bottom: 28px;
-    }
-    .kicker {
-      font-family: var(--mono);
-      font-size: 12px;
-      font-weight: 500;
-      color: #777;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      margin-bottom: 12px;
-    }
-    h2 {
-      margin: 0;
-      font-size: clamp(30px, 4vw, 44px);
-      line-height: 1.08;
-      letter-spacing: -2.2px;
-      font-weight: 600;
-    }
-    h3 {
-      margin: 0 0 10px;
-      font-size: 22px;
-      line-height: 1.25;
-      letter-spacing: -0.8px;
-      font-weight: 600;
-    }
-    .lead { font-size: 18px; line-height: 1.7; }
-
-    .question-card {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 34px;
-      border-radius: 18px;
-      background: #fff;
-      box-shadow: var(--card-shadow);
-      text-align: left;
-    }
-    .question-card .label {
-      font-family: var(--mono);
-      color: var(--blue);
-      font-size: 12px;
-      font-weight: 500;
-      margin-bottom: 12px;
-    }
-    .question-card .question {
-      color: var(--ink);
-      font-size: clamp(25px, 4vw, 40px);
-      line-height: 1.15;
-      letter-spacing: -1.7px;
-      font-weight: 600;
-      margin: 0;
-    }
-
-    .grid { display: grid; gap: 16px; }
-    .grid.cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    .grid.cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .card {
-      border-radius: 14px;
-      padding: 22px;
-      background: #fff;
-      box-shadow: var(--card-shadow);
-      min-height: 100%;
-    }
-    .card p:last-child { margin-bottom: 0; }
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      margin-bottom: 14px;
-      padding: 4px 9px;
-      border-radius: 999px;
-      font-family: var(--mono);
-      font-size: 12px;
-      color: #0068d6;
-      background: #ebf5ff;
-    }
-    .tag.pink { color: #a80062; background: #fff0f8; }
-    .tag.red { color: #b91c1c; background: #fff1f0; }
-    .tag.green { color: #087a52; background: #ecfdf5; }
-    .tag.gray { color: #555; background: #f5f5f5; }
-
-    .project-card {
-      display: grid;
-      grid-template-columns: 118px minmax(0, 1fr);
-      gap: 18px;
-      align-items: center;
-    }
-    .thumb {
-      width: 118px;
-      height: 94px;
-      border-radius: 12px;
-      object-fit: cover;
-      background: #f6f6f6;
-      box-shadow: rgba(0,0,0,0.10) 0px 0px 0px 1px;
-    }
-    .project-card h3 { margin-bottom: 6px; }
-    .project-card p { font-size: 15px; line-height: 1.55; }
-
-    .flow {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 12px;
-    }
-    .flow-step {
-      padding: 18px;
-      border-radius: 14px;
-      background: #fff;
-      box-shadow: var(--card-shadow);
-      position: relative;
-    }
-    .flow-step .num {
-      font-family: var(--mono);
-      color: #999;
-      font-size: 12px;
-      margin-bottom: 10px;
-    }
-    .flow-step h3 { font-size: 19px; }
-    .flow-step p { font-size: 14px; }
-
-    .list {
-      display: grid;
-      gap: 10px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-    .list li {
-      padding: 12px 14px;
-      border-radius: 10px;
-      background: var(--soft);
-      color: #4d4d4d;
-      box-shadow: rgba(0,0,0,0.06) 0px 0px 0px 1px;
-      font-size: 15px;
-    }
-    .list li strong { display: block; margin-bottom: 3px; }
-
-    .focus-panel {
-      display: grid;
-      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
-      gap: 18px;
-      align-items: stretch;
-      padding: 18px;
-      border-radius: 18px;
-      background: #171717;
-      color: #fff;
-      box-shadow: var(--card-shadow);
-    }
-    .focus-panel p { color: #c9c9c9; }
-    .focus-panel .card { background: #202020; box-shadow: rgba(255,255,255,0.11) 0px 0px 0px 1px; }
-    .focus-panel h2, .focus-panel h3, .focus-panel strong { color: #fff; }
-    .focus-panel .list li { background: #252525; color: #d6d6d6; box-shadow: rgba(255,255,255,0.08) 0px 0px 0px 1px; }
-
-
-    .footer {
-      max-width: 1160px;
-      margin: 0 auto;
-      padding: 50px 24px 70px;
-      color: #777;
-      font-size: 14px;
-      border-top: 1px solid #ebebeb;
-    }
-    .footer a { color: #555; }
-
-    @media (max-width: 860px) {
-      .nav-links { display: none; }
-      .hero { padding-top: 76px; }
-      .hero h1 { letter-spacing: -2.2px; }
-      .section-header, .focus-panel { grid-template-columns: 1fr; }
-      .grid.cols-3, .grid.cols-2, .flow { grid-template-columns: 1fr; }
-      .project-card { grid-template-columns: 92px minmax(0, 1fr); }
-      .thumb { width: 92px; height: 78px; }
-      .question-card { padding: 24px; }
-    }
-  </style>
+:root{--paper:#faf9f6;--white:#fff;--ink:#242724;--muted:#646760;--line:#dcded6;--accent:#244e76;--wash:#edf2f6;--serif:'Instrument Serif',Georgia,serif;--sans:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;--mono:ui-monospace,SFMono-Regular,Consolas,monospace}
+*{box-sizing:border-box}html{scroll-padding-top:100px}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}a:hover{color:var(--accent)}a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:5px}button{font:inherit}img{display:block;max-width:100%}p{margin:0 0 16px}h1,h2,h3,h4{margin:0;font-weight:500}::selection{background:#dce7ed}.skip{position:absolute;top:-100px;left:16px;background:var(--ink);color:white;padding:12px;z-index:100}.skip:focus{top:8px}.wrap{max-width:1280px;margin:auto;padding-inline:48px}.topbar{border-bottom:1px solid var(--line);background:var(--paper)}.topbar .wrap{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}.wordmark{font-size:15px;font-weight:650;letter-spacing:-.4px}.wordmark span{font-weight:400;color:var(--muted);margin-left:10px}.toplinks{display:flex;gap:26px;font-size:13px}.toplinks a{display:inline-flex;align-items:center;min-height:44px}.toplinks .external{color:var(--accent)}.page{display:grid;grid-template-columns:152px minmax(0,1fr);gap:48px}.index{padding-top:76px}.index-inner{position:sticky;top:36px}.label{font-family:var(--mono);font-size:10px;line-height:1.5;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted)}.index nav{display:flex;flex-direction:column;gap:3px;margin-top:19px}.index nav a{font-size:12px;min-height:40px;display:flex;align-items:center;gap:12px;color:var(--muted)}.index nav a span{font-family:var(--mono);font-size:10px;color:#898c84}.index nav a:hover{color:var(--accent)}.index-note{font-size:11px;color:var(--muted);margin-top:40px;max-width:135px}.index-note::before{content:'';display:block;width:26px;border-top:1px solid var(--line);margin-bottom:16px}.hero{padding:70px 0 48px}.eyebrow{display:flex;align-items:center;gap:12px;color:var(--accent);margin-bottom:26px}.eyebrow::before{content:'';width:22px;border-top:1px solid var(--accent)}h1{font-family:var(--serif);font-size:clamp(58px,6.5vw,90px);line-height:1.01;letter-spacing:-2.5px;max-width:850px}h1 em{font-weight:400;color:var(--accent)}.hero-bottom{display:grid;grid-template-columns:1.35fr .65fr;gap:46px;margin-top:30px;align-items:start}.intro{font-size:16px;line-height:1.8;color:var(--muted);max-width:580px}.intro strong{color:var(--ink);font-weight:500}.byline{border-left:1px solid var(--line);padding-left:22px;font-size:12px;line-height:1.8}.byline strong{font-weight:600;display:block}.byline span{color:var(--muted);display:block}.byline a{color:var(--accent);display:inline-flex;align-items:center;min-height:44px}.section{padding:42px 0 48px;border-top:1px solid var(--line)}.section-head{display:flex;align-items:baseline;justify-content:space-between;gap:20px;margin-bottom:28px}.section-head h2{font-family:var(--serif);font-size:36px;line-height:1.2;letter-spacing:-.5px}.section-head .label{font-size:10px;text-align:right}.map{background:var(--white);border:1px solid var(--line);padding:28px;margin:0}.figure-top{display:flex;justify-content:space-between;gap:20px;border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:26px}.figure-top strong{font-size:13px;font-weight:550}.figure-top span{font-family:var(--mono);font-size:10px;color:var(--muted);align-self:center}.foundation{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:19px 22px;border:1px solid #cdd7dd;background:var(--wash)}.foundation h3{font-size:17px;letter-spacing:-.4px}.foundation p{font-size:12px;color:var(--muted);margin:3px 0 0}.foundation a{font-size:12px;white-space:nowrap;min-height:44px;display:flex;align-items:center;color:var(--accent)}.branches{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;padding-top:30px;position:relative}.branches::before{content:'';position:absolute;top:14px;left:16.66%;right:16.66%;border-top:1px solid #b4c2cc}.foundation::after{display:none}.branch{position:relative;padding:23px 18px 18px;border:1px solid var(--line);transition:border-color .18s,background .18s;display:flex;flex-direction:column;min-width:0}.branch::before{content:'';position:absolute;left:50%;height:16px;top:-17px;border-left:1px solid #b4c2cc}.branch:hover{border-color:var(--accent);background:#fafcfd}.branch .num{font-family:var(--mono);font-size:10px;color:var(--accent);margin-bottom:22px}.branch h3{font-size:19px;line-height:1.25;letter-spacing:-.6px;min-height:48px}.branch p{font-size:12px;line-height:1.7;color:var(--muted);margin:14px 0 20px}.branch .output{font-family:var(--mono);font-size:10px;line-height:1.7;border-top:1px solid var(--line);padding-top:12px;margin-top:auto;color:var(--muted)}.branch .arrow{position:absolute;right:17px;top:18px;color:var(--accent)}.map-conclusion{margin-top:25px;display:flex;justify-content:space-between;gap:18px;align-items:center}.map-conclusion strong{font-family:var(--serif);font-size:25px;font-weight:400}.map-conclusion span{font-size:11px;color:var(--muted);max-width:235px;text-align:right}.figcaption{font-size:11px;color:var(--muted);margin-top:12px;line-height:1.8}.figcaption b{font-family:var(--mono);font-size:10px;font-weight:500;color:var(--ink);margin-right:8px}.section-intro{font-size:14px;color:var(--muted);max-width:640px;margin-top:-12px;margin-bottom:26px}.tabs{display:none;gap:0;border-bottom:1px solid var(--line);margin-bottom:30px}.enhanced .tabs{display:flex}.tabs button{border:0;background:none;text-align:left;padding:13px 15px;min-height:48px;color:var(--muted);font-size:12px;cursor:pointer;position:relative;flex:1}.tabs button:first-child{padding-left:0}.tabs button[aria-selected=true]{color:var(--accent);font-weight:600}.tabs button[aria-selected=true]::after{content:'';position:absolute;bottom:-1px;left:0;right:15px;height:2px;background:var(--accent)}.brief{padding:0 0 20px}.brief:not([hidden])+.brief:not([hidden]){margin-top:32px}.brief-top{display:flex;align-items:center;gap:12px;margin-bottom:15px}.status{font-family:var(--mono);font-size:9px;color:var(--accent);border:1px solid #c6d2dc;padding:4px 7px;line-height:1.5}.brief h3{font-family:var(--serif);font-size:34px;line-height:1.2;margin-bottom:18px;max-width:650px}.brief-lead{font-size:15px;color:var(--muted);max-width:700px}.brief-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px;margin-top:28px}.brief-grid h4{font-family:var(--mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:12px}.brief-grid ul{list-style:none;padding:0;margin:0}.brief-grid li{position:relative;padding-left:14px;margin-bottom:12px;font-size:13px;line-height:1.8}.brief-grid li::before{content:'–';position:absolute;left:0;color:var(--muted)}.brief-grid .proof{background:var(--wash);padding:20px 22px;align-self:start}.proof p{font-size:13px;margin:0;line-height:1.8}.brief-links{display:flex;gap:22px;flex-wrap:wrap;margin-top:22px;font-size:12px;color:var(--accent)}.brief-links a{min-height:44px;display:flex;align-items:center}.pub-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}.publication{min-width:0}.pub-image{height:150px;background:white;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:17px}.pub-image img{width:100%;height:100%;object-fit:contain}.publication .venue{font-family:var(--mono);font-size:9px;color:var(--accent);line-height:1.7;min-height:31px;margin-bottom:9px}.publication h3{font-size:19px;font-weight:550;letter-spacing:-.4px}.publication .description{font-size:12px;color:var(--muted);line-height:1.8;margin:9px 0 6px}.pub-links{display:flex;gap:16px;color:var(--accent);font-size:11px}.pub-links a{min-height:44px;display:flex;align-items:center}.publication details{font-size:11px;color:var(--muted);margin-top:4px}.publication summary{cursor:pointer;min-height:44px;display:flex;align-items:center;list-style:none}.publication summary::before{content:'+';margin-right:8px}.publication details[open] summary::before{content:'−'}.publication details p{padding-bottom:12px}.human-foundation{border-top:1px solid var(--line);margin-top:25px;padding-top:22px;display:grid;grid-template-columns:1fr 1fr;gap:26px}.human-foundation h3{font-size:13px;font-weight:600;margin-bottom:5px}.human-foundation p{font-size:12px;color:var(--muted);margin:0}.human-foundation a{display:inline-flex;align-items:center;min-height:44px;font-size:11px;color:var(--accent)}.ongoing{display:grid;grid-template-columns:1fr 1.5fr;gap:32px;background:#f0f0eb;border:1px solid var(--line);padding:26px;margin-top:28px}.ongoing h3{font-family:var(--serif);font-size:26px;margin-bottom:8px}.ongoing p{font-size:11px;color:var(--muted);margin:0}.ongoing ul{padding:0;list-style:none;margin:0}.ongoing li{display:flex;justify-content:space-between;gap:16px;font-size:12px;padding:8px 0;border-bottom:1px solid var(--line)}.ongoing li:last-child{border:0}.ongoing li span{color:var(--muted);text-align:right;font-size:11px}.questions{counter-reset:q}.question{display:grid;grid-template-columns:35px 1fr;gap:18px;padding:23px 0;border-bottom:1px solid var(--line)}.question:last-child{border:0;padding-bottom:0}.question::before{counter-increment:q;content:'0' counter(q);font-family:var(--mono);font-size:10px;color:var(--accent);padding-top:5px}.question h3{font-size:17px;line-height:1.5;margin-bottom:7px;letter-spacing:-.3px}.question p{font-size:13px;color:var(--muted);margin:0;max-width:700px}.reading{display:grid;grid-template-columns:1fr 1fr;gap:0 32px}.reading a{display:block;padding:20px 0;border-top:1px solid var(--line)}.reading h3{font-size:13px;font-weight:550;margin-bottom:6px}.reading p{font-size:12px;color:var(--muted);margin:0}.reading small{display:block;color:var(--accent);font-size:11px;margin-top:8px}.thesis{border-top:1px solid var(--line);padding:40px 0 46px}.thesis blockquote{margin:0;font-family:var(--serif);font-size:32px;line-height:1.3;max-width:720px}.thesis .label{margin-top:18px}.footer{border-top:1px solid var(--line);padding:24px 0 35px}.footer .wrap{display:flex;justify-content:space-between;gap:20px;font-size:11px;color:var(--muted)}.footer a{color:var(--accent)}[hidden]{display:none!important}
+@media(min-width:1450px){.wrap{max-width:1380px}.page{gap:64px}.hero{padding-top:90px}.pub-image{height:170px}}
+@media(max-width:1050px){.wrap{padding-inline:30px}.page{grid-template-columns:110px minmax(0,1fr);gap:28px}.hero-bottom{grid-template-columns:1fr}.byline{border-left:0;padding-left:0;display:flex;gap:15px;flex-wrap:wrap;align-items:center}.byline a{min-height:30px}.pub-grid{gap:15px}.branch{padding-inline:13px}.branch h3{font-size:17px}.ongoing{grid-template-columns:1fr}}
+@media(max-width:780px){.wrap{padding-inline:24px}.page{display:block}.index{display:none}.topbar .wrap{min-height:68px}.wordmark span{display:none}.toplinks{gap:18px}.toplinks .cv{display:none}.hero{padding-top:46px;padding-bottom:32px}h1{font-size:68px}.hero-bottom{gap:16px;margin-top:24px}.intro{font-size:15px}.byline{font-size:11px;gap:8px 14px}.section{padding-block:30px}.section-head h2{font-size:31px}.map{padding:20px}.branch h3{font-size:16px}.branch p{font-size:11px}.branch .num{margin-bottom:15px}.brief-grid{gap:20px}.pub-image{height:130px}.map-conclusion strong{font-size:22px}.section-head .label{max-width:130px;font-size:9px}.reading{gap:0 24px}.footer .wrap{flex-direction:column;gap:8px}}
+@media(max-width:550px){.wrap{padding-inline:20px}.toplinks{gap:16px;font-size:12px}h1{font-size:59px;letter-spacing:-1.8px}.eyebrow{font-size:9px;letter-spacing:1.2px;margin-bottom:22px}.hero-bottom{margin-top:24px}.byline span{max-width:100%}.byline a{min-height:44px}.section-head{gap:16px;margin-bottom:22px}.section-head h2{font-size:30px}.section-head .label{font-size:8px}.figure-top{gap:10px;align-items:start}.figure-top strong{font-size:12px}.figure-top span{font-size:9px;max-width:90px;text-align:right}.map{padding:18px}.foundation{padding:15px;display:block}.foundation h3{font-size:16px}.foundation a{margin-top:3px}.branches{grid-template-columns:1fr;padding:0 0 0 16px;gap:12px;margin-top:20px}.branches::before{left:0;right:auto;top:0;bottom:0;border-top:0;border-left:1px solid #b4c2cc}.branch{padding:16px}.branch::before{top:29px;left:-17px;width:16px;height:0;border-left:0;border-top:1px solid #b4c2cc}.branch .num{margin-bottom:8px}.branch h3{font-size:19px;min-height:0}.branch p{font-size:12px;margin:9px 0 13px}.branch .output{font-size:9px}.map-conclusion{display:block}.map-conclusion span{display:block;text-align:left;max-width:none;margin-top:7px}.tabs button{padding:12px 8px;font-size:11px;line-height:1.6}.brief h3{font-size:31px}.brief-grid{grid-template-columns:1fr;gap:16px}.pub-grid{grid-template-columns:1fr;gap:28px}.pub-image{height:195px}.publication .venue{min-height:0;font-size:10px}.publication h3{font-size:21px}.publication .description{font-size:13px}.human-foundation{grid-template-columns:1fr;gap:16px}.ongoing{padding:20px;gap:16px}.ongoing li{flex-direction:column;gap:2px}.ongoing li span{text-align:left}.question{gap:9px;grid-template-columns:26px 1fr}.question h3{font-size:16px}.reading{grid-template-columns:1fr}.thesis blockquote{font-size:29px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;scroll-behavior:auto!important}}
+@media print{.index,.toplinks,.tabs{display:none!important}.page{display:block}.wrap{padding-inline:0}.brief[hidden]{display:block!important}.section,.map,.publication{break-inside:avoid}body{background:white}.hero{padding-top:20px}a{text-decoration:underline}.pub-image{height:120px}}
+</style>
 </head>
 <body>
-<nav class="nav">
-<div class="nav-inner">
-<a class="brand" href="../"><span class="logo-dot"></span> Gyeongsu (Bob) Cho</a>
-<div class="nav-links">
-<a href="#projects">Projects</a>
-<a href="#pillars">Pillars</a>
-<a href="#influences">Influences</a>
-<a href="#visit">Visiting Direction</a>
-<a class="pill-link" href="mailto:threedv@unist.ac.kr">Contact</a>
-</div>
-</div>
-</nav>
-<header class="hero">
-<div class="eyebrow">PUBLIC RESEARCH MAP</div>
-<h1>Research Taste Map</h1>
-<p class="subtitle">Papers, people, projects, and questions that shape my work on embodied human and animal AI.</p>
-<div class="question-card">
-<div class="label">CORE QUESTION</div>
-<p class="question">How can we build lifelike human and animal AI characters through 3D/4D reconstruction, motion, physics, and embodied interaction?</p>
-</div>
-<div class="hero-actions">
-<a class="button primary" href="#visit">Current Visiting Research Framing</a>
-<a class="button" href="../">Back to Portfolio</a>
-</div>
-</header>
-<main>
-<section class="section" id="direction">
-<div class="section-header">
-<div>
-<div class="kicker">Direction</div>
-<h2>From reconstruction to embodied characters.</h2>
-</div>
-<div>
-<p class="lead">I am a Ph.D. student at UNIST working on dynamic 3D/4D human and animal understanding. My work focuses on reconstructing, representing, and eventually animating humans and animals as dynamic embodied agents.</p>
-<p>The broader motivation is to move from passive 3D reconstruction toward interactive living representations: characters that can be reconstructed, animated, simulated, and used in embodied AI systems.</p>
-</div>
-</div>
-<div class="flow">
-<div class="flow-step"><div class="num">01</div><h3>Perceive</h3><p>Recover shape, appearance, pose, and motion from images or videos.</p></div>
-<div class="flow-step"><div class="num">02</div><h3>Represent</h3><p>Build neural, Gaussian, or structured body representations for dynamic agents.</p></div>
-<div class="flow-step"><div class="num">03</div><h3>Animate</h3><p>Make bodies controllable, temporally coherent, and physically plausible.</p></div>
-<div class="flow-step"><div class="num">04</div><h3>Interact</h3><p>Connect bodies with behavior, language, memory, and embodied AI systems.</p></div>
-</div>
+<a class="skip" href="#main">Skip to research map</a>
+<header class="topbar"><div class="wrap"><a class="wordmark" href="../">Gyeongsu Cho<span>Research notes</span></a><nav class="toplinks" aria-label="Main navigation"><a href="../">Portfolio ↗</a><a class="cv" href="../Gyeongsu_Bob_Cho_Research_Intern_CV_Updated.pdf">CV ↗</a><a class="external" href="mailto:threedv@unist.ac.kr">Get in touch ↗</a></nav></div></header>
+<div class="wrap page">
+<aside class="index"><div class="index-inner"><div class="label">Research map<br>No. 01 / Living document</div><nav aria-label="On this page"><a href="#map"><span>01</span> The map</a><a href="#directions"><span>02</span> Directions</a><a href="#projects"><span>03</span> Foundations</a><a href="#questions"><span>04</span> Open questions</a><a href="#influences"><span>05</span> Reading threads</a></nav><p class="index-note">Published evidence.<br>Current questions.<br>Longer-term ambition.<br><br>Kept distinct, connected by a research thesis.</p></div></aside>
+<main id="main">
+<section class="hero" aria-labelledby="page-title"><div class="eyebrow label">3D / 4D · Humans &amp; animals</div><h1 id="page-title">From seeing bodies<br>to <em>understanding<br>behavior.</em></h1><div class="hero-bottom"><p class="intro">I study how humans and animals can be <strong>reconstructed, understood, and animated</strong> from visual observations. This map connects my work in animatable 3D/4D reconstruction with three directions: <strong>AnimalAgent, Animal Motion, and Human Motion Understanding.</strong></p><div class="byline"><strong>Gyeongsu (Bob) Cho</strong><span>Ph.D. student · UNIST<br>Research intern · UT Austin</span><a href="../bob-wiki/publications.html">Publications &amp; manuscripts ↗</a></div></div></section>
+<section class="section" id="map" aria-labelledby="map-title"><div class="section-head"><h2 id="map-title">One thesis. Three directions.</h2><div class="label">01 / Research topology</div></div>
+<figure class="map"><div class="figure-top"><strong>What should a reconstructed body make possible?</strong><span>Representation → capability</span></div><div class="foundation"><div><h3>Animatable 3D / 4D bodies</h3><p>Geometry · appearance · articulation · temporal consistency</p></div><a href="#projects">Published foundations ↗</a></div><div class="branches"><a class="branch" href="#animal-agent" data-direction="animal-agent"><span class="num">I / BEHAVIOR</span><span class="arrow" aria-hidden="true">↗</span><h3>AnimalAgent</h3><p>Connect a reconstructed body with action, interaction, and an environment.</p><div class="output">Body + scene → situated behavior</div></a><a class="branch" href="#animal-motion" data-direction="animal-motion"><span class="num">II / DYNAMICS</span><span class="arrow" aria-hidden="true">↗</span><h3>Animal Motion</h3><p>Recover and model movement that can be reused beyond the source video.</p><div class="output">Video → motion → reusable skill</div></a><a class="branch" href="#human-motion" data-direction="human-motion"><span class="num">III / UNDERSTANDING</span><span class="arrow" aria-hidden="true">↗</span><h3>Human Motion<br>Understanding</h3><p>Understand bodies in motion, especially when people interact.</p><div class="output">Motion + context → action &amp; interaction</div></a></div><div class="map-conclusion"><strong>A body is more than a rendered surface.</strong><span>The goal: representations useful for understanding, generation, and interaction.</span></div></figure><figcaption class="figcaption"><b>FIG. 01</b> A map of research relationships, not a completed system. Published reconstruction work anchors the map; reusable skills and embodied behavior remain research goals. Select a direction to explore.</figcaption></section>
+<section class="section" id="directions" aria-labelledby="directions-title"><div class="section-head"><h2 id="directions-title">The research agenda</h2><div class="label">02 / Questions, not buzzwords</div></div><p class="section-intro">Each direction starts from a concrete limitation and asks what a better representation would let us do.</p>
+<div class="tabs" role="tablist" aria-label="Research directions"><button id="tab-animal-agent" role="tab" aria-controls="animal-agent" aria-selected="false" tabindex="-1">I · AnimalAgent</button><button id="tab-animal-motion" role="tab" aria-controls="animal-motion" aria-selected="true" tabindex="0">II · Animal Motion</button><button id="tab-human-motion" role="tab" aria-controls="human-motion" aria-selected="false" tabindex="-1">III · Human Motion Understanding</button></div>
+<article class="brief" id="animal-agent" aria-labelledby="agent-heading"><div class="brief-top"><span class="label">I / AnimalAgent</span><span class="status">RESEARCH DIRECTION</span></div><h3 id="agent-heading">From an animatable animal<br>to an animal that can act.</h3><p class="brief-lead">An animal avatar can look convincing without knowing how to respond to its surroundings. I am interested in the missing interface between a body representation, motion, and situated behavior—not just another locomotion demo.</p><div class="brief-grid"><div><h4>Questions to investigate</h4><ul><li>What body and scene state is needed to select a meaningful action?</li><li>How can motion become a reusable skill rather than a fixed animation?</li><li>How should contact and interaction constrain generated behavior?</li></ul></div><div class="proof"><h4>What would count as progress?</h4><p>A body representation that improves interaction success, controllability, or recovery in a changed scene—not only visual realism in the original clip.</p></div></div><div class="brief-links"><a href="../bob-wiki/publications.html#manuscripts">Ongoing Animal Agent manuscript ↗</a><a href="../bob-wiki/papers.html#physics">Physics &amp; embodiment background ↗</a></div></article>
+<article class="brief" id="animal-motion" aria-labelledby="motion-heading"><div class="brief-top"><span class="label">II / Animal Motion</span><span class="status">PUBLISHED FOUNDATION + ONGOING</span></div><h3 id="motion-heading">Not just where an animal is.<br>How it moves through the world.</h3><p class="brief-lead">WildAni4D connects monocular video to temporally coherent animal meshes, articulated motion, and world-space trajectories. The broader question is how such observations can support reusable motion representations and controllable generation.</p><div class="brief-grid"><div><h4>Questions to investigate</h4><ul><li>How do we separate body motion from camera motion and ambiguous observations?</li><li>Which motion structure transfers across animals with different proportions?</li><li>How can language and visual priors guide motion without losing anatomy or temporal consistency?</li></ul></div><div class="proof"><h4>What would count as progress?</h4><p>Motion that stays consistent over time and supports a new camera, body, or condition. Reconstruction fidelity, physical plausibility, and downstream usefulness should be evaluated separately.</p></div></div><div class="brief-links"><a href="../bob-wiki/publications.html#wildani4d">WildAni4D · CVPR 2026 Findings ↗</a><a href="../bob-wiki/publications.html#manuscripts">Ongoing Animal Motion manuscript ↗</a></div></article>
+<article class="brief" id="human-motion" aria-labelledby="human-heading"><div class="brief-top"><span class="label">III / Human Motion Understanding</span><span class="status">RELATED WORK + ONGOING</span></div><h3 id="human-heading">Understand the movement.<br>Preserve the interaction.</h3><p class="brief-lead">Human motion is more than a sequence of poses. I am interested in its relationship to identity, scene context, and other people, connecting work on controllable avatars and pose analysis with ongoing multi-dancer generation research.</p><div class="brief-grid"><div><h4>Questions to investigate</h4><ul><li>How can body identity and motion remain consistent under occlusion?</li><li>What changes when an action is defined by an interaction between people?</li><li>Which human motion priors transfer to animals—and which assumptions break?</li></ul></div><div class="proof"><h4>What would count as progress?</h4><p>Temporally stable bodies and coherent interactions under difficult observations. Related avatar and try-on publications are foundations, not claims of a completed motion-understanding system.</p></div></div><div class="brief-links"><a href="../bob-wiki/projects.html#sony">Multi-Dancer Generation collaboration ↗</a><a href="../seminars/2025-10-01-world-grounded-video-hmr.pdf">World-grounded video HMR · seminar ↗</a></div></article>
 </section>
-<section class="section" id="animals">
-<div class="section-header">
-<div>
-<div class="kicker">Why Animals?</div>
-<h2>Animals are a hard testbed for general 4D reconstruction.</h2>
-</div>
-<div>
-<p class="lead">Humans have strong datasets, parametric priors, motion capture pipelines, and evaluation protocols. Animals are much less standardized.</p>
-<p>If a method can handle non-human articulated bodies in the wild, it is closer to robust real-world embodied perception.</p>
-</div>
-</div>
-<div class="grid cols-3">
-<div class="card"><span class="tag">Shape</span><h3>Large variation</h3><p>Animals exhibit large inter-species and intra-species differences in anatomy, proportion, and appearance.</p></div>
-<div class="card"><span class="tag pink">Motion</span><h3>Contact-rich dynamics</h3><p>Animal motion involves locomotion, balance, ground contact, deformation, and highly non-rigid behavior.</p></div>
-<div class="card"><span class="tag red">Data</span><h3>Weak supervision</h3><p>Dense annotations and controlled multiview data are harder to obtain, especially for in-the-wild videos.</p></div>
-</div>
-</section>
-<section class="section" id="projects">
-<div class="section-header">
-<div>
-<div class="kicker">Project Nodes</div>
-<h2>My projects as a connected research thread.</h2>
-</div>
-<p class="lead">These projects are not isolated artifacts. I view them as steps toward dynamic, animatable, and eventually physics-grounded human and animal representations.</p>
-</div>
-<div class="grid cols-2">
-<a class="card project-card" href="https://vision3d-lab.github.io/wildani4d/" rel="noopener" target="_blank">
-<img alt="WildAni4D preview" class="thumb" src="../images/CVPR2026_tea.gif"/>
-<div><span class="tag">WildAni4D</span><h3>In-the-wild 4D animal reconstruction</h3><p>Dynamic animal reconstruction from realistic videos with sparse views, unknown motion, occlusion, and limited supervision.</p></div>
-</a>
-<div class="card project-card">
-<img alt="AniGauss preview" class="thumb" src="../images/feed_project.png"/>
-<div><span class="tag pink">AniGauss</span><h3>Neural / Gaussian animal representation</h3><p>Moving from mesh-only thinking toward renderable, animatable, neural representations for animals.</p></div>
-</div>
-<div class="card project-card">
-<img alt="DogRecon preview" class="thumb" src="../images/app2.gif"/>
-<div><span class="tag green">DogRecon</span><h3>Category-specific animal body reconstruction</h3><p>An entry point into animal 3D reconstruction, especially dogs as a challenging and meaningful category.</p></div>
-</div>
-<div class="card project-card">
-<img alt="Human avatar preview" class="thumb" src="../images/ICCVW2025_tea.png"/>
-<div><span class="tag gray">Human / Animal Avatars</span><h3>Transfer and limits of human-centric priors</h3><p>Learning from human avatar literature while asking what must be rebuilt for non-human bodies.</p></div>
-</div>
-</div>
-</section>
-<section class="section" id="pillars">
-<div class="section-header">
-<div>
-<div class="kicker">Pillars</div>
-<h2>The five pillars I keep returning to.</h2>
-</div>
-<p class="lead">My interests are broad, but they converge on a single direction: lifelike embodied human and animal AI characters.</p>
-</div>
-<div class="grid cols-3">
-<div class="card"><span class="tag">3D / 4D</span><h3>Dynamic reconstruction</h3><p>Recover not only shape, but time, motion, deformation, and interaction from sparse or in-the-wild inputs.</p></div>
-<div class="card"><span class="tag green">Animals</span><h3>Shape and motion</h3><p>Develop priors and representations that handle non-human anatomy, locomotion, fur, and weak supervision.</p></div>
-<div class="card"><span class="tag pink">Neural 3D</span><h3>Rendering and generation</h3><p>Use neural and Gaussian representations to bridge appearance, geometry, animation, and controllability.</p></div>
-<div class="card"><span class="tag red">Physics</span><h3>Grounded motion</h3><p>Move from visually plausible motion to physically plausible behavior: contact, balance, forces, and control.</p></div>
-<div class="card"><span class="tag gray">Embodiment</span><h3>AI characters</h3><p>Connect body representations with behavior, voice, memory, language, and interaction.</p></div>
-
-</div>
-</section>
-<section class="section" id="influences">
-<div class="section-header">
-<div>
-<div class="kicker">Influences</div>
-<h2>Ideas and labs that shape my research taste.</h2>
-</div>
-<p class="lead">This map is intentionally selective. It is not a complete bibliography; it is a public view of the ideas I keep returning to.</p>
-</div>
-<div class="grid cols-2">
-<div class="card"><span class="tag">Neural Rendering</span><h3>Scene representations and controllable 3D</h3><p>Neural and Gaussian representations reframed geometry and appearance as learnable structures that can connect reconstruction, rendering, generation, and control.</p></div>
-<div class="card"><span class="tag pink">Human Avatars</span><h3>Performance capture and animation</h3><p>Human avatar research provides strong tools for pose, deformation, and controllable rendering, while animals expose different assumptions and failure modes.</p></div>
-<div class="card"><span class="tag red">Physics</span><h3>Reconstruction that can move</h3><p>Many reconstructed motions look visually plausible but physically unstable. Contact, force, control, and dynamics are essential for embodied characters.</p></div>
-<div class="card"><span class="tag green">Robotics</span><h3>Useful representations</h3><p>Robotics forces representations to be useful, not only visually impressive: latency, sensors, actuation, safety, and control all matter.</p></div>
-</div>
-</section>
-<section class="section" id="questions">
-<div class="section-header">
-<div>
-<div class="kicker">Open Questions</div>
-<h2>Questions I expect to keep returning to.</h2>
-</div>
-<p class="lead">These questions help me convert broad vision into concrete research problems.</p>
-</div>
-<ul class="list">
-<li>How can we reconstruct animals in 4D without dense supervision?</li>
-<li>What physical priors are useful for non-human articulated bodies?</li>
-<li>Can human motion models transfer to animal motion and human-animal interaction?</li>
-<li>What representations best support animatable, controllable animal avatars?</li>
-<li>How can 3D/4D reconstruction become a body layer for AI agents?</li>
-<li>How can neural rendering, physical simulation, and control be unified for embodied characters?</li>
-</ul>
-</section>
-<section class="section" id="visit"><div class="section-header"><div><div class="kicker">Research direction</div><h2>From visual reconstruction to reusable motion.</h2></div><p class="lead">My public work connects single-image animal reconstruction with temporally coherent video-based motion. Physics-grounded and embodied systems are longer-term research interests, not completed results. <a href="../bob-wiki/publications.html">[papers]</a> <a href="../bob-wiki/projects.html">[demos]</a></p></div></section>
-
-</main>
-<footer class="footer">
-<p><strong>Gyeongsu (Bob) Cho</strong> · Ph.D. Student, AIGS, UNIST · <a href="mailto:threedv@unist.ac.kr">threedv@unist.ac.kr</a> · <a href="../">Portfolio</a> · <a href="https://www.linkedin.com/in/gyeongsu-bob-cho-1670a9202/" rel="noopener" target="_blank">LinkedIn</a></p>
-<p>Last updated: 2026-10-13 · <a href="../internship.html">Summer 2027 research profile</a> · <a href="../Gyeongsu_Bob_Cho_Research_Intern_CV_Updated.pdf">CV</a> · Expected Ph.D. graduation: February 2028.</p></footer>
+<section class="section" id="projects" aria-labelledby="projects-title"><div class="section-head"><h2 id="projects-title">Where the map begins</h2><div class="label">03 / Published foundations</div></div><p class="section-intro">Three first-author animal projects: from a single image, to broader anatomy, to motion in video.</p><div class="pub-grid">
+<article class="publication"><a class="pub-image" href="https://vision3d-lab.github.io/dogrecon/"><img src="../bob-wiki/assets/research/dogrecon-teaser.png" alt="DogRecon: single-image reconstruction of animatable Gaussian dogs" loading="lazy" width="480" height="300"></a><p class="venue">IJCV 2025</p><h3>DogRecon</h3><p class="description">Single-image, canine-prior-guided reconstruction of animatable 3D Gaussian dogs.</p><div class="pub-links"><a href="../bob-wiki/assets/research/dogrecon-paper.pdf">Paper ↗</a><a href="https://vision3d-lab.github.io/dogrecon/">Project ↗</a><a href="../bob-wiki/projects.html#dogrecon">Demo ↗</a></div><details><summary>Full title &amp; earlier version</summary><p>DogRecon: Canine Prior-Guided Animatable 3D Gaussian Dog Reconstruction From a Single Image. Earlier version: CV4Animals @ CVPR 2024 (oral).</p></details></article>
+<article class="publication"><a class="pub-image" href="https://vision3d-lab.github.io/anigauss/"><img src="../bob-wiki/assets/research/anigauss-paper-figure2.png" alt="AniGauss: topology-aware Gaussian reconstruction across animal categories" loading="lazy" width="480" height="300"></a><p class="venue">CV4ANIMALS WORKSHOP @ CVPR 2026</p><h3>AniGauss</h3><p class="description">Topology-aware Gaussians for animatable animal reconstruction from in-the-wild images.</p><div class="pub-links"><a href="../bob-wiki/assets/research/anigauss-workshop-paper.pdf">Paper ↗</a><a href="https://vision3d-lab.github.io/anigauss/">Project ↗</a><a href="../bob-wiki/projects.html#anigauss">Demo ↗</a></div><details><summary>Full title</summary><p>AniGauss: Toward Animatable Animal Reconstruction from Single In-the-Wild Images via Topology-Aware Gaussians.</p></details></article>
+<article class="publication"><a class="pub-image" href="https://vision3d-lab.github.io/wildani4d/"><img src="../bob-wiki/assets/research/wildani4d-teaser.jpg" alt="WildAni4D: 4D animal mesh reconstruction from video" loading="lazy" width="480" height="300"></a><p class="venue">CVPR 2026 FINDINGS</p><h3>WildAni4D</h3><p class="description">Monocular video to temporally coherent animal meshes, motion, and world-space trajectories.</p><div class="pub-links"><a href="../bob-wiki/assets/research/wildani4d-paper.pdf">Paper ↗</a><a href="https://vision3d-lab.github.io/wildani4d/">Project ↗</a><a href="../bob-wiki/projects.html#wildani4d">Demo ↗</a></div><details><summary>Full title</summary><p>WildAni4D: Towards 4D Animal Mesh Reconstruction.</p></details></article>
+</div><div class="human-foundation"><div><h3>Human avatars &amp; pose-diverse generation</h3><p>Coauthored work: Avatar++ · Wild3D Workshop @ ICCV 2025; Pose-Diverse Multi-View Virtual Try-on · WACV 2026.</p><a href="../bob-wiki/publications.html#avatar">Publication details ↗</a></div><div><h3>Human pose in an applied setting</h3><p>A startup project on real-time 3D human pose analysis using three cameras and motion smoothing. An applied system, separate from published research.</p><a href="../bob-wiki/projects.html#startup">Project context ↗</a></div></div>
+<div class="ongoing"><div><h3>Work in progress</h3><p>Working titles, separate from published results.<br><a href="../bob-wiki/publications.html#manuscripts">Manuscript record ↗</a></p></div><ul><li>AniGauss++<span>Submitted to IJCV</span></li><li>Animal Agent<span>Manuscript in preparation</span></li><li>Animal Motion<span>Manuscript in preparation</span></li><li>Multi-Dancer Generation<span>In preparation · Sony × UT Austin collaboration</span></li></ul></div></section>
+<section class="section" id="questions" aria-labelledby="questions-title"><div class="section-head"><h2 id="questions-title">Questions worth staying with</h2><div class="label">04 / Across the three directions</div></div><div class="questions"><article class="question"><div><h3>When does explicit 3D / 4D earn its complexity?</h3><p>When a body can be reused for a new viewpoint, motion, edit, or interaction. A better rendered frame alone is not the only test.</p></div></article><article class="question"><div><h3>What should transfer between human and animal motion?</h3><p>Shared ideas about articulation, temporal structure, and contact are useful. Morphology, anatomy, and behavior make blind transfer unreliable.</p></div></article><article class="question"><div><h3>Can generative priors fill in evidence without inventing the body?</h3><p>Generation can propose missing views and motion. The research challenge is to preserve identity, anatomy, and consistency while representing uncertainty.</p></div></article><article class="question"><div><h3>What turns movement into behavior?</h3><p>A trajectory describes what moved. Behavior also depends on a scene, a goal, and another agent. Connecting those levels is the longer-term ambition.</p></div></article></div></section>
+<section class="section" id="influences" aria-labelledby="reading-title"><div class="section-head"><h2 id="reading-title">Reading threads</h2><div class="label">05 / Intellectual background</div></div><p class="section-intro">Selected technical lineages behind the map—not my contributions or a ranked bibliography.</p><div class="reading"><a href="../bob-wiki/papers.html#animal-modeling"><h3>Body priors &amp; animals ↗</h3><p>SMAL, BARC, BANMo, MagicPony. What structure helps when supervision is weak and anatomy varies?</p><small>From category priors to generalizable bodies</small></a><a href="../bob-wiki/papers.html#human-avatars"><h3>Human recovery &amp; avatars ↗</h3><p>SMPL / SMPL-X, HMR, TRAM, PromptHMR. How do pose, identity, camera, and deformation fit together?</p><small>A mature reference point, not a universal template</small></a><a href="../bob-wiki/papers.html#gaussians"><h3>Renderable &amp; generative representations ↗</h3><p>NeRF, 3D Gaussian Splatting, and generative 3D. Which representations remain useful after image synthesis?</p><small>Appearance, geometry, and controllability</small></a><a href="../bob-wiki/papers.html#physics"><h3>Physics, motion &amp; embodiment ↗</h3><p>Physics-grounded reconstruction and control. How can visual observations become motion that interacts with a world?</p><small>From plausible pixels to useful behavior</small></a></div></section>
+<section class="thesis" aria-label="Research principle"><blockquote>“Build a representation because it enables something—not just because it can be rendered.”</blockquote><p class="label">The principle connecting this map</p></section>
+</main></div>
+<footer class="footer"><div class="wrap"><span>Gyeongsu (Bob) Cho · <a href="../">Portfolio</a> · <a href="mailto:threedv@unist.ac.kr">Email</a></span><span>Updated <time datetime="2026-10-23">23 October 2026</time> · <a href="../bob-wiki/publications.html">Publication record ↗</a></span></div></footer>
+<script>
+(()=>{
+  const tabs=[...document.querySelectorAll('[role="tab"]')];
+  const panels=tabs.map(tab=>document.getElementById(tab.getAttribute('aria-controls')));
+  function select(id,focus=false){
+    if(!panels.some(panel=>panel.id===id))return;
+    tabs.forEach((tab,i)=>{
+      const active=panels[i].id===id;
+      tab.setAttribute('aria-selected',String(active));
+      tab.tabIndex=active?0:-1;
+      panels[i].hidden=!active;
+      if(active&&focus)tab.focus();
+    });
+  }
+  panels.forEach((panel,i)=>{panel.setAttribute('role','tabpanel');panel.setAttribute('aria-labelledby',tabs[i].id);panel.tabIndex=0;});
+  tabs.forEach((tab,i)=>{
+    tab.addEventListener('click',()=>select(panels[i].id));
+    tab.addEventListener('keydown',event=>{
+      let next;
+      if(event.key==='ArrowRight')next=(i+1)%tabs.length;
+      if(event.key==='ArrowLeft')next=(i+tabs.length-1)%tabs.length;
+      if(event.key==='Home')next=0;
+      if(event.key==='End')next=tabs.length-1;
+      if(next!==undefined){event.preventDefault();select(panels[next].id,true);}
+    });
+  });
+  document.querySelectorAll('[data-direction]').forEach(link=>link.addEventListener('click',()=>select(link.dataset.direction)));
+  window.addEventListener('hashchange',()=>select(location.hash.slice(1)));
+  document.documentElement.classList.add('enhanced');
+  select(panels.some(panel=>panel.id===location.hash.slice(1))?location.hash.slice(1):'animal-motion');
+})();
+</script>
 </body>
 </html>
