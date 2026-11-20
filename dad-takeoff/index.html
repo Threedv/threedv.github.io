@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ko">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>물량산출실 · 접속</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#edf2f5;color:#132c43;font:17px/1.6 system-ui,sans-serif;word-break:keep-all}main{width:min(100% - 32px,580px);margin:clamp(24px,9vw,90px) auto;background:#fff;border:1px solid #cbd7df;border-radius:14px;padding:clamp(19px,5vw,36px)}h1{font-size:clamp(30px,7vw,43px);letter-spacing:-.05em;line-height:1.18;margin:8px 0 15px}.eyebrow{font-size:14px;font-weight:800;color:#124f78;letter-spacing:.07em}p{margin:0 0 16px}.muted{color:#4c6274;font-size:15px}label{display:block;font-weight:700}input{display:block;width:100%;min-height:46px;border:1px solid #788e9f;border-radius:8px;padding:10px;margin:5px 0 10px;font:inherit}button{min-height:46px;width:100%;border:0;border-radius:8px;background:#124f78;color:#fff;font:inherit;font-weight:800;cursor:pointer}a{color:#124f78}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #1672a7;outline-offset:3px}#message:empty{display:none}#message{color:#8b360a;margin-top:12px}footer{margin-top:20px;border-top:1px solid #cbd7df;padding-top:14px}
+</style>
+<main>
+  <div class="eyebrow">토목 도면 검토 · 비공개 접속</div>
+  <h1>물량산출실</h1>
+  <p>도면을 올려 철근, 레미콘, 거푸집 물량을 확인하는 작업 공간입니다.</p>
+  <p class="muted">이 페이지에서는 도면이나 접속 암호를 받지 않습니다. Tailscale에 연결한 뒤, 전달받은 비공개 접속 주소로 이동해 주세요.</p>
+  <form id="connect">
+    <label for="address">비공개 접속 주소</label>
+    <input type="url" id="address" placeholder="https://…ts.net:8443/" autocomplete="off" autocapitalize="off" spellcheck="false" required>
+    <button type="submit">물량산출실 열기</button>
+    <p id="message" role="alert"></p>
+  </form>
+  <footer class="muted">서버가 켜진 컴퓨터에서 열고 있다면 <a href="http://127.0.0.1:8936/">이 컴퓨터의 물량산출실 열기</a></footer>
+</main>
+<script>
+const input = document.getElementById('address');
+const message = document.getElementById('message');
+document.getElementById('connect').addEventListener('submit', (event) => {
+  event.preventDefault();
+  try {
+    const url = new URL(input.value.trim());
+    if (url.protocol !== 'https:' || !url.hostname.endsWith('.ts.net') || url.username || url.password || url.search || url.hash || url.pathname !== '/') throw new Error();
+    location.assign(url.origin + '/');
+  } catch {
+    message.textContent = '전달받은 HTTPS 접속 주소를 그대로 입력해 주세요.';
+  }
+});
+</script>
+</html>
